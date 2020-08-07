@@ -1,0 +1,68 @@
+$headerBackGroundColor: #202020;
+$headerRightContentWidth : 80px;
+$underLiningBorderWidth : 3px;
+
+
+.header {
+  background-color: $headerBackGroundColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+}
+
+.headerContentContainer {
+  display: flex;
+  margin: auto;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+
+.headerLeftContent{
+}
+
+.headerRightContent{
+  display: flex;
+  justify-content: space-between;
+  width: $headerRightContentWidth;
+}
+
+
+
+.headerContentContainerUnderLining {
+  display: flex;
+  margin: auto;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+//====================================================================================================
+//UNDER LINING WIDTH
+//====================================================================================================
+
+.headerLeftContentUnderLining{
+  border-bottom: $underLiningBorderWidth solid #D4D4D4;
+  width: 276px; //logo width or could be also logoContainer width
+}
+
+.headerRightContentUnderLining{
+  display: flex;
+  justify-content: space-between;
+  width: $headerRightContentWidth;
+}
+ .sunMoonUnderLining{
+   border-bottom: $underLiningBorderWidth solid  #FCC21B;
+   width: 28px; //it is sunMoon width
+
+ }
+
+ .navIconUnderLining{
+   border-bottom: $underLiningBorderWidth solid #1B7CD1;
+   width: 35px; // it is navIcon width
+
+ }

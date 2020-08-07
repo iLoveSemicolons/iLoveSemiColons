@@ -1,0 +1,19 @@
+$showAllTextColor : #009EFF;
+$showAllBackgroundColor : #1A1A1A;
+$topAndBottomPadding : 2px;
+$sidesPadding : 30px;
+
+
+.showAll{
+  display: inline-block;
+  border-radius: 12px;
+  background-color: $showAllBackgroundColor;
+  width:content-box;
+  color: $showAllTextColor;
+
+  cursor: pointer;
+
+  padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
+}
+
+

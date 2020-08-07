@@ -1,0 +1,19 @@
+$hashtagTextColor : #009EFF;
+$hashtagBackgroundColor : #1A1A1A;
+$topAndBottomPadding : 2px;
+$sidesPadding : 15px;
+
+
+.hashtagText{
+    display: inline-block;
+    border-radius: 12px;
+    background-color: $hashtagBackgroundColor;
+    width:content-box;
+    color: $hashtagTextColor;
+
+    padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
+}
+
+
+
+

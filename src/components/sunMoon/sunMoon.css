@@ -1,0 +1,7 @@
+.sunMoonContainer{
+    display : inline-block;
+}
+.sunMoon{
+    cursor : pointer;
+    width : 28px;
+}

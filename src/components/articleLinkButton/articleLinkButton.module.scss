@@ -1,0 +1,21 @@
+$articleLinkButtonBackgroundColor : #FFE087;
+$topAndBottomPadding : 5px;
+$sidesPadding : 30px;
+$color : #1A1A1A;
+
+
+
+.button {
+  background-color: $articleLinkButtonBackgroundColor;
+
+  padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
+
+  border: none;
+  color : $color;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  border-radius: 8px;
+}
