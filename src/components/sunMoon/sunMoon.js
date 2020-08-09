@@ -1,34 +1,6 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import "./sunMoon.css"
 
-/*export default function Sunoon(){
-    return(
-        <div className = "sunMoonContainer" >
-            <img onClick={toggleMode} src="/sun.svg" alt="sun icon" id="sunMoon" className="sunMoon" />
-        </div>
-    );
-}
-
-
-
-let state = true;
-function toggleMode (){
-    let modeIcon = document.getElementById("sunMoon");
-
-    let sun = "/sun.svg";
-    let moon = "/moon.svg";
-
-    if(state){
-        modeIcon.src = moon;
-        state = false;
-        window.alert(modeIcon.src);
-    } else {
-        modeIcon.src = sun;
-        state = true;
-        window.alert(modeIcon.src);
-    }
-}*/
 
 const iconPath = {
     sun: "/sun.svg",

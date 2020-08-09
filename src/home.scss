@@ -1,0 +1,37 @@
+@import "components/globalFontStyling.scss";
+
+.myImageHomePage {
+  width: 130px;
+}
+
+.introContainer {
+  display: flex;
+}
+
+
+.introTitle{
+  font-size: $fontsizeBiggest;
+  font-weight: bold;
+}
+.homePageIntroLeftContainer {
+
+}
+
+.homePageIntroRightContainer {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+
+  padding: 0 20px 0 20px;
+
+  height: 350px;
+  width: 310px;
+
+
+
+  background-color: #1A1A1A;
+  text-align: center;
+  border-radius: 10px;
+}

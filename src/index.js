@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Link, Switch, Route} from "react-router-dom";
-import Header from "./components/header/header";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Project from "./project";
 import Error from './components/Error';
 import design from "./design";
@@ -17,7 +16,6 @@ function App() {
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
             </style>
-            <Header/>
             <Switch>
                 <Route path="/" component={Home} exact/>
                 <Route path="/project" component={Project}/>

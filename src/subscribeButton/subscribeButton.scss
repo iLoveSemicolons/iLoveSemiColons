@@ -1,0 +1,15 @@
+
+@import "./src/components/globalFontStyling.scss";
+
+.subscribeButton{
+  background-image: linear-gradient(to right, #3036FE,#009EFF );
+  border: none;
+  cursor: pointer;
+
+  color: #EEEEEE;
+  font-size: $fontsizeMedium;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 5px 17px  5px 17px ;
+}

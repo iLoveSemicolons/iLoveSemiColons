@@ -1,0 +1,38 @@
+$verticalPadding : 7px;
+
+
+
+
+.navBarContainer {
+
+  background-color: #FFE087;
+  display: flex;
+  visibility : visible;
+  opacity: 1;
+
+  justify-content: space-around;
+  align-items: center;
+
+
+  padding-top: $verticalPadding;
+  padding-bottom: $verticalPadding;
+
+  border-radius: 20px;
+
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);  width: 100%;
+  max-width: 1000px;
+  top : 100px;
+}
+
+.navBarLink{
+
+}
+
+.openNavBar{
+  display: flex;
+  visibility : visible;
+  opacity: 1;
+}

@@ -1,0 +1,38 @@
+@import "../globalFontStyling";
+
+.buttonContainer{
+  background-color: #EEEEEE;
+  display: inline-block;
+  border-radius: 5px;
+
+}
+
+
+
+
+.gitHubIcon{
+  width:20px;
+}
+
+
+.gitHubButton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 2px 20px 1px 20px;
+
+  font-size: $fontsizeSmall;
+  font-weight: bold;
+}
+
+.gitHubButton div{
+  padding : 0 8px 0 8px;
+}
+
+
+
+.pushes{
+  border-left: 3px solid #676767;
+  padding-left: 5px;
+}
