@@ -7,27 +7,23 @@
 
 }
 
-
-
-
 .gitHubIcon{
   width:20px;
 }
-
 
 .gitHubButton{
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  padding: 2px 20px 1px 20px;
+  padding: 2px 10px 1px 10px;
 
   font-size: $fontsizeSmall;
   font-weight: bold;
 }
 
 .gitHubButton div{
-  padding : 0 8px 0 8px;
+  padding : 0 6px 0 6px;
 }
 
 

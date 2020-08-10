@@ -1,10 +1,12 @@
 $verticalPadding : 7px;
+@import "../globalFontStyling";
 
 
 
 
 .navBarContainer {
 
+  font-weight: bold;
   background-color: #FFE087;
   display: flex;
   visibility : visible;

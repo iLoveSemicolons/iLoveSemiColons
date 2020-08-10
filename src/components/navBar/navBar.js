@@ -33,11 +33,11 @@ export default class NavBar extends React.Component {
 
 const Child = () => (
     <div className="navBarContainer navBar">
-        <NavLink to={"../../../"}>Acceuil</NavLink>
-        <NavLink to={"./project"}>Projets</NavLink>
-        <NavLink to={"./design"}>Design</NavLink>
-        <NavLink to={"./blog"}>Blog</NavLink>
-        <NavLink to={"./about"}>A Propos</NavLink>
-        <NavLink to={"./contact"}>Contact</NavLink>
+        <NavLink className="navBarLink" to={"../../../"}>Acceuil</NavLink>
+        <NavLink className="navBarLink" to={"./project"}>Projets</NavLink>
+        <NavLink className="navBarLink" to={"./design"}>Design</NavLink>
+        <NavLink className="navBarLink" to={"./blog"}>Blog</NavLink>
+        <NavLink className="navBarLink" to={"./about"}>A Propos</NavLink>
+        <NavLink className="navBarLink" to={"./contact"}>Contact</NavLink>
     </div>
 )

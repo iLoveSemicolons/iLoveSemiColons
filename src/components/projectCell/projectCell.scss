@@ -1,0 +1,21 @@
+
+@import "../globalFontStyling";
+
+
+
+.projectCell{
+display: flex;
+}
+
+.projectCellTitle{
+  color: $colorWhite;
+}
+
+.projectResume{
+  color: $colorGrey;
+}
+
+
+.projectCellButtons{
+  display: flex;
+}
