@@ -10,6 +10,8 @@ import blog from "./blog";
 import Home from "./home";
 import "./App.scss"
 
+//TODO maybe github icon should be a bit bigger?
+
 function App() {
     return (
         <BrowserRouter>

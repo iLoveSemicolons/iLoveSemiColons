@@ -1,12 +1,12 @@
 import React from "react";
-import "./projectLinkbutton.scss";
+import "./demoButton.scss";
 
 
-export default function ProjectLinkButton(props) {
+export default function DemoButton(props) {
     return (
         <div>
             <a href={props.demoLink} target="_blank" rel="noopener noreferrer">
-                <button className="projectLinkButton">Lien</button>
+                <button className="projectLinkButton">{props.buttonValue}</button>
             </a>
         </div>
     );

@@ -1,6 +1,7 @@
 import React from "react"
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+import PageTitle from "./components/pageTitle/pageTitle";
 
 
 export default function Blog (){
@@ -8,7 +9,7 @@ export default function Blog (){
     return(
         <PageLayout>
             <MainLayout>
-                <div>Hello it is Blog</div>
+                <PageTitle title="BLog"/>
             </MainLayout>
         </PageLayout>
     );

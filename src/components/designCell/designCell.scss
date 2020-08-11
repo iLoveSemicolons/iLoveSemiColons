@@ -1,7 +1,5 @@
 @import "../globalFontStyling";
 
-
-
 .projectCell {
   display: flex;
   border-left: solid 6px #009EFF;
@@ -30,10 +28,6 @@
   line-height: 1.5 !important;
 }
 
-.projectDemoButtonContainer{
+.demoButtonContainer{
   padding-left: 10px;
-}
-
-.projectCellButtons {
-  display: flex;
 }
