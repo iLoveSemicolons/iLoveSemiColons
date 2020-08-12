@@ -1,7 +1,10 @@
+@import "../globalFontStyling";
+
+
 $hashtagTextColor : #009EFF;
 $hashtagBackgroundColor : #1A1A1A;
-$topAndBottomPadding : 2px;
-$sidesPadding : 15px;
+$topAndBottomPadding : 4px;
+$sidesPadding : 17px;
 
 
 .hashtagText{
@@ -10,7 +13,7 @@ $sidesPadding : 15px;
     background-color: $hashtagBackgroundColor;
     width:content-box;
     color: $hashtagTextColor;
-
+    font-size: $fontsizeSmall;
     padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
 }
 

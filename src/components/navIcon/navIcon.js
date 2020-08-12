@@ -4,6 +4,7 @@ import "../navBar/navBar.scss";
 import {NavLink} from "react-router-dom";
 
 //TODO FADEIN and FADEOUT navBar material ui
+//TODO while NavBar is open, clicking  on any part of the page will close it
 
 export default class NavIcon extends React.Component {
 

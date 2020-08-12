@@ -1,0 +1,55 @@
+@import "../globalFontStyling.scss";
+
+
+ .articleTitle{
+   font-size: $fontsizeBig;
+   font-weight: bold;
+   color: $colorWhiter;
+ }
+
+
+
+ .datePosted{
+   color: $colorWhiter;
+   font-size: $fontsizeSmall;
+ }
+
+
+ .copyAndShareButton{
+   background-color: #FFE087;
+   padding: 0 22px 0 22px;
+   height: 26.2px; //same height as ProjectGithubLinkButton
+   border: none;
+   font-weight: bold;
+   color : #1A1A1A;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   border-radius: 12px;
+   font-size: $fontsizeSmall;
+ }
+
+ .goToBlogPageButton{
+   background-color: #FFE087;
+   padding: 0 22px 0 22px;
+   height: 26.2px; //same height as ProjectGithubLinkButton
+   border: none;
+   font-weight: bold;
+   color : #1A1A1A;
+   text-align: center;
+   text-decoration: none;
+   cursor: pointer;
+   border-radius: 12px;
+   font-size: $fontsizeSmall;
+ }
+
+ .articleHashtagContainer{
+
+ }
+
+ .articleContent{
+   margin-top: 20px;
+   color: $colorWhite;
+   font-size: $fontsizeSmallMedium;
+   line-height: 1.4;
+ }
