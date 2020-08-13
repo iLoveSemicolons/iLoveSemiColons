@@ -7,14 +7,6 @@
    color: $colorWhiter;
  }
 
-
-
- .datePosted{
-   color: $colorWhiter;
-   font-size: $fontsizeSmall;
- }
-
-
  .copyAndShareButton{
    background-color: #FFE087;
    padding: 0 22px 0 22px;
@@ -43,13 +35,39 @@
    font-size: $fontsizeSmall;
  }
 
- .articleHashtagContainer{
+
+ .articleSubTitleContainer{
+   display : flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-wrap: wrap;
+   margin-top: 40px;
 
  }
 
+
+.datePosted{
+  color: $colorWhiter;
+  font-size: $fontsizeSmall;
+  flex-grow: 0.5;
+}
+
+.copyAndShareButtonContainer{
+  flex-grow: 0.5;
+
+}
+.goToBlogPageButtonContainer{
+  flex-grow: 2;
+}
+
+.articleHashtagContainer div{
+  margin-top: 40px;
+  margin-right: 10px;
+}
+
  .articleContent{
-   margin-top: 20px;
+   margin-top: 40px;
    color: $colorWhite;
    font-size: $fontsizeSmallMedium;
-   line-height: 1.4;
+   line-height: 1.8;
  }

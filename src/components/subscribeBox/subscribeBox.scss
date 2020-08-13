@@ -1,0 +1,41 @@
+@import "../globalFontStyling.scss";
+
+
+
+.subscribeBoxContainer{
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #1A1A1A;
+  border-radius: 10px;
+
+
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.myImageHomePage{
+  width: 130px;
+}
+
+.subscribeBoxLeftContainer{
+  margin : 0 auto;
+}
+
+.subscribeBoxRightContainer{
+  max-width: 700px;
+}
+
+.subscribeBoxText{
+  font-size: $fontsizeSmallMedium;
+  color: $colorWhiter;
+  line-height: 1.8;
+}
+
+.subscribeButtonContainer{
+  margin-top: 10px;
+}

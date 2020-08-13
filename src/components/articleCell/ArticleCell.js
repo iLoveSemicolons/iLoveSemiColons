@@ -18,7 +18,7 @@ export default function ArticleCell(props) {
                         <ReadArticleButton/>
                     </div>
                 </div>
-                <div className="articleHashtagContainer">
+                <div className="articleCellHashtagContainer">
                     <Hashtag hashtagArray = {props.hashtagArray} />
                 </div>
             </div>

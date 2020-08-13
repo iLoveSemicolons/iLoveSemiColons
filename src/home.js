@@ -4,12 +4,10 @@ import MainLayout from "./components/mainLayout/mainLayout";
 import "./components/projectGithubLinkButton/projectGithubLinkButton.scss";
 import "./home.scss"
 import SubscribeButton from "./subscribeButton/SubscribeButton";
-import ShowAll from "./components/showAll/showAll";
 import TopicTitle from "./components/topicTitle/TopicTitle";
 
 
 export default function Home() {
-
     return (
         <PageLayout>
             <MainLayout>
