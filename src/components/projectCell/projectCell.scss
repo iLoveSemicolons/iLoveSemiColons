@@ -15,25 +15,29 @@
 
 .projectCellTitle {
   color: $colorWhite;
+  padding-left: 15px;
+
+  flex: 1 1;
 }
 
-.projectCellTitle {
-  padding-left: 15px;
-}
 
 .projectResume {
   color: $colorGrey;
   padding: 0 15px 0 15px;
   line-height: 1.5;
+  flex: 3 1;
+
 }
 .projectResume::first-line {
   line-height: 1.5 !important;
 }
 
 .projectDemoButtonContainer{
-  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .projectCellButtons {
+  flex: 1 1;
   display: flex;
+  justify-content: flex-end;
 }

@@ -18,14 +18,22 @@ export default function ProjectCell(props) {
                 </div>
 
                 <div className="projectCellButtons">
-                    <div>
-                        <ProjectGithubLinkButton goTo={props.goTo} pushes={props.pushes}/></div>
+
+
 
                     {props.demoLink !== "noDemo" &&
                     <div className="projectDemoButtonContainer">
                         <DemoButton buttonValue="Lien" demoLink={props.demoLink}/>
                     </div>
                     }
+
+
+
+                    <div>
+                        <ProjectGithubLinkButton goTo={props.goTo} pushes={props.pushes}/>
+                    </div>
+
+
                 </div>
             </div>
         </div>

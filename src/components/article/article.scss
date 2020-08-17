@@ -65,9 +65,11 @@
   margin-right: 10px;
 }
 
+//TODO hesitating between fontsizeMedium or fontsizeSmallMedium
+
  .articleContent{
    margin-top: 40px;
    color: $colorWhite;
-   font-size: $fontsizeSmallMedium;
+   font-size: $fontsizeMedium;
    line-height: 1.8;
  }
