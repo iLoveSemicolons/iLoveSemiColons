@@ -1,21 +1,27 @@
 @import "../globalFontStyling";
 
-.articleCell {
-  display: flex;
-  flex-direction: column;
-  border-left: solid 6px #009EFF;
-}
 
-.articleCellTopSideContainer{
-  display: flex;
-  padding-left: 15px;
-}
 
 .articleCellContainer {
   padding-bottom: 30px;
   padding-top: 30px;
   border-bottom: 2px solid #141414;
 }
+
+
+.articleCell {
+  display: flex;
+  flex-direction: column;
+  border-left: solid 6px #009EFF;
+}
+
+
+.articleCellTopSideContainer{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
 
 .articleCellTitle {
   color: $colorWhite;
@@ -30,6 +36,12 @@
 .readButtonContainer{
   padding-left: 10px;
 }
+
+
+
+
+
+
 
 .articleCellHashtagContainer{
   padding-left: 15px;

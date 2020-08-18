@@ -1,19 +1,19 @@
-$showAllTextColor : #009EFF;
-$showAllBackgroundColor : #1A1A1A;
-$topAndBottomPadding : 2px;
-$sidesPadding : 30px;
+@import "../globalFontStyling";
 
 
 .showAll{
   display: inline-block;
   border-radius: 12px;
-  background-color: $showAllBackgroundColor;
+  background-color: #1A1A1A;
   width:content-box;
-  color: $showAllTextColor;
-
+  color: $colorBlue;
+  font-size: $fontsizeSmallMedium;
   cursor: pointer;
-
-  padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
+  padding: 3px 30px 3px 30px;
 }
 
 
+.showAllContainer{
+  margin-top: 30px;
+  text-align: center;
+}

@@ -27,13 +27,9 @@ export default function ProjectCell(props) {
                     </div>
                     }
 
-
-
                     <div>
                         <ProjectGithubLinkButton goTo={props.goTo} pushes={props.pushes}/>
                     </div>
-
-
                 </div>
             </div>
         </div>

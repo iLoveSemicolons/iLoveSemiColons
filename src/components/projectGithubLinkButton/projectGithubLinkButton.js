@@ -12,9 +12,9 @@ export default function ProjectGithubLinkButton(props) {
                 <div>
                     Source
                 </div>
-                <div className="pushes">
+{/*                <div className="pushes">
                     {props.pushes}
-                </div>
+                </div>*/}
             </a>
         </div>
     );

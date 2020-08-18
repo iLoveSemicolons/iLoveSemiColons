@@ -49,30 +49,9 @@ export default class Project extends React.Component{
                     {projects.map(project =>
                             <ProjectCell projectTitle={project.title}
                                          projectResume={project.description}
-                                         goTo={project.linkToSource} pushes="312"
+                                         goTo={project.linkToSource}
                                          demoLink={project.linkToDemo}/>
                         )}
-
-
-
-                   <ProjectCell projectTitle="ValidateOnTheFly"
-                                 projectResume="Javascript form validation and notifica-tion library, simple, fast, polyvalent and Open Source"
-                                 goTo="https://github.com/iLoveSemicolons/validateOnTheFly" pushes="312"
-                                 demoLink="https://github.com/iLoveSemicolons/validateOnTheFly"/>
-                    <ProjectCell projectTitle="ValidateOnTheFly"
-                                 projectResume="Javascript form validation and notifica-tion library, simple, fast, polyvalent and Open Source"
-                                 goTo="https://github.com/iLoveSemicolons/validateOnTheFly" pushes="312"
-                                 demoLink="noDemo"/>
-                    <ProjectCell projectTitle="ValidateOnTheFly"
-                                 projectResume="Javascript form validation and notifica-tion library, simple, fast, polyvalent and Open Source"
-                                 goTo="https://github.com/iLoveSemicolons/validateOnTheFly" pushes="312"
-                                 demoLink="https://github.com/iLoveSemicolons/validateOnTheFly"/>
-
-                    <ProjectCell projectTitle="ValidateOnTheFly"
-                                 projectResume="Javascript form validation and notifica-tion library, simple, fast, polyvalent and Open Source"
-                                 goTo="https://github.com/iLoveSemicolons/validateOnTheFly" pushes="312"
-                                 demoLink="https://github.com/iLoveSemicolons/validateOnTheFly"/>
-
                 </MainLayout>
             </PageLayout>
 

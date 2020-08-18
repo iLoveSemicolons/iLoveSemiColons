@@ -6,32 +6,67 @@ import "./home.scss"
 import SubscribeButton from "./subscribeButton/SubscribeButton";
 import TopicTitle from "./components/topicTitle/TopicTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
+import DesignCell from "./components/designCell/designCell";
+import ArticleCell from "./components/articleCell/ArticleCell";
+import ShowAll from "./components/showAll/showAll";
 
+//TODO maybe maring top for topicTitle and deleteing the div container topicsContainer, adding the margin/padding of topicsContainer to each topicTitle class
 
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {apiResponse: ""};
+        this.state = {
+            projectTopicAPIResponse: [],
+            designTopicAPIResponse: [],
+            postTopicAPIResponse: []
+        };
     }
 
 
-    callAPI() {
-        fetch("http://localhost:9000/testAPI")
-            .then(res => res.text())
-            .then(res => this.setState({apiResponse: res}))
-            .catch(function(){
+    callProjectTopicAPI() {
+        fetch("http://localhost:9000/homePageProjectTopic")
+            .then(response => response.json())
+            .then(response => this.setState({projectTopicAPIResponse: response}))
+            .catch(function () {
+                console.log('error');
+            });
+    }
+
+    callDesignTopicAPI() {
+        fetch("http://localhost:9000/homePageDesignTopic")
+            .then(response => response.json())
+            .then(response => this.setState({designTopicAPIResponse: response}))
+            .catch(function () {
+                console.log('error');
+            });
+    }
+
+
+    callPostTopicAPI() {
+        fetch("http://localhost:9000/homePagePostTopic")
+            .then(response => response.json())
+            .then(response => this.setState({postTopicAPIResponse: response}))
+            .catch(function () {
                 console.log('error');
             });
     }
 
 
     componentDidMount() {
-        this.callAPI()
+        this.callProjectTopicAPI();
+        this.callDesignTopicAPI();
+        this.callPostTopicAPI();
     }
 
 
     render() {
+
+        const projects = this.state.projectTopicAPIResponse;
+        const designs = this.state.designTopicAPIResponse;
+        const posts = this.state.postTopicAPIResponse;
+
+        console.log(posts);
         return (
             <PageLayout>
                 <MainLayout>
@@ -56,14 +91,12 @@ export default class Home extends React.Component {
                                         <div>
                                             iLoveSemicolons
                                         </div>
-                                        <div className="pushes">
+                                        {/*                                        <div className="pushes">
                                             12
-                                        </div>
+                                        </div>*/}
                                     </a>
                                 </div>
                             </div>
-
-
                         </div>
 
 
@@ -83,22 +116,42 @@ export default class Home extends React.Component {
                         </div>
                     </div>
 
+                    <div className="topicsContainer">
+                        <TopicTitle title="Projects"/>
+                        <div>
+                            {projects.map(project =>
+                                <ProjectCell projectTitle={project.title}
+                                             projectResume={project.description}
+                                             goTo={project.linkToSource}
+                                             demoLink={project.linkToDemo}/>
+                            )}
+                            <ShowAll goTo="/project" text="Voir tous mes projects" />
+                        </div>
 
-                    <TopicTitle title="Projects"/>
+                        <TopicTitle title="Design"/>
+                        <div>
+                            {designs.map(design =>
+                                <DesignCell projectTitle={design.title}
+                                            projectResume={design.resume}
+                                            demoLink={design.linkToDemo}/>
+                            )}
+                            <ShowAll goTo="/design" text="Voir tous mes créations design" />
+                        </div>
 
+                        <TopicTitle title="Derniers Articles"/>
+                        <div>
 
-                    {/*================================================================================================================================================*/}
+                            {posts.map(post =>
+                                <ArticleCell articleTitle={post.title}
+                                             goToArticleLink = {post.sourceLink}
+                                             // hashtags = {post.hashtags}
+                                />
+                                )}
+                            <ShowAll goTo="/blog" text="Voir tous mes articles" />
 
-                    <div>
-                        {this.state.apiResponse}
+                        </div>
+
                     </div>
-
-                    {/*================================================================================================================================================*/}
-
-
-                    <TopicTitle title="Design"/>
-                    <TopicTitle title="Derniers Articles"/>
-
                 </MainLayout>
             </PageLayout>
         );
