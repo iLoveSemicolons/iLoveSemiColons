@@ -35,7 +35,6 @@
    font-size: $fontsizeSmall;
  }
 
-
  .articleSubTitleContainer{
    display : flex;
    justify-content: flex-start;
@@ -45,7 +44,6 @@
 
  }
 
-
 .datePosted{
   color: $colorWhiter;
   font-size: $fontsizeSmall;
@@ -54,8 +52,8 @@
 
 .copyAndShareButtonContainer{
   flex-grow: 0.5;
-
 }
+
 .goToBlogPageButtonContainer{
   flex-grow: 2;
 }
@@ -64,8 +62,6 @@
   margin-top: 40px;
   margin-right: 10px;
 }
-
-//TODO hesitating between fontsizeMedium or fontsizeSmallMedium
 
  .articleContent{
    margin-top: 40px;

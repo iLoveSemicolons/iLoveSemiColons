@@ -3,14 +3,13 @@ import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 import "./components/projectGithubLinkButton/projectGithubLinkButton.scss";
 import "./home.scss"
-import SubscribeButton from "./subscribeButton/SubscribeButton";
+import SubscribeButton from "./components/subscribeButton/SubscribeButton";
 import TopicTitle from "./components/topicTitle/TopicTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
 import DesignCell from "./components/designCell/designCell";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 
-//TODO maybe maring top for topicTitle and deleteing the div container topicsContainer, adding the margin/padding of topicsContainer to each topicTitle class
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -25,6 +24,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
+
         fetch("http://localhost:9000/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
@@ -66,6 +66,8 @@ export default class Home extends React.Component {
         const designs = this.state.designTopicAPIResponse;
         const posts = this.state.postTopicAPIResponse;
 
+
+        //TODO check how many posts are in console, maybe this is abnormal ?
         console.log(posts);
         return (
             <PageLayout>
@@ -144,7 +146,7 @@ export default class Home extends React.Component {
                             {posts.map(post =>
                                 <ArticleCell articleTitle={post.title}
                                              goToArticleLink = {post.sourceLink}
-                                             // hashtags = {post.hashtags}
+                                             hashtags = {post.hashtags}
                                 />
                                 )}
                             <ShowAll goTo="/blog" text="Voir tous mes articles" />

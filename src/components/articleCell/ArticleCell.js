@@ -19,7 +19,7 @@ export default function ArticleCell(props) {
                     </div>
                 </div>
                 <div className="articleCellHashtagContainer">
-                    {/*<Hashtag hashtagArray = {props.hashtagArray} />*/}
+                    <Hashtag hashtags = {props.hashtags} />
                 </div>
             </div>
         </div>

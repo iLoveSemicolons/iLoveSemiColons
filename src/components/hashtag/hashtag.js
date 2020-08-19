@@ -6,15 +6,20 @@ import "./hashtag.scss"
 export default class Hashtag extends React.Component {
     constructor(props) {
         super(props);
-        this.hashtagArray = props.hashtagArray;
+        this.hashtags = props.hashtags;
     }
 
-    mappingHashtagArray(hashtagArray) {
+    mappingHashtagArray(hashtags) {
+        const hashtagArray = this.hashtagsToArrayOfHashtags(hashtags);
         return hashtagArray.map((hashtag) => <div className="hashtagText"># {hashtag}</div>);
     }
 
+
+    hashtagsToArrayOfHashtags(hashtags){
+        return hashtags.split(',');
+    }
+
     render() {
-        // return this.hashtagArray.map((hashtag) => <div className="hashtagText"># {hashtag}</div>);
-            return this.mappingHashtagArray(this.hashtagArray);
+        return this.mappingHashtagArray(this.hashtags);
     }
 }

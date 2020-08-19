@@ -7,27 +7,31 @@ import Article from "./components/article/article";
 
 //TODO articles should be stored as statical pages but the link to them should be stored in database
 
-
+//TODO generate a new link with the article title
 
 export default function Blog() {
 
     return (
         <PageLayout>
             <MainLayout>
-{/*                <Article articleTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et d"
-                         content="is simply dummy text of the printing and typesetting <br />industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                         datePosted="05/03/2020"
-                         hashtagArray={["javascript","vue.js"]}
-                />*/}
-
 
 
                 <PageTitle title="BLog"/>
-                <ArticleCell
-                    articleTitle="this is the article title"
-                    hashtagArray={['javascript']}
-                    goToArticleLink="https://google.com"
+
+
+                <Article articleTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et d"
+                         contentSourcePath='/articles/js-talks.html'
+                         datePosted={"05/03/2020"}
+                         hashtags= {'javascript'}
                 />
+
+
+                <ArticleCell articleTitle={'post.title'}
+                             goToArticleLink = {'post.sourceLink'}
+                             hashtags = {'post,hashtags'}
+                />
+
+
 
             </MainLayout>
         </PageLayout>

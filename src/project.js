@@ -6,8 +6,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
 
 
-//TODO this is the component where all project should be listed
-
+//TODO what to do in case there is no source code but only demo
 
 export default class Project extends React.Component{
 

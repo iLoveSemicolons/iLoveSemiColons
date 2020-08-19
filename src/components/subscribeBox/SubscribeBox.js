@@ -1,6 +1,6 @@
 import React from "react";
 import "./subscribeBox.scss";
-import SubscribeButton from "../../subscribeButton/SubscribeButton";
+import SubscribeButton from "../subscribeButton/SubscribeButton";
 
 
 export default function SubscribeBox() {
