@@ -121,8 +121,8 @@ export default class Home extends React.Component {
                     <div className="topicsContainer">
                         <TopicTitle title="Projects"/>
                         <div>
-                            {projects.map(project =>
-                                <ProjectCell projectTitle={project.title}
+                            {projects.map((project, index) =>
+                                <ProjectCell key={project.idProject} projectTitle={project.title}
                                              projectResume={project.description}
                                              goTo={project.linkToSource}
                                              demoLink={project.linkToDemo}/>
@@ -132,8 +132,8 @@ export default class Home extends React.Component {
 
                         <TopicTitle title="Design"/>
                         <div>
-                            {designs.map(design =>
-                                <DesignCell projectTitle={design.title}
+                            {designs.map((design,index) =>
+                                <DesignCell key={design.idDesign} projectTitle={design.title}
                                             projectResume={design.resume}
                                             demoLink={design.linkToDemo}/>
                             )}
@@ -143,8 +143,8 @@ export default class Home extends React.Component {
                         <TopicTitle title="Derniers Articles"/>
                         <div>
 
-                            {posts.map(post =>
-                                <ArticleCell articleTitle={post.title}
+                            {posts.map((post, index) =>
+                                <ArticleCell key={post.idPost} articleTitle={post.title}
                                              goToArticleLink = {post.sourceLink}
                                              hashtags = {post.hashtags}
                                 />

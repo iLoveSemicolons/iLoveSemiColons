@@ -3,6 +3,8 @@ import "./article.scss"
 import Hashtag from "../hashtag/hashtag";
 import {NavLink} from "react-router-dom";
 import SubscribeBox from "../subscribeBox/SubscribeBox";
+import PageLayout from "../pageLayout/pageLayout";
+import MainLayout from "../mainLayout/mainLayout";
 
 
 // const ReactMarkdown = require('react-markdown/with-html');
@@ -51,8 +53,9 @@ export default class Article extends React.Component {
         const articleContent = {__html: this.state.articleContent};
 
         return (
-            <div>
 
+
+            <div>
                 <div className="articleTitle">
                     {this.articleTitle}
                 </div>
@@ -64,7 +67,8 @@ export default class Article extends React.Component {
 
 
                     <div className="copyAndShareButtonContainer">
-                        <button onClick={this.copyAndShare} className="copyAndShareButton">Copier le lien et partager
+                        <button onClick={this.copyAndShare} className="copyAndShareButton">Copier le lien et
+                            partager
                         </button>
                     </div>
 
@@ -91,7 +95,6 @@ export default class Article extends React.Component {
 
 
             </div>
-
 
         );
 

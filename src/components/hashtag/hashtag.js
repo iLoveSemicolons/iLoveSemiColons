@@ -11,7 +11,7 @@ export default class Hashtag extends React.Component {
 
     mappingHashtagArray(hashtags) {
         const hashtagArray = this.hashtagsToArrayOfHashtags(hashtags);
-        return hashtagArray.map((hashtag) => <div className="hashtagText"># {hashtag}</div>);
+        return hashtagArray.map((hashtag, index) => <div key={index} className="hashtagText"># {hashtag}</div>);
     }
 
 

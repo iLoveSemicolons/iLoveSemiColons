@@ -9,31 +9,67 @@ import Article from "./components/article/article";
 
 //TODO generate a new link with the article title
 
-export default function Blog() {
 
-    return (
-        <PageLayout>
-            <MainLayout>
+export default class Blog extends React.Component {
 
+    constructor(props) {
+        super(props);
 
-                <PageTitle title="BLog"/>
-
-
-                <Article articleTitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et d"
-                         contentSourcePath='/articles/js-talks.html'
-                         datePosted={"05/03/2020"}
-                         hashtags= {'javascript'}
-                />
+        this.state = {
+            blogAPIResponse: []
+        }
+    }
 
 
-                <ArticleCell articleTitle={'post.title'}
-                             goToArticleLink = {'post.sourceLink'}
-                             hashtags = {'post,hashtags'}
-                />
+    callBlogAPI() {
+        fetch("http://localhost:9000/blog")
+            .then(response => response.json())
+            .then(response => this.setState({blogAPIResponse: response}))
+            .catch(function () {
+                console.log('Errror fetching blog API');
+            });
+    }
 
 
+    componentDidMount() {
+        this.callBlogAPI();
+    }
 
-            </MainLayout>
-        </PageLayout>
-    );
+
+    render() {
+
+
+        const articles = this.state.blogAPIResponse;
+
+        return (
+            <PageLayout>
+                <MainLayout>
+
+                    <PageTitle title="BLog"/>
+
+{/*
+                                      DO NOT DELETE THIS ONE
+
+                   <Article articleTitle="this is the title"
+                             datePosted="01/02/2002"
+                             contentSourcePath='/articles/js-talks.html'
+                             hashtags="hashtag1,hashtag2"
+                    />*/}
+
+
+                    {articles.map((article) =>
+                        <div>
+                            <ArticleCell key={article.idPost}
+                                         articleTitle={article.title}
+                                         goToArticleLink={article.sourceLink}
+                                         hashtags={article.hashtags}
+                            />
+                        </div>
+                    )}
+
+                </MainLayout>
+            </PageLayout>
+        );
+    }
 }
+

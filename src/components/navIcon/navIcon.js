@@ -52,7 +52,7 @@ export default class NavIcon extends React.Component {
 
 function NavBar() {
     return (<div className="navBarContainer navBar">
-        <NavLink to={"../../../"}>Acceuil</NavLink>
+        <NavLink to={"./"}>Acceuil</NavLink>
         <NavLink to={"./project"}>Projets</NavLink>
         <NavLink to={"./design"}>Design</NavLink>
         <NavLink to={"./blog"}>Blog</NavLink>
