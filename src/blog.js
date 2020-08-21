@@ -3,7 +3,7 @@ import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
-import Article from "./components/article/article";
+import Article from "./article";
 
 //TODO articles should be stored as statical pages but the link to them should be stored in database
 
@@ -47,10 +47,9 @@ export default class Blog extends React.Component {
 
                     <PageTitle title="BLog"/>
 
-{/*
-                                      DO NOT DELETE THIS ONE
 
-                   <Article articleTitle="this is the title"
+
+{/*                   <Article articleTitle="this is the title"
                              datePosted="01/02/2002"
                              contentSourcePath='/articles/js-talks.html'
                              hashtags="hashtag1,hashtag2"

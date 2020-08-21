@@ -15,7 +15,8 @@ export default function ArticleCell(props) {
                     </div>
 
                     <div className="readButtonContainer">
-                        <ReadArticleButton goToArticleLink={props.goToArticleLink}/>
+                        <ReadArticleButton goToArticleLink={props.goToArticleLink}
+                        />
                     </div>
                 </div>
                 <div className="articleCellHashtagContainer">
