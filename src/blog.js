@@ -38,7 +38,6 @@ export default class Blog extends React.Component {
 
     render() {
 
-
         const articles = this.state.blogAPIResponse;
 
         return (
@@ -59,9 +58,10 @@ export default class Blog extends React.Component {
                     {articles.map((article) =>
                         <div>
                             <ArticleCell key={article.idPost}
-                                         articleTitle={article.title}
-                                         goToArticleLink={article.sourceLink}
+                                         title={article.title}
+                                         sourceLink={article.sourceLink}
                                          hashtags={article.hashtags}
+                                         datePosted = {article.datePosted}
                             />
                         </div>
                     )}

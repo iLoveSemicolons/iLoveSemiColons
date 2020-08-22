@@ -11,15 +11,14 @@ import MainLayout from "./components/mainLayout/mainLayout";
 //TODO add lazy loading for articles
 
 
-
 export default class Article extends React.Component {
 
     constructor(props) {
         super(props);
-        this.articleTitle = props.articleTitle;
-        this.datePosted = props.datePosted;
-        this.contentSourcePath = props.contentSourcePath;
-        this.hashtags = props.hashtags;
+        this.articleTitle = this.props.location.state.title;
+        this.datePosted = this.props.location.state.datePosted;
+        this.sourceLink = '/articles/' + this.props.match.params.articleTitle;
+        this.hashtags = this.props.location.state.hashtags;
 
 
         this.state = {
@@ -29,7 +28,12 @@ export default class Article extends React.Component {
 
 
     componentDidMount() {
-        const contentSourcePath = this.contentSourcePath
+
+
+        console.log(this.props.location.state.title);
+        console.log(this.hashtags);
+
+        const contentSourcePath = this.sourceLink
         fetch(contentSourcePath)
             .then(response => response.text())
             .then(response => this.setState({articleContent: response}))
@@ -39,7 +43,7 @@ export default class Article extends React.Component {
     }
 
 
-    copyAndShare() {
+    copyToClipboard() {
         let dummyLinkHolder = document.createElement("input"), text = window.location.href;
         document.body.appendChild(dummyLinkHolder);
         dummyLinkHolder.value = text;
@@ -68,7 +72,7 @@ export default class Article extends React.Component {
 
 
                             <div className="copyAndShareButtonContainer">
-                                <button onClick={this.copyAndShare} className="copyAndShareButton">Copier le lien et
+                                <button onClick={this.copyToClipboard} className="copyAndShareButton">Copier le lien et
                                     partager
                                 </button>
                             </div>
@@ -83,7 +87,7 @@ export default class Article extends React.Component {
 
 
                         <div className="articleHashtagContainer">
-                            {/*<Hashtag hashtags={this.hashtags}/>*/}
+                            <Hashtag hashtags={this.hashtags}/>
                         </div>
 
 

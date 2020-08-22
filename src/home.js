@@ -64,11 +64,11 @@ export default class Home extends React.Component {
 
         const projects = this.state.projectTopicAPIResponse;
         const designs = this.state.designTopicAPIResponse;
-        const posts = this.state.postTopicAPIResponse;
+        const articles = this.state.postTopicAPIResponse;
 
 
         //TODO check how many posts are in console, maybe this is abnormal ?
-        console.log(posts);
+        console.log(articles);
         return (
             <PageLayout>
                 <MainLayout>
@@ -127,29 +127,31 @@ export default class Home extends React.Component {
                                              goTo={project.linkToSource}
                                              demoLink={project.linkToDemo}/>
                             )}
-                            <ShowAll goTo="/project" text="Voir tous mes projects" />
+                            <ShowAll goTo="/project" text="Voir tous mes projects"/>
                         </div>
 
                         <TopicTitle title="Design"/>
                         <div>
-                            {designs.map((design,index) =>
+                            {designs.map((design, index) =>
                                 <DesignCell key={design.idDesign} projectTitle={design.title}
                                             projectResume={design.resume}
                                             demoLink={design.linkToDemo}/>
                             )}
-                            <ShowAll goTo="/design" text="Voir tous mes créations design" />
+                            <ShowAll goTo="/design" text="Voir tous mes créations design"/>
                         </div>
 
                         <TopicTitle title="Derniers Articles"/>
                         <div>
 
-                            {posts.map((post, index) =>
-                                <ArticleCell key={post.idPost} articleTitle={post.title}
-                                             goToArticleLink = {post.sourceLink}
-                                             hashtags = {post.hashtags}
+                            {articles.map((article) =>
+                                <ArticleCell key={article.idPost}
+                                             title={article.title}
+                                             sourceLink={article.sourceLink}
+                                             hashtags={article.hashtags}
+                                             datePosted={article.datePosted}
                                 />
-                                )}
-                            <ShowAll goTo="/blog" text="Voir tous mes articles" />
+                            )}
+                            <ShowAll goTo="/blog" text="Voir tous mes articles"/>
 
                         </div>
 

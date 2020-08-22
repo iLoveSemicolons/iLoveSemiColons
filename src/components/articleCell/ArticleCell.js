@@ -11,16 +11,23 @@ export default function ArticleCell(props) {
             <div className="articleCell">
                 <div className="articleCellTopSideContainer">
                     <div className="articleCellTitle">
-                        {props.articleTitle}
+                        {props.title}
                     </div>
 
+
                     <div className="readButtonContainer">
-                        <ReadArticleButton goToArticleLink={props.goToArticleLink}
+                        <ReadArticleButton
+                            title={props.title}
+                            sourceLink={props.sourceLink}
+                            hashtags={props.hashtags}
+                            datePosted={props.datePosted}
                         />
                     </div>
+
+
                 </div>
                 <div className="articleCellHashtagContainer">
-                    <Hashtag hashtags = {props.hashtags} />
+                    <Hashtag hashtags={props.hashtags}/>
                 </div>
             </div>
         </div>
