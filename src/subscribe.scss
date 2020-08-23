@@ -1,0 +1,72 @@
+@import './components/globalFontStyling.scss';
+
+
+
+.subscribeBox{
+
+  max-width: 400px;
+  background-color: #1A1A1A;
+  border-radius: 10px;
+
+  padding: 5px 50px 20px 50px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+
+
+
+
+
+}
+
+.subscribeBoxTextInput{
+  font-family: inherit;
+  font-size: $fontsizeSmall;
+  font-weight: bold;
+
+  box-sizing: border-box;
+
+  border-radius: 15px;
+  border: none;
+
+  background-color: $colorGrey;
+  transition: background-color 200ms ease-in-out;
+
+  padding: 8px 8px 8px 8px;
+  margin-top: 20px;
+
+
+  &:focus{
+    background-color: $colorWhite;
+    border: none;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+
+
+
+.subscribeButtonContainer{
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.subscribeButton{
+  background-image: linear-gradient(to right, #3036FE,#009EFF );
+  border: none;
+  cursor: pointer;
+
+  color: #EEEEEE;
+  font-size: $fontsizeSmallMedium;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 5px 17px  5px 17px ;
+}
+
+
+

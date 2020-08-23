@@ -10,6 +10,7 @@ import blog from "./blog";
 import Home from "./home";
 import article from "./article";
 import "./App.scss"
+import Subscribe from "./subscribe";
 
 //TODO maybe github icon should be a bit bigger?
 
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/blog" component={blog}/>
                 <Route path="/about" component={about}/>
                 <Route path="/contact" component={contact}/>
+                <Route path="/subscribe" component={Subscribe}/>
                 <Route path="/article/:articleTitle" component={article}/>
                 <Route component={Error}/>
             </Switch>
