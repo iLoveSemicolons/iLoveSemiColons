@@ -1,7 +1,6 @@
 @import './components/globalFontStyling.scss';
 
 
-
 .subscribeBox{
 
   max-width: 400px;
@@ -13,11 +12,6 @@
 
   display: flex;
   flex-direction: column;
-
-
-
-
-
 }
 
 .subscribeBoxTextInput{
@@ -66,6 +60,10 @@
   border-radius: 15px;
 
   padding: 5px 17px  5px 17px ;
+
+  &:focus{
+    outline: none;
+  }
 }
 
 

@@ -6,10 +6,9 @@ import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 
-// const ReactMarkdown = require('react-markdown/with-html');
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles
-
+//TODO this component will search for the same value of this.props.match.params.articleTitle in the data base and get the entire row
 
 export default class Article extends React.Component {
 
