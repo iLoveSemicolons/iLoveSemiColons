@@ -28,7 +28,7 @@ function App() {
                 <Route path="/about" component={about}/>
                 <Route path="/contact" component={contact}/>
                 <Route path="/subscribe" component={Subscribe}/>
-                <Route path="/article/:articleTitle" component={article}/>
+                <Route path="/article/:articleLocalFileName" component={article}/>
                 <Route component={Error}/>
             </Switch>
         </BrowserRouter>

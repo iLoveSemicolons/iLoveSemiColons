@@ -3,14 +3,16 @@ import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 import styles from "./subscribe.module.scss"
 
+
+//handling security issues on submit in backend
 export default class Subscribe extends React.Component {
     constructor(props) {
         super(props);
 
-
         this.state = {
             firstNameValue: '',
             emailValue: '',
+            submit : false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -22,8 +24,7 @@ export default class Subscribe extends React.Component {
 
 
         let date  = new Date();
-        console.log(date);
-        console.log(date.toISOString());
+        date = date.toISOString().slice(0,19).replace("T",' ');
    //     https://www.geeksforgeeks.org/how-to-convert-javascript-datetime-to-mysql-datetime/
 
         fetch('http://localhost:9000/subscribe', {
@@ -35,7 +36,7 @@ export default class Subscribe extends React.Component {
             body: JSON.stringify({
                 firstName: this.state.firstNameValue,
                 email: this.state.emailValue,
-                subscriptionDate : this.state.subscriptionDate
+                subscriptionDate : date
             })
         })
             .then(res => res.json())
@@ -51,11 +52,6 @@ export default class Subscribe extends React.Component {
         this.setState({emailValue: event.target.value});
     }
 
-
-
-    componentDidMount() {
-
-    }
 
 
     render() {

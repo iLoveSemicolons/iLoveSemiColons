@@ -6,7 +6,7 @@ import ArticleCell from "./components/articleCell/ArticleCell";
 import Article from "./article";
 
 //TODO articles should be stored as statical pages but the link to them should be stored in database
-
+//TODO slice the date and show only the important digits
 //TODO generate a new link with the article title
 
 
@@ -55,7 +55,7 @@ export default class Blog extends React.Component {
                     />*/}
 
 
-                    {articles.map((article) =>
+                    {articles.map((article ) =>
                         <div>
                             <ArticleCell key={article.idPost}
                                          title={article.title}
