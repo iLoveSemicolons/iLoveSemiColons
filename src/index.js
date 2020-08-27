@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from 'react-dom'
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Project from "./project";
-import Error from './components/Error';
+import Error from './Error';
 import design from "./design";
 import about from "./about";
 import contact from "./contact";

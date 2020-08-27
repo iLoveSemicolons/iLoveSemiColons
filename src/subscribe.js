@@ -2,9 +2,10 @@ import React from "react";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 import styles from "./subscribe.module.scss"
+import {Link} from "react-router-dom";
 
 
-//handling security issues on submit in backend
+//TODO handling security issues on submit in backend
 export default class Subscribe extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +13,7 @@ export default class Subscribe extends React.Component {
         this.state = {
             firstNameValue: '',
             emailValue: '',
-            submit : false
+            isSubscribed: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -20,12 +21,15 @@ export default class Subscribe extends React.Component {
     }
 
     handleSubmit(event) {
+        console.log(this.state.isSubscribed);
+        this.setState({isSubscribed: true});
+        console.log(this.state.isSubscribed);
         event.preventDefault();
 
 
-        let date  = new Date();
-        date = date.toISOString().slice(0,19).replace("T",' ');
-   //     https://www.geeksforgeeks.org/how-to-convert-javascript-datetime-to-mysql-datetime/
+        let date = new Date();
+        date = date.toISOString().slice(0, 19).replace("T", ' ');
+        //     https://www.geeksforgeeks.org/how-to-convert-javascript-datetime-to-mysql-datetime/
 
         fetch('http://localhost:9000/subscribe', {
             method: 'POST',
@@ -36,7 +40,7 @@ export default class Subscribe extends React.Component {
             body: JSON.stringify({
                 firstName: this.state.firstNameValue,
                 email: this.state.emailValue,
-                subscriptionDate : date
+                subscriptionDate: date
             })
         })
             .then(res => res.json())
@@ -53,13 +57,30 @@ export default class Subscribe extends React.Component {
     }
 
 
-
     render() {
 
+        const isSubscribed = this.state.isSubscribed;
+        console.log(isSubscribed);
         return (
             <PageLayout>
                 <MainLayout>
-                        <form className={styles.subscribeBox} onSubmit={this.handleSubmit}>
+                    {isSubscribed
+                        ? <div className={styles.subscriberThanksBox}>
+                            <div >
+                                Merci !, Vous êtes maintenant abonné à mon Newsletter, je ne vais pas vous
+                                gêner...promis :)
+                            </div>
+                            <div className={styles.subscriberThankButtonContainer}>
+                                <Link to={"../../"}>
+                                <button className={styles.subscriberThankButton}>
+                                    Retourner à l'acceuil
+                                </button>
+                                </Link>
+                            </div>
+
+                        </div>
+
+                        : <form className={styles.subscribeBox} onSubmit={this.handleSubmit}>
                             <input className={styles.subscribeBoxTextInput} type="text" placeholder="Un Prénom"
                                    value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
                             <input className={styles.subscribeBoxTextInput} type="email" placeholder="Un Mail"
@@ -68,6 +89,18 @@ export default class Subscribe extends React.Component {
                                 <input className={styles.subscribeButton} type="submit" value="S'abonner"/>
                             </div>
                         </form>
+                    }
+
+
+                    {/*                        <form className={styles.subscribeBox} onSubmit={this.handleSubmit}>
+                            <input className={styles.subscribeBoxTextInput} type="text" placeholder="Un Prénom"
+                                   value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
+                            <input className={styles.subscribeBoxTextInput} type="email" placeholder="Un Mail"
+                                   value={this.state.emailValue} onChange={this.handleEmailChange}/>
+                            <div className={styles.subscribeButtonContainer}>
+                                <input className={styles.subscribeButton} type="submit" value="S'abonner"/>
+                            </div>
+                        </form>*/}
                 </MainLayout>
             </PageLayout>
         );

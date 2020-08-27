@@ -1,10 +1,11 @@
 import React from 'react'
 import "./article.scss"
 import Hashtag from "./components/hashtag/hashtag";
-import {NavLink} from "react-router-dom";
+import {NavLink, Route} from "react-router-dom";
 import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+import Error from "./Error";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
@@ -20,7 +21,8 @@ export default class Article extends React.Component {
 
         this.state = {
             articleContent: "",
-            articleAPIResponse: []
+            articleAPIResponse: [],
+            errorOccurred : false
         }
     }
 
@@ -40,6 +42,14 @@ export default class Article extends React.Component {
             })
         })
             .then(response => response.json())
+
+            //if there is no data from the api it will set the errorOccurred to true in order to show to 404Error page after the condition rendering
+            .then((response) => {
+                if(response.length === 0){
+                    this.setState({errorOccurred : true});
+                }
+                return response;
+            })
             .then(response => this.setState({articleAPIResponse: response}))
             .catch(function (error) {
                 console.log(error);
@@ -77,15 +87,11 @@ export default class Article extends React.Component {
     render() {
 
         const articleObject = this.state.articleAPIResponse;
-
         const articleContent = {__html: this.state.articleContent};
         return (
             <PageLayout>
                 <MainLayout>
-
-
                     {articleObject.map((article) =>
-
                         <div>
                             <div className="articleTitle">
                                 {article.title}
@@ -105,12 +111,11 @@ export default class Article extends React.Component {
 
 
                                 <div className="goToBlogPageButtonContainer">
-                                    <NavLink to={"./blog"}>
+                                    <NavLink to={"../../../blog"}>
                                         <button className="goToBlogPageButton">Voir tous mes articles</button>
                                     </NavLink>
                                 </div>
                             </div>
-
 
                             <div className="articleHashtagContainer">
                                 <Hashtag hashtags={article.hashtags}/>
@@ -124,6 +129,9 @@ export default class Article extends React.Component {
                         </div>
                     )}
 
+                    {this.state.errorOccurred === true &&
+                    <Error />
+                    }
 
                 </MainLayout>
             </PageLayout>

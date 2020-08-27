@@ -1,6 +1,56 @@
 @import './components/globalFontStyling.scss';
 
 
+
+.subscriberThanksBox{
+  max-width: 400px;
+  background-color: #1A1A1A;
+  border-radius: 10px;
+
+  color: $colorGrey;
+  font-size: $fontsizeMedium;
+
+  padding: 20px 50px 20px 50px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+.subscriberThankButtonContainer{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.subscriberThankButton{
+  //background-image: linear-gradient(to right, #3036FE,#009EFF );
+  background-color: $colorGrey;
+  border: none;
+  cursor: pointer;
+
+  color: $colorBlacker;
+  font-size: $fontsizeSmallMedium;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 5px 17px  5px 17px ;
+
+
+  &:hover{
+    background-color: $colorYellow;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .subscribeBox{
 
   max-width: 400px;
@@ -46,7 +96,6 @@
   margin-top: 20px;
   text-align: center;
 }
-
 
 .subscribeButton{
   background-image: linear-gradient(to right, #3036FE,#009EFF );
