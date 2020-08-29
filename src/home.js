@@ -33,14 +33,14 @@ export default class Home extends React.Component {
             });
     }
 
-    callDesignTopicAPI() {
+/*    callDesignTopicAPI() {
         fetch("http://localhost:9000/homePageDesignTopic")
             .then(response => response.json())
             .then(response => this.setState({designTopicAPIResponse: response}))
             .catch(function () {
                 console.log('error');
             });
-    }
+    }*/
 
 
     callPostTopicAPI() {
@@ -55,7 +55,7 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.callProjectTopicAPI();
-        this.callDesignTopicAPI();
+        // this.callDesignTopicAPI();
         this.callPostTopicAPI();
     }
 
@@ -128,7 +128,7 @@ export default class Home extends React.Component {
                             <ShowAll goTo="/project" text="Voir tous mes projects"/>
                         </div>
 
-                        <TopicTitle title="Design"/>
+{/*                        <TopicTitle title="Design"/>
                         <div>
                             {designs.map((design, index) =>
                                 <DesignCell key={design.idDesign} projectTitle={design.title}
@@ -136,7 +136,7 @@ export default class Home extends React.Component {
                                             demoLink={design.linkToDemo}/>
                             )}
                             <ShowAll goTo="/design" text="Voir tous mes créations design"/>
-                        </div>
+                        </div>*/}
 
                         <TopicTitle title="Derniers Articles"/>
                         <div>

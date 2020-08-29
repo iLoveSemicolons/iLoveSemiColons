@@ -1,3 +1,4 @@
+/*
 import React from "react"
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
@@ -20,4 +21,4 @@ export default function Design (){
             </MainLayout>
         </PageLayout>
     );
-}
+}*/

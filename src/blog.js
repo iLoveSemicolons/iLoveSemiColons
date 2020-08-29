@@ -4,6 +4,7 @@ import MainLayout from "./components/mainLayout/mainLayout";
 import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import Article from "./article";
+import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 
 //TODO slice the date and show only the important digits
 
@@ -44,6 +45,7 @@ export default class Blog extends React.Component {
 
                     <PageTitle title="BLog"/>
 
+                    <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un article ou hâte d'apprenre sur un sujet ?"/>
 
 
 {/*                   <Article articleTitle="this is the title"

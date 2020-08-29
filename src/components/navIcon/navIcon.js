@@ -37,7 +37,7 @@ export default class NavIcon extends React.Component {
     render() {
         return (
             <div>
-                <div onClick={this.handleClick} className="icon nav-icon-5">
+                <div onTouchStart={this.handleClick} onClick={this.handleClick} className="icon nav-icon-5">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -50,23 +50,11 @@ export default class NavIcon extends React.Component {
 }
 
 
-
-/*function NavBar() {
-    return (<div className="navBarContainer navBar">
-        <NavLink to={"./"}>Acceuil</NavLink>
-        <NavLink to={"./project"}>Projets</NavLink>
-        <NavLink to={"./design"}>Design</NavLink>
-        <NavLink to={"./blog"}>Blog</NavLink>
-        <NavLink to={"./about"}>A Propos</NavLink>
-        <NavLink to={"./contact"}>Contact</NavLink>
-    </div>);
-}*/
-
 function NavBar() {
     return (<div className="navBarContainer navBar">
         <NavLink to={"./"}>Acceuil</NavLink>
         <NavLink to={"./../../../project"}>Projets</NavLink>
-        <NavLink to={"./../../../design"}>Design</NavLink>
+        {/*<NavLink to={"./../../../design"}>Design</NavLink>*/}
         <NavLink to={"./../../../blog"}>Blog</NavLink>
         <NavLink to={"./../../../about"}>A Propos</NavLink>
         <NavLink to={"./../../../contact"}>Contact</NavLink>

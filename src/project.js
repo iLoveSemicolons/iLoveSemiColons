@@ -4,6 +4,7 @@ import MainLayout from "./components/mainLayout/mainLayout";
 import "./project.scss";
 import PageTitle from "./components/pageTitle/pageTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
+import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 
 
 //TODO what to do in case there is no source code but only demo
@@ -44,6 +45,9 @@ export default class Project extends React.Component{
             <PageLayout>
                 <MainLayout>
                     <PageTitle title="Projects"/>
+
+                    <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un projet ?"/>
+
 
                     {projects.map(project =>
                             <ProjectCell projectTitle={project.title}

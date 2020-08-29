@@ -1,0 +1,105 @@
+@import '../globalFontStyling.scss';
+
+.ideaBoxContainer{
+  margin-top: 30px;
+  background-color: $colorBlacker;
+
+  padding: 20px 50px 20px 50px;
+  border-radius: 10px;
+
+}
+
+
+.ideaBox{
+  display: flex;
+  flex-direction: column;
+
+
+
+
+
+
+}
+
+.ideaBoxTitle{
+ font-size: $fontsizeSmallMedium;
+  color: $colorWhite;
+}
+
+
+
+
+
+.textInput{
+
+  font-family: inherit;
+  font-size: $fontsizeSmall;
+  font-weight: bold;
+  color: $colorWhite;
+  box-sizing: border-box;
+
+  border-radius: 13px;
+  border: 1px solid $colorGrey;
+
+  background-color: $colorBlacker;
+  transition: background-color 200ms ease-in-out;
+
+  padding: 5px 8px 5px 8px;
+  margin-top: 15px;
+
+
+  &::placeholder{
+    font-size: $fontsizeSmall;
+    font-weight: bold;
+    color: $colorGrey
+  }
+
+  &:focus{
+    background-color: $colorBlack;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.ideaBoxBottomContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.emailField{
+  flex-grow: 4;
+}
+
+.submitButtonContainer{
+  flex-grow: 1;
+  text-align: right;
+}
+
+.submitButton{
+
+  background-image: linear-gradient(to right, #3036FE,#009EFF );
+  border: none;
+  cursor: pointer;
+
+  color: #EEEEEE;
+  font-size: $fontsizeSmall;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 5px 17px  5px 17px ;
+
+  &:focus{
+    outline: none;
+  }
+
+
+  margin-top: 15px;
+
+
+  &:focus{
+    outline: none;
+  }
+}
