@@ -1,7 +1,8 @@
 @import '../globalFontStyling.scss';
 
 .ideaBoxContainer{
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
   background-color: $colorBlacker;
 
   padding: 20px 50px 20px 50px;
@@ -9,15 +10,9 @@
 
 }
 
-
 .ideaBox{
   display: flex;
   flex-direction: column;
-
-
-
-
-
 
 }
 
@@ -25,9 +20,6 @@
  font-size: $fontsizeSmallMedium;
   color: $colorWhite;
 }
-
-
-
 
 
 .textInput{
@@ -38,8 +30,8 @@
   color: $colorWhite;
   box-sizing: border-box;
 
-  border-radius: 13px;
-  border: 1px solid $colorGrey;
+  border-radius: 12px;
+  border: 1px solid $colorDarkGray;
 
   background-color: $colorBlacker;
   transition: background-color 200ms ease-in-out;
@@ -98,8 +90,29 @@
 
   margin-top: 15px;
 
-
   &:focus{
     outline: none;
   }
 }
+
+
+@media screen and (max-width: 600px) {
+  .ideaBoxContainer{
+    padding: 10px;
+  }
+
+  .ideaBoxBottomContainer{
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .emailField{
+    flex-grow: 1;
+  }
+
+  .submitButtonContainer{
+    flex-grow: 1;
+  }
+}
+
+

@@ -23,8 +23,6 @@ export default function ArticleCell(props) {
                             datePosted={props.datePosted}
                         />
                     </div>
-
-
                 </div>
                 <div className="articleCellHashtagContainer">
                     <Hashtag hashtags={props.hashtags}/>

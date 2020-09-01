@@ -1,5 +1,5 @@
 import React from "react"
-import "./sunMoon.css"
+import "./sunMoon.scss"
 
 
 const iconPath = {

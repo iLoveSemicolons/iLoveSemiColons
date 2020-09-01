@@ -1,0 +1,70 @@
+@import "../globalFontStyling";
+
+
+
+.footer{
+  position: absolute;
+
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: $colorBlack;
+  color: $colorGrey;
+
+
+  font-size: $fontsizeSmall;
+}
+
+.footerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1000px;
+  height: 100%;
+}
+
+
+
+.footerRightContainer{
+  display: flex;
+}
+
+.separator{
+  margin: 0 4px 0 4px;
+}
+
+
+//===============================================================================
+
+//TODO media query of upperLining
+
+.footerContentContainerUpperLining {
+  display: flex;
+  margin: auto;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.footerLeftContentUpperLining {
+  border-bottom: 3px solid #D4D4D4;
+  width: 276px; //logo width or could be also logoContainer width
+}
+
+.footerRightContentUpperLining {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+
+.sunMoonUpperLining {
+  border-bottom: 3px  solid #FCC21B;
+  width: 28px; //it is sunMoon width
+}
+
+.navIconUpperLining {
+  border-bottom: 3px  solid #1B7CD1;
+  width: 35px; // it is navIcon width
+}

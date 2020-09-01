@@ -5,7 +5,9 @@ body {
   background-color:#202020 ;
   font-family: 'Comfortaa', cursive;
   margin: 0;
-  padding: 0;
+  padding: 0 0 80px 0;
+  position: relative;
+  min-height: 100vh;
 }
 
 
@@ -23,5 +25,12 @@ a {
     outline: none;
   }
 }
+
+input, textarea{
+  &:focus{
+    outline: none;
+  }
+}
+
 
 

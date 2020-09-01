@@ -8,9 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
-
 
 .introTitle{
   font-size: $fontsizeBiggest;
@@ -60,4 +58,21 @@
   font-size: $fontsizeSmallMedium;
   color: $colorWhiter;
   line-height: 1.8;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .introContainer{
+    flex-direction: column;
+  }
+
+  .homePageIntroRightContainer{
+   height: auto;
+    padding-bottom: 15px;
+    margin-top: 40px;
+  }
+  .homePageIntroRightContainer div{
+    margin-top: 15px;
+  }
 }

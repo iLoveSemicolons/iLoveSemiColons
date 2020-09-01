@@ -26,9 +26,6 @@ export default class NewIdeaBox extends React.Component {
         let date = new Date();
         date = date.toISOString().slice(0, 19).replace("T", ' ');
 
-
-
-
         fetch('http://localhost:9000/newidea', {
             method : 'POST',
             headers : {
@@ -45,8 +42,6 @@ export default class NewIdeaBox extends React.Component {
             .catch(error => console.log(error));
 
         this.setState({ideaIsSent: true});
-
-
     }
 
 
@@ -70,7 +65,7 @@ export default class NewIdeaBox extends React.Component {
                 <div className={style.ideaBoxTitle}> {this.ideaBoxTitle} </div>
                 <form className={style.ideaBox} onSubmit={this.handleSubmit}>
                     <input className={style.textInput} value={this.state.ideaField} type="text"
-                           onChange={this.handleIdeaFieldOnChange} placeholder="Votre Idée en quelques mots ?"/>
+                            onChange={this.handleIdeaFieldOnChange} placeholder="Votre Idée en quelques mots ?"/>
 
                     <div className={style.ideaBoxBottomContainer}>
                         <input className={style.textInput + " " + style.emailField}

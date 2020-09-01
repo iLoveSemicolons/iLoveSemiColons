@@ -1,6 +1,6 @@
 $headerBackGroundColor: #202020;
-$headerRightContentWidth : 80px;
-$underLiningBorderWidth : 3px;
+$headerRightContentWidth: 80px;
+$underLiningBorderWidth: 3px;
 
 
 .header {
@@ -22,16 +22,20 @@ $underLiningBorderWidth : 3px;
 }
 
 
-.headerLeftContent{
+.headerLeftContent {
 }
 
-.headerRightContent{
+.headerRightContent {
   display: flex;
   justify-content: space-between;
   width: $headerRightContentWidth;
 }
 
 
+
+//====================================================================================================
+//UNDER LINING WIDTH
+//====================================================================================================
 
 .headerContentContainerUnderLining {
   display: flex;
@@ -42,51 +46,55 @@ $underLiningBorderWidth : 3px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-//====================================================================================================
-//UNDER LINING WIDTH
-//====================================================================================================
-
-.headerLeftContentUnderLining{
+.headerLeftContentUnderLining {
   border-bottom: $underLiningBorderWidth solid #D4D4D4;
   width: 276px; //logo width or could be also logoContainer width
 }
 
-.headerRightContentUnderLining{
+.headerRightContentUnderLining {
   display: flex;
   justify-content: space-between;
   width: $headerRightContentWidth;
 }
- .sunMoonUnderLining{
-   border-bottom: $underLiningBorderWidth solid  #FCC21B;
-   width: 28px; //it is sunMoon width
 
- }
+.sunMoonUnderLining {
+  border-bottom: $underLiningBorderWidth solid #FCC21B;
+  width: 28px; //it is sunMoon width
+}
 
- .navIconUnderLining{
-   border-bottom: $underLiningBorderWidth solid #1B7CD1;
-   width: 35px; // it is navIcon width
-
- }
-
+.navIconUnderLining {
+  border-bottom: $underLiningBorderWidth solid #1B7CD1;
+  width: 35px; // it is navIcon width
+}
 
 
 
 
+@media screen and (max-width: 600px) {
+  .headerContentContainer {
+    width: 90%;
+  }
 
+  .headerContentContainerUnderLining {
+    width: 90%;
+  }
 
-@media screen and (max-width: 600px){
   .headerLeftContentUnderLining{
-    width: 220px;
+    max-width: 220px; //logo width while responsive design
+  }
+  .sunMoonUnderLining{
+    max-width: 24px;
+  }
+
+  .navIconUnderLining{
+    max-width: 30px;
+  }
+
+  .headerRightContent{
+    justify-content: space-around;
+  }
+
+  .headerRightContentUnderLining{
+    justify-content: space-around;
   }
 }

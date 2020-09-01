@@ -12,6 +12,7 @@
   cursor: pointer;
   display: inline-block;
 }
+
 .nav-icon-5 span{
   background-color:#1B7CD1;
   position: absolute;
@@ -30,6 +31,10 @@
   left: 0px;
   opacity:1;
 }
+
+
+
+
 .nav-icon-5 span:nth-child(3){
   bottom:0px;
   left: 0px;
@@ -58,13 +63,14 @@
 
 
 
-@media screen and (max-width: 600px){
-
-
+@media screen and (max-width: 600px) {
+  .nav-icon-5{
+    width: 30px;
+    height: 25.8px;
+  }
+  .nav-icon-5 span:nth-child(2){
+    top: 11.1px;
+  }
 }
-
-
-
-
 
 

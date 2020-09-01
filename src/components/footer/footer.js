@@ -1,17 +1,39 @@
 import React from "react";
-import "./footer.scss";
+import style from "./footer.module.scss";
+import Styles from "../header/header.module.scss";
+import {Link} from "react-router-dom";
 
 
-//https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/
+export default function Footer() {
+    return (
 
-export default function Footer (){
-    return(
+        <div className={style.footer}>
+            <div className={style.footerContentContainerUpperLining}>
+                <div className={style.footerLeftContentUpperLining}>
+                </div>
+                <div className={style.footerRightContentUpperLining}>
+                    <div className={style.sunMoonUpperLining} />
+                    <div className={style.navIconUpperLining} />
+                </div>
+            </div>
 
-        <div className="footer">
+            <div className={style.footerContainer}>
+                <div>
+                    &copy; 2020 iLoveSemicolons.io
+                </div>
 
-            this is the footer
-
+                <div className={style.footerRightContainer}>
+                    <div>
+                        <Link to={"../../../contact"}>
+                        Contact
+                        </Link>
+                    </div>
+                    <div className={style.separator}>|</div>
+                    <div>
+                         Mentions légales
+                    </div>
+                </div>
+            </div>
         </div>
-
     );
 }

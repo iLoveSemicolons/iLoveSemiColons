@@ -1,0 +1,160 @@
+@import "./components/globalFontStyling.scss";
+
+
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 50px auto auto auto;
+  border-radius: 10px;
+  background-color: $colorBlacker;
+  padding: 0 50px 20px 50px; //padding-top is 0 because first element has margin top of 20 px
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.contactThanksBox{
+  max-width: 400px;
+  background-color: #1A1A1A;
+  border-radius: 10px;
+
+  color: $colorGrey;
+  font-size: $fontsizeSmallMedium;
+
+  padding: 20px 50px 20px 50px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+.contactThankButtonContainer{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.contactThankButton{
+  //background-image: linear-gradient(to right, #3036FE,#009EFF );
+  background-color: $colorGrey;
+  border: none;
+  cursor: pointer;
+
+  color: $colorBlacker;
+  font-size: $fontsizeSmallMedium;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 5px 17px  5px 17px ;
+
+  &:hover{
+    background-color: $colorYellow;
+  }
+}
+
+.errorNotification{
+  color: #E66767;
+  font-size: $fontsizeSmallMedium;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.textInput {
+  font-family: inherit;
+  font-size: $fontsizeSmall;
+  font-weight: bold;
+  color: $colorWhite;
+
+  box-sizing: border-box;
+
+  border-radius: 15px;
+  border: 1px solid $colorDarkGray;
+
+  background-color: $colorBlacker;
+  transition: background-color 200ms ease-in-out;
+
+  padding: 5px 8px 5px 8px;
+  margin-top: 20px;
+
+  &::placeholder {
+    font-size: $fontsizeSmall;
+    font-weight: bold;
+    color: $colorGrey
+  }
+
+  &:focus {
+    background-color: $colorBlack;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submitButtonContainer {
+}
+
+
+.submitButton {
+  display: block;
+  margin: 20px auto auto auto;
+
+
+  background-image: linear-gradient(to right, #3036FE, #009EFF);
+  border: none;
+  cursor: pointer;
+
+  color: #EEEEEE;
+  font-size: $fontsizeSmall;
+  font-family: inherit;
+  font-weight: bold;
+  border-radius: 15px;
+
+  padding: 7px 30px 5px 30px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .form {
+    padding: 0 10px 20px 10px; //padding-top is 0 because first element has margin top of 20 px
+  }
+}

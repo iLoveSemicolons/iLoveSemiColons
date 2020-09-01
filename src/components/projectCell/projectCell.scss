@@ -26,7 +26,6 @@
   padding: 0 15px 0 15px;
   line-height: 1.5;
   flex: 3 1;
-
 }
 .projectResume::first-line {
   line-height: 1.5 !important;
@@ -40,4 +39,24 @@
   flex: 1 1;
   display: flex;
   justify-content: flex-end;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .projectCell{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .projectCellButtons{
+    flex: auto;
+    justify-content: normal;
+    padding-left: 15px;
+    margin-top: 15px;
+  }
+
+  .projectResume{
+    margin-top: 15px;
+  }
 }

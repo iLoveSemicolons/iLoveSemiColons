@@ -1,7 +1,15 @@
 
 .mainLayout {
-    display: block;
-    max-width: 1000px;
-    margin: auto;
-    padding-top: 150px;
+  display: block;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 150px; //header height
+  //padding-bottom: 40px; //footer height
+}
+
+@media screen and (max-width: 600px) {
+  .mainLayout {
+    max-width: 90%;
+    padding-top: 100px;
+  }
 }

@@ -76,7 +76,7 @@ export default class Home extends React.Component {
                                 Bonjour, Je Suis Sirage
                             </div>
                             <div className="introText">
-                                Je suis développeur web Fullstack. passionné
+                                Je suis développeur web Fullstack. Passionné
                                 par les projets <span className="blueSpan">OpenSource</span> et la contribution
                                 à la modernisation du Web.
                             </div>

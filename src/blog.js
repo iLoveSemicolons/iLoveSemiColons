@@ -47,14 +47,6 @@ export default class Blog extends React.Component {
 
                     <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un article ou hâte d'apprenre sur un sujet ?"/>
 
-
-{/*                   <Article articleTitle="this is the title"
-                             datePosted="01/02/2002"
-                             contentSourcePath='/articles/js-talks.html'
-                             hashtags="hashtag1,hashtag2"
-                    />*/}
-
-
                     {articles.map((article ) =>
                         <div>
                             <ArticleCell key={article.idPost}

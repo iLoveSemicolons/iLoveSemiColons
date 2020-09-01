@@ -66,7 +66,7 @@ export default class Subscribe extends React.Component {
                 <MainLayout>
                     {isSubscribed
                         ? <div className={styles.subscriberThanksBox}>
-                            <div >
+                            <div>
                                 Merci !, Vous êtes maintenant abonné à mon Newsletter, je ne vais pas vous
                                 gêner...promis :)
                             </div>

@@ -1,6 +1,6 @@
 @import './components/globalFontStyling.scss';
 
-
+//TODO media query here
 
 .subscriberThanksBox{
   max-width: 400px;
@@ -34,7 +34,6 @@
   border-radius: 15px;
 
   padding: 5px 17px  5px 17px ;
-
 
   &:hover{
     background-color: $colorYellow;
