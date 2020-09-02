@@ -99,7 +99,6 @@ export default class Contact extends React.Component {
 //=== VALIDATION =========================================================
 
     checkInputRequired(inputValue) {
-
         let regex = /^\s+/;
         if (regex.test(String(inputValue)) || inputValue.length === 0) {
             this.setState({error: this.state.error + 1})
@@ -128,50 +127,49 @@ export default class Contact extends React.Component {
         const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
         return (
-            <PageLayout>
 
-                <MainLayout>
-                    <PageTitle title="Contact"/>
-                    {
-                        formIsSent
-                            ? <div className={style.contactThanksBox}>
-                                <div>
-                                    Thank you for contacting me, i will recontact you as soon as possible :)
-                                </div>
-                                <div className={style.contactThankButtonContainer}>
-                                    <Link to={"./../../../"}>
-                                        <button className={style.contactThankButton}>Return to Home Page</button>
-                                    </Link>
-                                </div>
+            <div>
+                <PageTitle title="Contact"/>
+                {
+                    formIsSent
+                        ? <div className={style.contactThanksBox}>
+                            <div>
+                                Thank you for contacting me, i will recontact you as soon as possible :)
                             </div>
+                            <div className={style.contactThankButtonContainer}>
+                                <Link to={"./../../../"}>
+                                    <button className={style.contactThankButton}>Return to Home Page</button>
+                                </Link>
+                            </div>
+                        </div>
 
 
-                            :
-                            <form className={style.form} onSubmit={this.handleSubmit}>
-                                {(submitButtonIsClicked && !(inputErrors===0)) &&
-                                <div className={style.errorNotification}>
-                                    Please, verify your entries.
-                                </div>
-                                }
-                                <input className={style.textInput} type="text" value={this.state.lastNameField}
-                                       onChange={this.handleLastNameFieldChange} placeholder="Last Name (Required)"/>
-                                <input className={style.textInput} type="email" value={this.state.emailField}
-                                       onChange={this.handleEmailFieldChange}
-                                       placeholder="Email (Required)"/>
-                                <input className={style.textInput} type="text" value={this.state.subjectField}
-                                       onChange={this.handleSubjectFieldChange}
-                                       placeholder="Subject (Required)"/>
-                                <textarea className={style.textInput + " " + style.textarea}
-                                          value={this.state.messageField}
-                                          onChange={this.handleMessageFieldChange}
-                                          placeholder="Message (Required)"/>
-                                <div>
-                                    <input className={style.submitButton} type="submit" value="Send"/>
-                                </div>
-                            </form>
-                    }
-                </MainLayout>
-            </PageLayout>
+                        :
+                        <form className={style.form} onSubmit={this.handleSubmit}>
+                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                            <div className={style.errorNotification}>
+                                Please, verify your entries.
+                            </div>
+                            }
+                            <input className={style.textInput} type="text" value={this.state.lastNameField}
+                                   onChange={this.handleLastNameFieldChange} placeholder="Last Name (Required)"/>
+                            <input className={style.textInput} type="email" value={this.state.emailField}
+                                   onChange={this.handleEmailFieldChange}
+                                   placeholder="Email (Required)"/>
+                            <input className={style.textInput} type="text" value={this.state.subjectField}
+                                   onChange={this.handleSubjectFieldChange}
+                                   placeholder="Subject (Required)"/>
+                            <textarea className={style.textInput + " " + style.textarea}
+                                      value={this.state.messageField}
+                                      onChange={this.handleMessageFieldChange}
+                                      placeholder="Message (Required)"/>
+                            <div>
+                                <input className={style.submitButton} type="submit" value="Send"/>
+                            </div>
+                        </form>
+                }
+            </div>
+
         );
     }
 }

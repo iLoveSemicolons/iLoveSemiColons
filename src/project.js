@@ -9,54 +9,53 @@ import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 
 //TODO what to do in case there is no source code but only demo
 
-export default class Project extends React.Component{
+export default class Project extends React.Component {
 
 
     constructor(props) {
         super(props);
 
         this.state = {
-            apiResponse :[],
+            apiResponse: [],
         };
     }
 
-    callAPI(){
+    callAPI() {
         fetch("http://localhost:9000/project")
             .then(response => response.json())
             .then(response => this.setState({apiResponse: response}))
-            .catch(function(){
+            .catch(function () {
                 console.log('error');
             });
     }
 
 
     componentDidMount() {
-         this.callAPI();
+        this.callAPI();
     }
 
 
-    render(){
+    render() {
 
-        const  projects  = this.state.apiResponse;
+        const projects = this.state.apiResponse;
 
         // console.log(projects[0]["title"]);
 
         return (
-            <PageLayout>
-                <MainLayout>
-                    <PageTitle title="Projects"/>
 
-                    <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un projet ?"/>
+            <div>
+                <PageTitle title="Projects"/>
+
+                <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un projet ?"/>
 
 
-                    {projects.map(project =>
-                            <ProjectCell projectTitle={project.title}
-                                         projectResume={project.description}
-                                         goTo={project.linkToSource}
-                                         demoLink={project.linkToDemo}/>
-                        )}
-                </MainLayout>
-            </PageLayout>
+                {projects.map(project =>
+                    <ProjectCell projectTitle={project.title}
+                                 projectResume={project.description}
+                                 goTo={project.linkToSource}
+                                 demoLink={project.linkToDemo}/>
+                )}
+            </div>
 
 
         );

@@ -3,6 +3,8 @@ import "./navIcon.scss"
 import "../navBar/navBar.scss";
 import {NavLink} from "react-router-dom";
 
+import {useTranslation} from "react-i18next";
+
 //TODO FADEIN and FADEOUT navBar material ui
 //TODO while NavBar is open, clicking  on any part of the page will close it
 
@@ -51,9 +53,10 @@ export default class NavIcon extends React.Component {
 
 
 function NavBar() {
+    const {t, i18n} = useTranslation('common');
     return (<div className="navBarContainer navBar">
         <NavLink to={"./"}>Acceuil</NavLink>
-        <NavLink to={"./../../../project"}>Projets</NavLink>
+        <NavLink to={"./../../../project"}>{t('Projets')}</NavLink>
         {/*<NavLink to={"./../../../design"}>Design</NavLink>*/}
         <NavLink to={"./../../../blog"}>Blog</NavLink>
         <NavLink to={"./../../../about"}>A Propos</NavLink>

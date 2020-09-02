@@ -40,26 +40,22 @@ export default class Blog extends React.Component {
         const articles = this.state.blogAPIResponse;
 
         return (
-            <PageLayout>
-                <MainLayout>
+            <div>
+                <PageTitle title="BLog"/>
 
-                    <PageTitle title="BLog"/>
+                <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un article ou hâte d'apprenre sur un sujet ?"/>
 
-                    <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un article ou hâte d'apprenre sur un sujet ?"/>
-
-                    {articles.map((article ) =>
-                        <div>
-                            <ArticleCell key={article.idPost}
-                                         title={article.title}
-                                         sourceLink={article.sourceLink}
-                                         hashtags={article.hashtags}
-                                         datePosted = {article.datePosted}
-                            />
-                        </div>
-                    )}
-
-                </MainLayout>
-            </PageLayout>
+                {articles.map((article) =>
+                    <div>
+                        <ArticleCell key={article.idPost}
+                                     title={article.title}
+                                     sourceLink={article.sourceLink}
+                                     hashtags={article.hashtags}
+                                     datePosted={article.datePosted}
+                        />
+                    </div>
+                )}
+            </div>
         );
     }
 }

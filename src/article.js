@@ -22,7 +22,7 @@ export default class Article extends React.Component {
         this.state = {
             articleContent: "",
             articleAPIResponse: [],
-            errorOccurred : false
+            errorOccurred: false
         }
     }
 
@@ -45,8 +45,8 @@ export default class Article extends React.Component {
 
             //if there is no data from the api it will set the errorOccurred to true in order to show to 404Error page after the condition rendering
             .then((response) => {
-                if(response.length === 0){
-                    this.setState({errorOccurred : true});
+                if (response.length === 0) {
+                    this.setState({errorOccurred: true});
                 }
                 return response;
             })
@@ -89,52 +89,50 @@ export default class Article extends React.Component {
         const articleObject = this.state.articleAPIResponse;
         const articleContent = {__html: this.state.articleContent};
         return (
-            <PageLayout>
-                <MainLayout>
-                    {articleObject.map((article) =>
-                        <div>
-                            <div className="articleTitle">
-                                {article.title}
+            <div>
+                {articleObject.map((article) =>
+                    <div>
+                        <div className="articleTitle">
+                            {article.title}
+                        </div>
+
+                        <div className="articleSubTitleContainer">
+                            <div className="datePosted">
+                                {article.datePosted}
                             </div>
 
-                            <div className="articleSubTitleContainer">
-                                <div className="datePosted">
-                                    {article.datePosted}
-                                </div>
 
-
-                                <div className="copyAndShareButtonContainer">
-                                    <button onClick={this.copyToClipboard} className="copyAndShareButton">
-                                        Copier le lien et partager
-                                    </button>
-                                </div>
-
-
-                                <div className="goToBlogPageButtonContainer">
-                                    <NavLink to={"../../../blog"}>
-                                        <button className="goToBlogPageButton">Voir tous mes articles</button>
-                                    </NavLink>
-                                </div>
+                            <div className="copyAndShareButtonContainer">
+                                <button onClick={this.copyToClipboard} className="copyAndShareButton">
+                                    Copier le lien et partager
+                                </button>
                             </div>
 
-                            <div className="articleHashtagContainer">
-                                <Hashtag hashtags={article.hashtags}/>
-                            </div>
 
-                            <p className="articleContent" dangerouslySetInnerHTML={articleContent}/>
-
-                            <div>
-                                <SubscribeBox/>
+                            <div className="goToBlogPageButtonContainer">
+                                <NavLink to={"../../../blog"}>
+                                    <button className="goToBlogPageButton">Voir tous mes articles</button>
+                                </NavLink>
                             </div>
                         </div>
-                    )}
 
-                    {this.state.errorOccurred === true &&
-                    <Error />
-                    }
+                        <div className="articleHashtagContainer">
+                            <Hashtag hashtags={article.hashtags}/>
+                        </div>
 
-                </MainLayout>
-            </PageLayout>
+                        <p className="articleContent" dangerouslySetInnerHTML={articleContent}/>
+
+                        <div>
+                            <SubscribeBox/>
+                        </div>
+                    </div>
+                )}
+
+                {this.state.errorOccurred === true &&
+                <Error/>
+                }
+
+            </div>
         );
     }
 }
