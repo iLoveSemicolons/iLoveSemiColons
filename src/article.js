@@ -104,14 +104,14 @@ export default class Article extends React.Component {
 
                             <div className="copyAndShareButtonContainer">
                                 <button onClick={this.copyToClipboard} className="copyAndShareButton">
-                                    Copier le lien et partager
+                                    Copy link and share
                                 </button>
                             </div>
 
 
                             <div className="goToBlogPageButtonContainer">
                                 <NavLink to={"../../../blog"}>
-                                    <button className="goToBlogPageButton">Voir tous mes articles</button>
+                                    <button className="goToBlogPageButton">View all my articles</button>
                                 </NavLink>
                             </div>
                         </div>

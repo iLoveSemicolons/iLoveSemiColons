@@ -39,14 +39,12 @@ export default class Project extends React.Component {
 
         const projects = this.state.apiResponse;
 
-        // console.log(projects[0]["title"]);
-
         return (
 
             <div>
                 <PageTitle title="Projects"/>
 
-                <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un projet ?"/>
+                <NewIdeaBox ideaBoxTitle="You have an idea for a project ?"/>
 
 
                 {projects.map(project =>

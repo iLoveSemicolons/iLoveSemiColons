@@ -1,20 +1,13 @@
 import React from "react"
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
+
 import "./components/projectGithubLinkButton/projectGithubLinkButton.scss";
 import "./home.scss"
 import SubscribeButton from "./components/subscribeButton/SubscribeButton";
 import TopicTitle from "./components/topicTitle/TopicTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
-// import DesignCell from "./components/designCell/designCell";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 
-
-// import {I18nProvider, locales} from "./internationalization";
-
-
-import translate from "./internationalization/translate";
 
 
 export default class Home extends React.Component {
@@ -39,15 +32,6 @@ export default class Home extends React.Component {
             });
     }
 
-    /*    callDesignTopicAPI() {
-            fetch("http://localhost:9000/homePageDesignTopic")
-                .then(response => response.json())
-                .then(response => this.setState({designTopicAPIResponse: response}))
-                .catch(function () {
-                    console.log('error');
-                });
-        }*/
-
 
     callPostTopicAPI() {
         fetch("http://localhost:9000/homePagePostTopic")
@@ -61,7 +45,6 @@ export default class Home extends React.Component {
 
     componentDidMount() {
         this.callProjectTopicAPI();
-        // this.callDesignTopicAPI();
         this.callPostTopicAPI();
     }
 
@@ -75,18 +58,14 @@ export default class Home extends React.Component {
         console.log(articles);
         return (
             <div>
-                {/*<I18nProvider locale={locales.FRENCH}>*/}
                 <div className="introContainer">
                     <div className="homePageIntroLeftContainer">
                         <div className="introTitle">
-                            Bonjour, Je Suis Sirage
+                            Hey, I am Sirage
                         </div>
                         <div className="introText">
-                            Je suis développeur web Fullstack. Passionné
-                            par les projets <span className="blueSpan">OpenSource</span> et la contribution
-                            à la modernisation du Web.
-
-                            {/*{translate('homePageWelcoming',{value : <span className="blueSpan">OpenSource</span>})}*/}
+                            I am a full stack web developer, Passionate by <span className="blueSpan">OpenSource</span>  projects and the contribution
+                            to the modernization of the Web.
                         </div>
 
                         <div>
@@ -99,9 +78,7 @@ export default class Home extends React.Component {
                                     <div>
                                         iLoveSemicolons
                                     </div>
-                                    {/*                                        <div className="pushes">
-                                            12
-                                        </div>*/}
+
                                 </a>
                             </div>
                         </div>
@@ -113,9 +90,9 @@ export default class Home extends React.Component {
                             <img src="/me.svg" className="myImageHomePage" alt="Sirage AL DBIYAT"/>
                         </div>
                         <div className="rightContainerText">
-                            Soyez informé lorsqu'il y a
-                            un nouveau projet ou article
-                            sur mon page !
+                            Be informed when there is
+                            a new project or article
+                            on my page !
                         </div>
 
                         <div>
@@ -133,20 +110,11 @@ export default class Home extends React.Component {
                                          goTo={project.linkToSource}
                                          demoLink={project.linkToDemo}/>
                         )}
-                        <ShowAll goTo="/project" text="Voir tous mes projects"/>
+                        <ShowAll goTo="/project" text="View all my projects"/>
                     </div>
 
-                    {/*                        <TopicTitle title="Design"/>
-                        <div>
-                            {designs.map((design, index) =>
-                                <DesignCell key={design.idDesign} projectTitle={design.title}
-                                            projectResume={design.resume}
-                                            demoLink={design.linkToDemo}/>
-                            )}
-                            <ShowAll goTo="/design" text="Voir tous mes créations design"/>
-                        </div>*/}
 
-                    <TopicTitle title="Derniers Articles"/>
+                    <TopicTitle title="Last Articles"/>
                     <div>
 
                         {articles.map((article) =>
@@ -157,12 +125,11 @@ export default class Home extends React.Component {
                                          datePosted={article.datePosted}
                             />
                         )}
-                        <ShowAll goTo="/blog" text="Voir tous mes articles"/>
+                        <ShowAll goTo="/blog" text="View all my articles"/>
 
                     </div>
 
                 </div>
-                {/*</I18nProvider>*/}
             </div>
 
         );

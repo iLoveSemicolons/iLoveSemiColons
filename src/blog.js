@@ -43,7 +43,7 @@ export default class Blog extends React.Component {
             <div>
                 <PageTitle title="BLog"/>
 
-                <NewIdeaBox ideaBoxTitle="Vous avez une idée pour un article ou hâte d'apprenre sur un sujet ?"/>
+                <NewIdeaBox ideaBoxTitle="You have an idea for an article or can't wait to learn about a topic ?"/>
 
                 {articles.map((article) =>
                     <div>

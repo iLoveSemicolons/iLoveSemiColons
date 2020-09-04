@@ -14,12 +14,12 @@ export default function Error() {
                 <span className={styles.textCodeRight} >4</span>
             </div>
             <div className={styles.text} >
-                Page introuvable
+                Page unfound
             </div>
             <div>
                 <Link to={"../../"}>
                     <button className={styles.button404}>
-                        Retourner à l'acceuil
+                        Go to homepage =>
                     </button>
                 </Link>
             </div>
