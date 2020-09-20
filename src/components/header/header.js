@@ -1,31 +1,50 @@
 import React from "react"
 import Styles from "./header.module.scss"
+import styled from "styled-components";
 import NavIcon from "../navIcon/navIcon";
 import IlovesemicolonsLogo from "../ilovesmeiolconslogo/ilovesemicolonsLogo";
 import SunMoon from "../sunMoon/sunMoon"
 
+
+
+//Styled component theme changing, the rest of styling is in the scss module file
+//===============================================================================
+const HeaderContainer = styled.div`
+  background-color: ${({theme}) => theme.headerBackgroundColor};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  transition :0.3s; 
+`;
+
+
+const HeaderLeftContentUnderLining = styled.div`
+ border-bottom-color  : ${({theme}) => theme.headerLeftContentUnderLiningColor};
+`;
+//===============================================================================
+
 export default function Header() {
     return (
-        <div className={Styles.header}>
+        <HeaderContainer>
             <div className={Styles.headerContentContainer}>
                 <div className={Styles.headerLeftContent}>
-                    <IlovesemicolonsLogo className="logo"/>
+                    <IlovesemicolonsLogo/>
                 </div>
                 <div className={Styles.headerRightContent}>
-                    <SunMoon className="sunMoon"/>
-                    <NavIcon className="navIcon"/>
+                    <SunMoon/>
+                    <NavIcon/>
                 </div>
             </div>
 
             <div className={Styles.headerContentContainerUnderLining}>
-                <div className={Styles.headerLeftContentUnderLining}>
-                </div>
+                <HeaderLeftContentUnderLining className={Styles.headerLeftContentUnderLining}/>
                 <div className={Styles.headerRightContentUnderLining}>
-                    <div className={Styles.sunMoonUnderLining} > </div>
-                    <div className={Styles.navIconUnderLining} > </div>
+                    <div className={Styles.sunMoonUnderLining}/>
+                    <div className={Styles.navIconUnderLining}/>
                 </div>
             </div>
-
-        </div>
+        </HeaderContainer>
     );
 }

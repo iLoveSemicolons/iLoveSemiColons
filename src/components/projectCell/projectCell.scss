@@ -4,13 +4,15 @@
 
 .projectCell {
   display: flex;
-  border-left: solid 6px #009EFF;
+  border-left: solid 6px $colorBluer;
 }
 
 .projectCellContainer {
   padding-bottom: 30px;
   padding-top: 30px;
-  border-bottom: 2px solid #141414;
+  border-bottom: 2px solid;
+  border-bottom-color : #141414;
+
 }
 
 .projectCellTitle {

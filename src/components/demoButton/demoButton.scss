@@ -1,15 +1,14 @@
 @import "../globalFontStyling";
 
 
-.projectLinkButton {
-  background-color: #FFE087;
+.demoLinkButton {
+  background-color: inherit;
   padding: 0 22px 0 22px;
   height: 26.2px; //same height as ProjectGithubLinkButton
-  border: none;
-  color : #1A1A1A;
+  border: 3px solid;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 14px;
   font-size: $fontsizeSmall;
 }

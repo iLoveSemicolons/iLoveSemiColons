@@ -1,20 +1,18 @@
 @import "../globalFontStyling";
 
 
-$hashtagTextColor : #009EFF;
-$hashtagBackgroundColor : #1A1A1A;
-$topAndBottomPadding : 4px;
-$sidesPadding : 17px;
+
 
 
 .hashtagText{
     display: inline-block;
     border-radius: 12px;
-    background-color: $hashtagBackgroundColor;
+    background-color: $colorBlacker;
     width:content-box;
-    color: $hashtagTextColor;
+    color: $colorBluer;
+    font-weight: bold;
     font-size: $fontsizeSmall;
-    padding: $topAndBottomPadding $sidesPadding $topAndBottomPadding $sidesPadding;
+    padding: 4px 17px 4px 17px;
 }
 
 

@@ -22,7 +22,7 @@ export default function ProjectCell(props) {
 
                     {props.demoLink !== "noDemo" &&
                     <div className="projectDemoButtonContainer">
-                        <DemoButton buttonValue="Lien" demoLink={props.demoLink}/>
+                        <DemoButton buttonValue="Demo" demoLink={props.demoLink}/>
                     </div>
                     }
 

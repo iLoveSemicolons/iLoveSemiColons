@@ -1,15 +1,16 @@
 @import "../globalFontStyling";
 
 
+//TODO mayeb putting onyl the border as a dark yellow but the buttonbackground is the same acolor as the body background color ...
+
 .ReadArticleButton {
-  background-color: #FFE087;
+  background-color: inherit;
   padding: 0 22px 0 22px;
   height: 26.2px; //same height as ProjectGithubLinkButton
-  border: none;
-  color : #1A1A1A;
+  border: 3px solid;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 14px;
   font-size: $fontsizeSmall;
 }

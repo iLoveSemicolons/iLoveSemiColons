@@ -2,11 +2,24 @@ import React from "react";
 import "./demoButton.scss";
 
 
+import styled from "styled-components";
+
+
+const DemoProjectButton = styled.button`
+
+border-color : ${({theme}) => theme.demoProjectButtonBorderColor};
+color : ${({theme}) => theme.demoProjectButtonTextColor};
+
+`;
+
+
+
+
 export default function DemoButton(props) {
     return (
         <div>
             <a href={props.demoLink} target="_blank" rel="noopener noreferrer">
-                <button className="projectLinkButton">{props.buttonValue}</button>
+                <DemoProjectButton className="demoLinkButton">{props.buttonValue}</DemoProjectButton>
             </a>
         </div>
     );

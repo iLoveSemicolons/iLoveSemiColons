@@ -1,16 +1,17 @@
-$headerBackGroundColor: #202020;
+@import "../globalFontStyling.scss";
+
 $headerRightContentWidth: 80px;
 $underLiningBorderWidth: 3px;
 
 
-.header {
-  background-color: $headerBackGroundColor;
+/*.header {
+  background-color: $colorBlack;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 70px;
-}
+}*/
 
 .headerContentContainer {
   display: flex;
@@ -47,7 +48,7 @@ $underLiningBorderWidth: 3px;
 
 
 .headerLeftContentUnderLining {
-  border-bottom: $underLiningBorderWidth solid #D4D4D4;
+  border-bottom: $underLiningBorderWidth solid;
   width: 276px; //logo width or could be also logoContainer width
 }
 
