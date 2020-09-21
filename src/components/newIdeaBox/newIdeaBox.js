@@ -57,7 +57,6 @@ export default class NewIdeaBox extends React.Component {
 
 
     render() {
-        const ideaIsSent = this.state.ideaIsSent;
         return (
 
             <div className={style.ideaBoxContainer}>

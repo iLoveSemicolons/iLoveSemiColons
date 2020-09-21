@@ -1,29 +1,38 @@
-import React, {useReducer} from "react"
+import React, {useContext} from "react"
 import "./ilovesemicolonslogo.scss";
 import {NavLink} from "react-router-dom";
-import {initialThemeState, themeReducer} from "../themeReducer";
-
-
-const logos  ={
-    darkModeLogoSourceLink : "/ilovesemicolonslogoDarkMode.svg",
-    lightModeLogoSourceLink : "/ilovesemicolonslogoLightMode.svg"
-}
-
-
+import {AppContext} from "../../index";
 
 
 export default function IlovesemicolonsLogo() {
 
-    const [themeState, dispatch] = useReducer(themeReducer, initialThemeState);
-    const {currentTheme} = themeState;
 
+    const Logo = () => {
+        const theme = useContext(AppContext);
+        const currentTheme = theme.currentTheme.id;
 
-    window.alert(currentTheme.dar);
+        const DarkModeLogo = () => {
+            return (
+                <img src="/ilovesemicolonslogoDarkMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+            );
+        }
+        const LightModeLogo = () => {
+            return (
+                <img src="/ilovesemicolonslogoLightMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+            );
+        }
+        if (currentTheme === "dark") {
+            return <DarkModeLogo/>
+        }
+        if (currentTheme === "light") {
+            return <LightModeLogo/>
+        }
+    }
 
     return (
         <div>
             <NavLink to={"../../../"}>
-                <img src="/ilovesemicolonslogoDarkMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+                <Logo/>
             </NavLink>
         </div>
     )

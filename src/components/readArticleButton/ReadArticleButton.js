@@ -10,6 +10,10 @@ const ReadButton = styled.button`
 border-color : ${({theme}) => theme.readButtonBorderColor};
 color : ${({theme}) => theme.readButtonTextColor};
 
+&:hover {
+    background : ${({theme}) => theme.readButtonBackgroundColorOnHover};
+    color : ${({theme}) => theme.readButtonTextColorOnHover};
+}
 `;
 
 

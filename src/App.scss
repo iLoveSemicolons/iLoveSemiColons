@@ -19,10 +19,14 @@ button {
     outline: none;
   }
 }
+
 a {
   text-decoration: none;
   color: inherit;
   &:focus{
+    outline: none;
+  }
+  &:hover{
     outline: none;
   }
 }

@@ -20,6 +20,12 @@ const lightTheme = {
     body: globalColorStyling.colorWhite,
     header: globalColorStyling.colorWhite,
 
+
+    footerBackgroundColor  : globalColorStyling.colorWhite,
+    footerTextColor : globalColorStyling.colorBlack,
+    footerLeftContentUpperLining : globalColorStyling.colorDarkGray,
+
+
     introTitleTextColor: globalColorStyling.colorBlack,
 
 
@@ -40,15 +46,19 @@ const lightTheme = {
 
 
     headerBackgroundColor: globalColorStyling.colorWhite,
-    headerLeftContentUnderLiningColor: globalColorStyling.colorTrueGray,
+    headerLeftContentUnderLiningColor: globalColorStyling.colorDarkGray,
 
 
     readButtonBorderColor : globalColorStyling.colorYellower,
     readButtonTextColor : globalColorStyling.colorBlack,
+    readButtonBackgroundColorOnHover : globalColorStyling.colorYellower,
+
 
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorBlack,
+    demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
 
+    pageTitleTextColor:globalColorStyling.colorBlack,
 }
 
 const darkTheme = {
@@ -58,16 +68,24 @@ const darkTheme = {
     headerLeftContentUnderLiningColor: globalColorStyling.colorWhite,
 
 
+    footerBackgroundColor  : globalColorStyling.colorBlack,
+    footerTextColor : globalColorStyling.colorWhite,
+    footerLeftContentUpperLining : globalColorStyling.colorWhite,
+
+
     showAllButtonBackgroundColor: globalColorStyling.colorBlacker,
     showAllButtonColor: globalColorStyling.colorBluer,
 
 
     readButtonBorderColor : globalColorStyling.colorYellow,
     readButtonTextColor : globalColorStyling.colorWhite,
+    readButtonBackgroundColorOnHover : globalColorStyling.colorYellow,
+    readButtonTextColorOnHover : globalColorStyling.colorBlack,
 
 
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorWhite,
+    demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
 
 }
 

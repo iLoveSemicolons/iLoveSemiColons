@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 import {theme} from './themes'
 
 export const initialThemeState = {

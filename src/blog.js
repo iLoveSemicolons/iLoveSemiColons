@@ -1,9 +1,6 @@
 import React from "react"
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
 import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
-import Article from "./article";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 
 //TODO slice the date and show only the important digits

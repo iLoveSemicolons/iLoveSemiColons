@@ -1,6 +1,4 @@
 import React from "react"
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
 import "./project.scss";
 import PageTitle from "./components/pageTitle/pageTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";

@@ -1,13 +1,13 @@
-$verticalPadding : 7px;
 @import "../globalFontStyling";
 
 
 
-
+//TODO border animation several colors, to do that look at your bookmarks :)
 .navBarContainer {
 
   font-weight: bold;
-  background-color: #FCC21B;
+  background-color: $colorWhiter;
+  box-shadow: $colorGrey 0px 0px 8px;
   display: flex;
   visibility : visible;
   opacity: 1;
@@ -16,8 +16,8 @@ $verticalPadding : 7px;
   align-items: center;
 
 
-  padding-top: $verticalPadding;
-  padding-bottom: $verticalPadding;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
   border-radius: 20px;
 
@@ -29,9 +29,7 @@ $verticalPadding : 7px;
   top : 100px;
 }
 
-.navBarLink{
 
-}
 
 
 
@@ -47,8 +45,6 @@ $verticalPadding : 7px;
     transform: translateX(0%);
     margin-left: 5%;
     padding: 3px 10px 3px 10px;
-
-
   }
 
 }

@@ -1,19 +1,29 @@
 import React from "react";
 import style from "./footer.module.scss";
-import Styles from "../header/header.module.scss";
 import {Link} from "react-router-dom";
 
+import styled from "styled-components";
+
+
+const FooterContainer = styled.div`
+background : ${({theme}) => theme.footerBackgroundColor};
+color : ${({theme}) => theme.footerTextColor};
+`;
+
+
+const FooterLeftContentUpperLining = styled.div`
+border-bottom-color : ${({theme}) => theme.footerLeftContentUpperLining};
+`;
 
 export default function Footer() {
     return (
 
-        <div className={style.footer}>
+        <FooterContainer className={style.footer}>
             <div className={style.footerContentContainerUpperLining}>
-                <div className={style.footerLeftContentUpperLining}>
-                </div>
+                <FooterLeftContentUpperLining className={style.footerLeftContentUpperLining} />
                 <div className={style.footerRightContentUpperLining}>
-                    <div className={style.sunMoonUpperLining} />
-                    <div className={style.navIconUpperLining} />
+                    <div className={style.sunMoonUpperLining}/>
+                    <div className={style.navIconUpperLining}/>
                 </div>
             </div>
 
@@ -25,15 +35,15 @@ export default function Footer() {
                 <div className={style.footerRightContainer}>
                     <div>
                         <Link to={"../../../contact"}>
-                        Contact
+                            Contact
                         </Link>
                     </div>
                     <div className={style.separator}>|</div>
                     <div>
-                         Mentions légales
+                        Mentions légales
                     </div>
                 </div>
             </div>
-        </div>
+        </FooterContainer>
     );
 }

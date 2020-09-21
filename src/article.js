@@ -1,10 +1,8 @@
 import React from 'react'
 import "./article.scss"
 import Hashtag from "./components/hashtag/hashtag";
-import {NavLink, Route} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import SubscribeBox from "./components/subscribeBox/SubscribeBox";
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
 import Error from "./Error";
 
 //TODO copy to clipboard will make a notification window

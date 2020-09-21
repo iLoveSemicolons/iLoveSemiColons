@@ -1,6 +1,4 @@
 import React from "react"
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
 import PageTitle from "./components/pageTitle/pageTitle";
 import style from "./contact.module.scss";
 import {Link} from "react-router-dom";
@@ -30,8 +28,6 @@ export default class Contact extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-
-
         let date = new Date();
         date = date.toISOString().slice(0, 19).replace("T", ' ');
 
@@ -121,11 +117,20 @@ export default class Contact extends React.Component {
 
 //========================================================================
 
+
+
     render() {
+
 
         const formIsSent = this.state.formIsSent;
         const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
+
+
+
+
+
+
         return (
 
             <div>

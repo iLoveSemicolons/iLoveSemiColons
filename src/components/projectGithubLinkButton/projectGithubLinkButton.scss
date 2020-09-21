@@ -5,6 +5,11 @@
   display: inline-block;
   border-radius: 14px;
 
+
+
+  &:hover{
+    box-shadow: $colorGrey 0px 0px 8px;
+  }
 }
 
 .gitHubIcon{
@@ -20,6 +25,9 @@
 
   font-size: $fontsizeSmall;
   font-weight: bold;
+
+
+
 }
 
 .gitHubButton div{

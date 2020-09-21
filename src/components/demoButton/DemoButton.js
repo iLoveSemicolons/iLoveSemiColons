@@ -10,9 +10,11 @@ const DemoProjectButton = styled.button`
 border-color : ${({theme}) => theme.demoProjectButtonBorderColor};
 color : ${({theme}) => theme.demoProjectButtonTextColor};
 
+&:hover {
+    background : ${({theme}) => theme.demoProjectButtonTextColorOnHover};
+}
+
 `;
-
-
 
 
 export default function DemoButton(props) {

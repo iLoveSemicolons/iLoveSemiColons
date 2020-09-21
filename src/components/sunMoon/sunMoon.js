@@ -8,6 +8,8 @@ export default function SunMoon() {
 
     const {dispatch} = useContext(AppContext);
 
+
+
     const iconPath = {
         sun: "/sun.svg",
         moon: "/moon.svg"

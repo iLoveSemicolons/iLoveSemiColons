@@ -8,11 +8,12 @@
   bottom: 0;
   width: 100%;
   height: 40px;
-  background-color: $colorBlack;
-  color: $colorGrey;
-
-
+  //background-color: $colorBlack;
+  //color: $colorGrey;
   font-size: $fontsizeSmall;
+
+  transition : 0.3s;
+
 }
 
 .footerContainer{
@@ -49,7 +50,7 @@
 
 
 .footerLeftContentUpperLining {
-  border-bottom: 3px solid #D4D4D4;
+  border-bottom: 3px solid;
   width: 276px; //logo width or could be also logoContainer width
 }
 

@@ -35,4 +35,9 @@ color : ${({theme}) => theme.projectResumeColor}
 background : ${({theme}) => theme.hashtagTextBackgroundColor}
 }
 
+.pageTitle{
+color : ${({theme}) => theme.pageTitleTextColor}
+}
+
+
 `
