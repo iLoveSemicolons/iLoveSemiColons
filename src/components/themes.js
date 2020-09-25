@@ -20,73 +20,96 @@ const lightTheme = {
     body: globalColorStyling.colorWhite,
     header: globalColorStyling.colorWhite,
 
-
+//===========================
     footerBackgroundColor  : globalColorStyling.colorWhite,
     footerTextColor : globalColorStyling.colorBlack,
     footerLeftContentUpperLining : globalColorStyling.colorDarkGray,
 
+//=================================================================================
 
     introTitleTextColor: globalColorStyling.colorBlack,
 
+//=================================================================================
 
     homePageIntroRightContainerBackgroundColor: globalColorStyling.colorGreyBlue,
     homePageIntroRightContainerColor: globalColorStyling.colorWhiter,
-
+//=================================================================================
     CellBorderBottom: globalColorStyling.colorGrey,
-
+//=================================================================================
     cellTitleColor: globalColorStyling.colorBlack,
 
-    projectResumeColor: globalColorStyling.colorTrueGray,
-
+//=================================================================================
+//=================================================================================
     hashtagTextBackgroundColor: globalColorStyling.colorGrey,
 
-
+//=================================================================================
     showAllButtonBackgroundColor: globalColorStyling.colorBluer,
     showAllButtonColor: globalColorStyling.colorWhiter,
 
-
+//=================================================================================
     headerBackgroundColor: globalColorStyling.colorWhite,
     headerLeftContentUnderLiningColor: globalColorStyling.colorDarkGray,
 
+//=================================================================================
 
     readButtonBorderColor : globalColorStyling.colorYellower,
     readButtonTextColor : globalColorStyling.colorBlack,
     readButtonBackgroundColorOnHover : globalColorStyling.colorYellower,
 
+//=================================================================================
 
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorBlack,
     demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
 
     pageTitleTextColor:globalColorStyling.colorBlack,
+//=================================================================================
+    contactFormBackgroundColor : globalColorStyling.colorGrey,
+    contactFormTextInputColor : globalColorStyling.colorBlack,
+    contactFormTextInputBackgroundColor : globalColorStyling.colorWhite,
+    contactFormTextInputBorderColor : globalColorStyling.colorWhite,
+
+    contactFormPlaceholderTextColor : globalColorStyling.colorDarkGray,
+
+    contactThanksBoxBackgroundColor : globalColorStyling.colorGrey,
+    contactThanksBoxTextColor : globalColorStyling.colorBlack,
+
 }
 
 const darkTheme = {
     id: "dark",
-
+//=================================================================================
     headerBackgroundColor: globalColorStyling.colorBlack,
     headerLeftContentUnderLiningColor: globalColorStyling.colorWhite,
 
-
+//=================================================================================
     footerBackgroundColor  : globalColorStyling.colorBlack,
     footerTextColor : globalColorStyling.colorWhite,
     footerLeftContentUpperLining : globalColorStyling.colorWhite,
 
-
+//=================================================================================
     showAllButtonBackgroundColor: globalColorStyling.colorBlacker,
     showAllButtonColor: globalColorStyling.colorBluer,
 
-
+//=================================================================================
     readButtonBorderColor : globalColorStyling.colorYellow,
     readButtonTextColor : globalColorStyling.colorWhite,
     readButtonBackgroundColorOnHover : globalColorStyling.colorYellow,
     readButtonTextColorOnHover : globalColorStyling.colorBlack,
 
-
+//=================================================================================
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorWhite,
     demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
+//=================================================================================
+    contactFormBackgroundColor : globalColorStyling.colorBlacker,
+    contactFormTextInputColor : globalColorStyling.colorWhite,
+    contactFormTextInputBackgroundColor : globalColorStyling.colorBlacker,
+    contactFormTextInputBorderColor : globalColorStyling.colorDarkGray,
+    contactFormPlaceholderTextColor : globalColorStyling.colorGrey,
 
+    contactThanksBoxBackgroundColor : globalColorStyling.colorBlacker,
+    contactThanksBoxTextColor : globalColorStyling.colorGrey,
 }
 
 
