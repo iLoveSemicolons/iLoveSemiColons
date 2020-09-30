@@ -9,8 +9,6 @@
   max-width: 600px;
   margin: 50px auto auto auto;
   border-radius: 10px;
-  //background-color: $colorBlacker;
-  background-color: $colorGrey;
   padding: 0 50px 20px 50px; //padding-top is 0 because first element has margin top of 20 px
 
 }
@@ -28,17 +26,12 @@
   font-family: inherit;
   font-size: $fontsizeSmall;
   font-weight: bold;
-  //color: $colorWhite;
-  color: $colorBlack;
 
   box-sizing: border-box;
 
   border-radius: 15px;
-  //border: 1px solid $colorDarkGray;
   border: 1px solid;
 
-  //background-color: $colorBlacker;
-  //background-color:  $colorWhite;
   transition: background-color 200ms ease-in-out;
 
   padding: 5px 8px 5px 8px;
@@ -47,12 +40,10 @@
   &::placeholder {
     font-size: $fontsizeSmall;
     font-weight: bold;
-    //color: $colorGrey
-    //color: $colorDarkGray
+
   }
 
   &:focus {
-    //background-color: $colorBlack;
     text-decoration: none;
     outline: none;
   }
@@ -97,13 +88,11 @@
 //==================================================================
 .contactThanksBox{
   max-width: 400px;
-  //background-color: #1A1A1A;
-  //background-color: $colorGrey;
+
 
   border-radius: 10px;
 
-  //color: $colorGrey;
-  //color: $colorBlack;
+
   font-size: $fontsizeSmallMedium;
 
   padding: 20px 50px 20px 50px;

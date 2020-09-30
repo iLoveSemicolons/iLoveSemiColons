@@ -21,6 +21,7 @@ const lightTheme = {
     header: globalColorStyling.colorWhite,
 
 //===========================
+
     footerBackgroundColor  : globalColorStyling.colorWhite,
     footerTextColor : globalColorStyling.colorBlack,
     footerLeftContentUpperLining : globalColorStyling.colorDarkGray,
@@ -31,22 +32,32 @@ const lightTheme = {
 
 //=================================================================================
 
-    homePageIntroRightContainerBackgroundColor: globalColorStyling.colorGreyBlue,
-    homePageIntroRightContainerColor: globalColorStyling.colorWhiter,
+    homePageIntroRightContainerBackgroundColor: globalColorStyling.colorWhiter,
+    homePageIntroRightContainerColor: globalColorStyling.colorDarkGray,
+
 //=================================================================================
+
     CellBorderBottom: globalColorStyling.colorGrey,
+
 //=================================================================================
+
     cellTitleColor: globalColorStyling.colorBlack,
 
 //=================================================================================
+
+    projectResumeColor:globalColorStyling.colorTrueGray,
+
 //=================================================================================
+
     hashtagTextBackgroundColor: globalColorStyling.colorGrey,
 
 //=================================================================================
+
     showAllButtonBackgroundColor: globalColorStyling.colorBluer,
     showAllButtonColor: globalColorStyling.colorWhiter,
 
 //=================================================================================
+
     headerBackgroundColor: globalColorStyling.colorWhite,
     headerLeftContentUnderLiningColor: globalColorStyling.colorDarkGray,
 
@@ -60,10 +71,15 @@ const lightTheme = {
 
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorBlack,
-    demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
+    demoProjectButtonTextColorOnHover : globalColorStyling.colorWhite,
+    demoProjectButtonBackgroundColorOnHover : globalColorStyling.colorBluer,
+
+//=================================================================================
 
     pageTitleTextColor:globalColorStyling.colorBlack,
+
 //=================================================================================
+
     contactFormBackgroundColor : globalColorStyling.colorGrey,
     contactFormTextInputColor : globalColorStyling.colorBlack,
     contactFormTextInputBackgroundColor : globalColorStyling.colorWhite,
@@ -74,34 +90,74 @@ const lightTheme = {
     contactThanksBoxBackgroundColor : globalColorStyling.colorGrey,
     contactThanksBoxTextColor : globalColorStyling.colorBlack,
 
+//=================================================================================
+    ideaBoxContainerBackgroundColor : globalColorStyling.colorGrey,
+    ideaBoxTitleTextColor : globalColorStyling.colorBlack,
+    ideaBoxTextInputBorderColor : globalColorStyling.colorWhite,
+    ideaBoxTextInputBackgroundColor : globalColorStyling.colorWhite,
+    ideaBoxTextInputColor : globalColorStyling.colorBlack,
+    ideaTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+//=================================================================================
+
+    subscribeBoxContainerBackgroundColor : globalColorStyling.colorWhiter,
+    subscribeBoxContainerTextColor : globalColorStyling.colorDarkGray,
+
+//=================================================================================
+
+    subscriberThankBoxBackgroundColor : globalColorStyling.colorGrey,
+    subscriberThankBoxTextColor : globalColorStyling.colorBlack,
+
+    subscribeBoxBackgroundColor : globalColorStyling.colorGrey,
+    subscribeBoxTextInputBackgroundColor : globalColorStyling.colorWhite,
+
+    subscribeBoxTextInputColor : globalColorStyling.colorBlack,
+    subscribeBoxTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+
+//=================================================================================
+
+    articleContentTextColor : globalColorStyling.colorBlack,
+    articleTitleTextColor : globalColorStyling.colorBlack,
+
+//=================================================================================
+
+    legalNoticeTextColor : globalColorStyling.colorBlack,
+
 }
 
 const darkTheme = {
     id: "dark",
 //=================================================================================
+
     headerBackgroundColor: globalColorStyling.colorBlack,
     headerLeftContentUnderLiningColor: globalColorStyling.colorWhite,
 
 //=================================================================================
+
     footerBackgroundColor  : globalColorStyling.colorBlack,
     footerTextColor : globalColorStyling.colorWhite,
     footerLeftContentUpperLining : globalColorStyling.colorWhite,
 
 //=================================================================================
+
     showAllButtonBackgroundColor: globalColorStyling.colorBlacker,
     showAllButtonColor: globalColorStyling.colorBluer,
 
 //=================================================================================
+
     readButtonBorderColor : globalColorStyling.colorYellow,
     readButtonTextColor : globalColorStyling.colorWhite,
     readButtonBackgroundColorOnHover : globalColorStyling.colorYellow,
     readButtonTextColorOnHover : globalColorStyling.colorBlack,
 
 //=================================================================================
+
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
     demoProjectButtonTextColor : globalColorStyling.colorWhite,
-    demoProjectButtonTextColorOnHover : globalColorStyling.colorBluer,
+    demoProjectButtonTextColorOnHover : globalColorStyling.colorWhite,
+    demoProjectButtonBackgroundColorOnHover : globalColorStyling.colorBluer,
+
 //=================================================================================
+
     contactFormBackgroundColor : globalColorStyling.colorBlacker,
     contactFormTextInputColor : globalColorStyling.colorWhite,
     contactFormTextInputBackgroundColor : globalColorStyling.colorBlacker,
@@ -110,6 +166,38 @@ const darkTheme = {
 
     contactThanksBoxBackgroundColor : globalColorStyling.colorBlacker,
     contactThanksBoxTextColor : globalColorStyling.colorGrey,
+//=================================================================================
+    ideaBoxContainerBackgroundColor : globalColorStyling.colorBlacker,
+    ideaBoxTitleTextColor : globalColorStyling.colorWhite,
+    ideaBoxTextInputBorderColor : globalColorStyling.colorTrueGray,
+    ideaBoxTextInputBackgroundColor : globalColorStyling.colorBlacker,
+    ideaBoxTextInputColor : globalColorStyling.colorWhite,
+    ideaTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+//=================================================================================
+
+    subscribeBoxContainerBackgroundColor : globalColorStyling.colorBlacker,
+    subscribeBoxContainerTextColor : globalColorStyling.colorWhite,
+
+//=================================================================================
+
+    subscriberThankBoxBackgroundColor : globalColorStyling.colorBlacker,
+    subscriberThankBoxTextColor : globalColorStyling.colorGrey,
+    subscribeBoxBackgroundColor : globalColorStyling.colorBlacker,
+
+    subscribeBoxTextInputBackgroundColor : globalColorStyling.colorGrey,
+
+    subscribeBoxTextInputColor : globalColorStyling.colorBlack,
+    subscribeBoxTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+
+//=================================================================================
+
+    articleContentTextColor : globalColorStyling.colorWhite,
+    articleTitleTextColor : globalColorStyling.colorWhite,
+
+//=================================================================================
+
+    legalNoticeTextColor : globalColorStyling.colorWhite,
+
 }
 
 

@@ -2,6 +2,7 @@ import React from "react"
 import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
+import {Helmet} from "react-helmet";
 
 //TODO slice the date and show only the important digits
 
@@ -38,6 +39,9 @@ export default class Blog extends React.Component {
 
         return (
             <div>
+                <Helmet>
+                    <title>Blog</title>
+                </Helmet>
                 <PageTitle title="BLog"/>
 
                 <NewIdeaBox ideaBoxTitle="You have an idea for an article or can't wait to learn about a topic ?"/>

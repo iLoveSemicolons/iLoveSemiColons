@@ -1,9 +1,37 @@
 import React from "react";
 import styles from "./subscribe.module.scss"
 import {Link} from "react-router-dom";
-
+import styled from 'styled-components';
+import {Helmet} from "react-helmet";
 
 //TODO handling security issues on submit in backend
+
+
+const SubscriberThankBox = styled.div`
+background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
+color : ${({theme}) => theme.subscriberThankBoxTextColor};
+`;
+
+
+const SubscribeBox  = styled.form`
+background-color : ${({theme}) => theme.subscribeBoxBackgroundColor};
+`;
+
+const SubscribeBoxTextInput = styled.input `
+background-color : ${({theme}) => theme.subscribeBoxTextInputBackgroundColor};
+color : ${({theme}) => theme.subscribeBoxTextInputColor};
+
+
+&::placeholder : {
+color : ${({theme}) => theme.subscribeBoxTextInputPlaceholderColor};
+
+
+}
+
+
+`;
+
+
 export default class Subscribe extends React.Component {
     constructor(props) {
         super(props);
@@ -60,8 +88,14 @@ export default class Subscribe extends React.Component {
         console.log(isSubscribed);
         return (
             <div>
+                <Helmet>
+                    <title>Subscribe</title>
+                </Helmet>
+
+
+
                 {isSubscribed
-                    ? <div className={styles.subscriberThanksBox}>
+                    ? <SubscriberThankBox className={styles.subscriberThanksBox}>
                         <div>
                             Merci !, Vous êtes maintenant abonné à mon Newsletter, je ne vais pas vous
                             gêner...promis :)
@@ -74,17 +108,17 @@ export default class Subscribe extends React.Component {
                             </Link>
                         </div>
 
-                    </div>
+                    </SubscriberThankBox>
 
-                    : <form className={styles.subscribeBox} onSubmit={this.handleSubmit}>
-                        <input className={styles.subscribeBoxTextInput} type="text" placeholder="Un Prénom"
+                    : <SubscribeBox className={styles.subscribeBox} onSubmit={this.handleSubmit}>
+                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text" placeholder="Un Prénom"
                                value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
-                        <input className={styles.subscribeBoxTextInput} type="email" placeholder="Un Mail"
+                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="email" placeholder="Un Mail"
                                value={this.state.emailValue} onChange={this.handleEmailChange}/>
                         <div className={styles.subscribeButtonContainer}>
-                            <input className={styles.subscribeButton} type="submit" value="S'abonner"/>
+                            <input className={styles.subscribeButton} type="submit" value="Subscribe"/>
                         </div>
-                    </form>
+                    </SubscribeBox>
                 }
             </div>
         );

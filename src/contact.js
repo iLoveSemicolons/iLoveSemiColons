@@ -3,8 +3,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import style from "./contact.module.scss";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
-
-
+import {Helmet} from "react-helmet";
 
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
@@ -15,9 +14,9 @@ const TextInput = styled.input`
         color : ${({theme}) => theme.contactFormTextInputColor};
         border-color : ${({theme}) => theme.contactFormTextInputBorderColor};
         
-        // &::place-holder  : {
-        // color : ${({theme}) => theme.contactFormTextInputColor};
-        // }
+         &::place-holder  : {
+         color : ${({theme}) => theme.contactFormTextInputColor};
+         }
         `
 
 const TextArea = styled.textarea`
@@ -30,7 +29,7 @@ const TextArea = styled.textarea`
         // }
         `
 
-const contactThanksBox = styled.div`
+const ContactThanksBox = styled.div`
         background-color : ${({theme}) => theme.contactThanksBoxBackgroundColor};
         color : ${({theme}) => theme.contactThanksBoxTextColor};
         `
@@ -167,10 +166,13 @@ export default class Contact extends React.Component {
 
         return (
             <div>
+                <Helmet>
+                    <title>Contact</title>
+                </Helmet>
                 <PageTitle title="Contact"/>
                 {
                     formIsSent
-                        ? <contactThanksBox className={style.contactThanksBox}>
+                        ? <ContactThanksBox className={style.contactThanksBox}>
                             <div>
                                 Thank you for contacting me, i will recontact you as soon as possible :)
                             </div>
@@ -179,7 +181,7 @@ export default class Contact extends React.Component {
                                     <button className={style.contactThankButton}>Return to Home Page</button>
                                 </Link>
                             </div>
-                        </contactThanksBox>
+                        </ContactThanksBox>
 
 
                         :

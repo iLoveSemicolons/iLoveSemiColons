@@ -7,6 +7,7 @@ import TopicTitle from "./components/topicTitle/TopicTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
+import {Helmet} from "react-helmet";
 
 
 
@@ -52,12 +53,16 @@ export default class Home extends React.Component {
     render() {
 
         const projects = this.state.projectTopicAPIResponse;
-        // const designs = this.state.designTopicAPIResponse;
+        //const designs = this.state.designTopicAPIResponse;
         const articles = this.state.postTopicAPIResponse;
 
         console.log(articles);
         return (
             <div>
+                <Helmet>
+                    <title>Home Page</title>
+                </Helmet>
+
                 <div className="introContainer">
                     <div className="homePageIntroLeftContainer">
                         <div className="introTitle">

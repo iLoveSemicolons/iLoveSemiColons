@@ -14,11 +14,14 @@ import Subscribe from "./subscribe";
 
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+import LegalNotice from "./legalNotice";
+
 //===========================================================
 
 import {ThemeProvider} from "styled-components";
 import {GlobalStyles} from "./components/globalStyles";
 import {initialThemeState, themeReducer} from "./components/themeReducer";
+import {Helmet} from "react-helmet";
 
 
 //===========================================================
@@ -36,7 +39,14 @@ function App() {
                 <ThemeProvider theme={currentTheme}>
                     <AppContext.Provider value={{...themeState, dispatch}}>
                         <GlobalStyles />
+                        <Helmet>
+                            <meta name="author" content="Sirage AL DBIYAT" />
+                            <meta name="copyright" content="Sirage AL DBIYAT"/>
+                            <meta name="robots" content="index,follow"/>
+                            <meta httpEquiv="expires" content="43200"/>
 
+
+                        </Helmet>
                             <PageLayout>
                                 <MainLayout>
 
@@ -51,6 +61,7 @@ function App() {
                                         <Route path="/blog" component={blog}/>
                                         <Route path="/about" component={about}/>
                                         <Route path="/contact" component={contact}/>
+                                        <Route path="/legalNotice" component={LegalNotice}/>
                                         <Route path="/subscribe" component={Subscribe}/>
                                         <Route path="/article/:articleLocalFileName" component={article}/>
                                         <Route component={Error}/>

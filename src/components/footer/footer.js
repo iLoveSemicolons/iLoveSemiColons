@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 
+//TODO legal notice
+
 const FooterContainer = styled.div`
 background : ${({theme}) => theme.footerBackgroundColor};
 color : ${({theme}) => theme.footerTextColor};
@@ -20,7 +22,7 @@ export default function Footer() {
 
         <FooterContainer className={style.footer}>
             <div className={style.footerContentContainerUpperLining}>
-                <FooterLeftContentUpperLining className={style.footerLeftContentUpperLining} />
+                <FooterLeftContentUpperLining className={style.footerLeftContentUpperLining}/>
                 <div className={style.footerRightContentUpperLining}>
                     <div className={style.sunMoonUpperLining}/>
                     <div className={style.navIconUpperLining}/>
@@ -40,7 +42,9 @@ export default function Footer() {
                     </div>
                     <div className={style.separator}>|</div>
                     <div>
-                        Mentions légales
+                        <Link to={"../../../legalNotice"}>
+                            Legal Notice
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,42 @@
 @import "src/components/globalFontStyling";
 
 
+.articleTopContainer{
+  border-left: solid 6px $colorBluer;
+  margin-bottom: 30px;
+}
+
  .articleTitle{
    font-size: $fontsizeBig;
    font-weight: bold;
-   color: $colorWhiter;
+   padding-left: 15px;
  }
 
- .copyAndShareButton{
+.datePosted{
+  font-size: $fontsizeSmall;
+  margin-top: 10px;
+  padding-left: 15px;
+}
+
+.articleSubTitleContainer{
+  display : flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+
+
+.articleHashtagContainer div{
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+
+
+ .copyAndShareButton {
    background-color: #FFE087;
    padding: 0 22px 0 22px;
    height: 26.2px; //same height as ProjectGithubLinkButton
@@ -35,37 +64,28 @@
    font-size: $fontsizeSmall;
  }
 
- .articleSubTitleContainer{
-   display : flex;
-   justify-content: flex-start;
-   align-items: center;
-   flex-wrap: wrap;
-   margin-top: 40px;
-
- }
-
-.datePosted{
-  color: $colorWhiter;
-  font-size: $fontsizeSmall;
-  flex-grow: 0.5;
-}
-
-.copyAndShareButtonContainer{
-  flex-grow: 0.5;
-}
 
 .goToBlogPageButtonContainer{
-  flex-grow: 2;
+  margin-left: 20px;
 }
 
-.articleHashtagContainer div{
-  margin-top: 40px;
-  margin-right: 10px;
-}
 
  .articleContent{
    margin-top: 40px;
-   color: $colorWhite;
-   font-size: $fontsizeMedium;
+   font-size: $fontsizeSmallMedium;
    line-height: 1.8;
+ }
+
+
+ @media screen and (max-width : 600px){
+
+   .articleSubTitleContainer{
+     flex-direction: column;
+     align-items : flex-start;
+   }
+
+   .goToBlogPageButtonContainer{
+     margin-left: 0;
+     margin-top: 20px;
+   }
  }

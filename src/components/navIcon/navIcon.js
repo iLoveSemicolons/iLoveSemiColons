@@ -4,16 +4,6 @@ import "../navBar/navBar.scss";
 import {NavLink} from "react-router-dom";
 
 
-//TODO FADEIN and FADEOUT navBar material ui
-//TODO while NavBar is open, clicking  on any part of the page will close it
-
-
-//
-// navBarLink.forEach(function (link) {
-//     link.addEventListener("click", that.clickOnLink);
-//     console.log(link);
-// });
-
 export default class NavIcon extends React.Component {
 
     constructor(props) {
@@ -59,7 +49,7 @@ export default class NavIcon extends React.Component {
 
         const NavBar = () => {
             return (<div className="navBarContainer navBar">
-                <NavLink onClick={this.clickOnLink} className={"navBarLink"} to={"./"}>Home</NavLink>
+                <NavLink onClick={this.clickOnLink} className={"navBarLink"} to={"../../../"}>Home</NavLink>
                 <NavLink onClick={this.clickOnLink} className={"navBarLink"} to={"./../../../project"}>Projects</NavLink>
                 <NavLink onClick={this.clickOnLink}  className={"navBarLink"} to={"./../../../blog"}>Blog</NavLink>
                 <NavLink onClick={this.clickOnLink}  className={"navBarLink"} to={"./../../../about"}>About</NavLink>

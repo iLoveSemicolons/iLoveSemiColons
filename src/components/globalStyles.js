@@ -15,7 +15,12 @@ color : ${({theme}) => theme.introTitleTextColor};
 }
 
 .homePageIntroRightContainer {
-background : ${({theme}) => theme.homePageIntroRightContainerBackgroundColor}
+background : ${({theme}) => theme.homePageIntroRightContainerBackgroundColor};
+color : ${({theme}) => theme.homePageIntroRightContainerColor};
+}
+
+.rightContainerText{
+color : ${({theme}) => theme.homePageIntroRightContainerColor};
 }
 
 

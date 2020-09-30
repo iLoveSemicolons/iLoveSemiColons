@@ -4,9 +4,30 @@ import Hashtag from "./components/hashtag/hashtag";
 import {NavLink} from "react-router-dom";
 import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import Error from "./Error";
+import styled from "styled-components";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
+//TODO copy link icon instead of the big button ...
+//TODO add estimated reading time to the top of an article
+//TODO add like button feature
+//TODO add comment feature
+//TODO buttoms to be continued
+//TODO check errors in F12 on this page
+//TODO reseolve date problems from the api ...
+
+const ArticleTitle = styled.div`
+color ${({theme}) => theme.articleTitleTextColor};
+`;
+
+const ArticleContent = styled.p`
+color : ${({theme}) => theme.articleContentTextColor};
+`;
+
+const DatePosted = styled.div`
+color : ${({theme}) => theme.articleContentTextColor};
+`;
+
 
 export default class Article extends React.Component {
 
@@ -65,6 +86,20 @@ export default class Article extends React.Component {
     }
 
 
+    articlePostDateReformatting(date){
+        date = date.slice(0,10);
+       date = date.split("-");
+
+        const newDateFormat = [];
+        newDateFormat.push(date[2]);
+        newDateFormat.push("/");
+        newDateFormat.push(date[1]);
+        newDateFormat.push("/");
+        newDateFormat.push(date[0]);
+
+        return newDateFormat;
+    }
+
     componentDidMount() {
 
         this.callArticleAPI();
@@ -85,20 +120,33 @@ export default class Article extends React.Component {
     render() {
 
         const articleObject = this.state.articleAPIResponse;
+
+        console.log(articleObject);
         const articleContent = {__html: this.state.articleContent};
         return (
             <div>
-                {articleObject.map((article) =>
-                    <div>
-                        <div className="articleTitle">
+                {articleObject.map((article,id) =>
+                    <div key={article.idPost}>
+                        <div className={"articleTopContainer"}>
+                            <ArticleTitle className="articleTitle">
                             {article.title}
+                        </ArticleTitle>
+
+                            <DatePosted className="datePosted">
+                                {/*{article.datePosted.slice(0,10).replace("-","/")}*/}
+                                {this.articlePostDateReformatting(article.datePosted)}
+                            </DatePosted>
+                            
                         </div>
 
-                        <div className="articleSubTitleContainer">
-                            <div className="datePosted">
-                                {article.datePosted}
-                            </div>
+                        <div className="articleHashtagContainer">
+                            <Hashtag  hashtags={article.hashtags}/>
+                        </div>
 
+                        <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent}/>
+
+
+                        <div className="articleSubTitleContainer">
 
                             <div className="copyAndShareButtonContainer">
                                 <button onClick={this.copyToClipboard} className="copyAndShareButton">
@@ -114,11 +162,6 @@ export default class Article extends React.Component {
                             </div>
                         </div>
 
-                        <div className="articleHashtagContainer">
-                            <Hashtag hashtags={article.hashtags}/>
-                        </div>
-
-                        <p className="articleContent" dangerouslySetInnerHTML={articleContent}/>
 
                         <div>
                             <SubscribeBox/>

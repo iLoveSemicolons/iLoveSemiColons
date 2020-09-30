@@ -1,5 +1,28 @@
 import React from 'react';
 import style from "./newIdeaBox.module.scss";
+import styled from "styled-components";
+
+
+const IdeaBoxContainer = styled.div`
+background-color : ${({theme}) => theme.ideaBoxContainerBackgroundColor};
+`;
+
+const IdeaBoxTitle = styled.div`
+color : ${({theme}) => theme.ideaBoxTitleTextColor};
+`;
+
+
+const IdeaTextInput = styled.input`
+background-color : ${({theme}) => theme.ideaBoxTextInputBackgroundColor};
+color : ${({theme}) => theme.ideaBoxTextInputColor};
+border-color : ${({theme}) => theme.ideaBoxTextInputBorderColor};
+
+&::place-holder  : {
+color : ${({theme}) => theme.ideaTextInputPlaceholderColor};
+}
+
+`;
+
 
 export default class NewIdeaBox extends React.Component {
     constructor(props) {
@@ -27,15 +50,15 @@ export default class NewIdeaBox extends React.Component {
         date = date.toISOString().slice(0, 19).replace("T", ' ');
 
         fetch('http://localhost:9000/newidea', {
-            method : 'POST',
-            headers : {
-                'Accept' : 'application/json',
-                'Content-Type' :'application/json'
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body : JSON.stringify({
-                idea : this.state.ideaField,
-                email : this.state.emailField,
-                date : date
+            body: JSON.stringify({
+                idea: this.state.ideaField,
+                email: this.state.emailField,
+                date: date
             })
         })
             .then(response => response.json())
@@ -55,19 +78,18 @@ export default class NewIdeaBox extends React.Component {
     }
 
 
-
     render() {
         return (
 
-            <div className={style.ideaBoxContainer}>
+            <IdeaBoxContainer className={style.ideaBoxContainer}>
 
-                <div className={style.ideaBoxTitle}> {this.ideaBoxTitle} </div>
+                <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} </IdeaBoxTitle>
                 <form className={style.ideaBox} onSubmit={this.handleSubmit}>
-                    <input className={style.textInput} value={this.state.ideaField} type="text"
-                            onChange={this.handleIdeaFieldOnChange} placeholder="Votre Idée en quelques mots ?"/>
+                    <IdeaTextInput className={style.textInput} value={this.state.ideaField} type="text"
+                           onChange={this.handleIdeaFieldOnChange} placeholder="Votre Idée en quelques mots ?"/>
 
                     <div className={style.ideaBoxBottomContainer}>
-                        <input className={style.textInput + " " + style.emailField}
+                        <IdeaTextInput className={style.textInput + " " + style.emailField}
                                value={this.state.emailField} type="email"
                                onChange={this.handleEmailFieldOnChange}
                                placeholder="Votre email"/>
@@ -76,7 +98,7 @@ export default class NewIdeaBox extends React.Component {
                         </div>
                     </div>
                 </form>
-            </div>
+            </IdeaBoxContainer>
         );
 
     }

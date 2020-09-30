@@ -1,12 +1,10 @@
 @import './components/globalFontStyling.scss';
 
 
-.subscriberThanksBox{
+.subscriberThanksBox {
   max-width: 400px;
-  background-color: #1A1A1A;
   border-radius: 10px;
 
-  color: $colorGrey;
   font-size: $fontsizeMedium;
 
   padding: 20px 50px 20px 50px;
@@ -15,44 +13,32 @@
   display: flex;
   flex-direction: column;
 }
-.subscriberThankButtonContainer{
+
+.subscriberThankButtonContainer {
   margin-top: 20px;
   text-align: center;
 }
 
-.subscriberThankButton{
-  //background-image: linear-gradient(to right, #3036FE,#009EFF );
-  background-color: $colorGrey;
+.subscriberThankButton {
+  background-image: linear-gradient(to right, #3036FE, #009EFF);
   border: none;
   cursor: pointer;
 
-  color: $colorBlacker;
+  color: $colorWhite;
   font-size: $fontsizeSmallMedium;
   font-family: inherit;
   font-weight: bold;
   border-radius: 15px;
 
-  padding: 5px 17px  5px 17px ;
+  padding: 5px 17px 5px 17px;
 
-  &:hover{
-    background-color: $colorYellow;
-  }
 }
 
+//============================================================================================
 
-
-
-
-
-
-
-
-
-
-.subscribeBox{
+.subscribeBox {
 
   max-width: 400px;
-  background-color: #1A1A1A;
   border-radius: 10px;
 
   padding: 5px 50px 20px 50px;
@@ -62,7 +48,7 @@
   flex-direction: column;
 }
 
-.subscribeBoxTextInput{
+.subscribeBoxTextInput {
   font-family: inherit;
   font-size: $fontsizeSmall;
   font-weight: bold;
@@ -72,15 +58,13 @@
   border-radius: 15px;
   border: none;
 
-  background-color: $colorGrey;
   transition: background-color 200ms ease-in-out;
 
   padding: 8px;
   margin-top: 20px;
 
 
-  &:focus{
-    background-color: $colorWhite;
+  &:focus {
     border: none;
     text-decoration: none;
     outline: none;
@@ -88,15 +72,13 @@
 }
 
 
-
-
-.subscribeButtonContainer{
+.subscribeButtonContainer {
   margin-top: 20px;
   text-align: center;
 }
 
-.subscribeButton{
-  background-image: linear-gradient(to right, #3036FE,#009EFF );
+.subscribeButton {
+  background-image: linear-gradient(to right, #3036FE, #009EFF);
   border: none;
   cursor: pointer;
 
@@ -106,12 +88,16 @@
   font-weight: bold;
   border-radius: 15px;
 
-  padding: 5px 17px  5px 17px ;
+  padding: 5px 17px 5px 17px;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-
+@media screen and (max-width: 600px) {
+  .subscribeBox {
+    padding: 5px 20px 20px 20px;
+  }
+}
 

@@ -4,14 +4,7 @@ $headerRightContentWidth: 80px;
 $underLiningBorderWidth: 3px;
 
 
-/*.header {
-  background-color: $colorBlack;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-}*/
+
 
 .headerContentContainer {
   display: flex;
@@ -23,8 +16,7 @@ $underLiningBorderWidth: 3px;
 }
 
 
-.headerLeftContent {
-}
+
 
 .headerRightContent {
   display: flex;

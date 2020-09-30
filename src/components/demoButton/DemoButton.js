@@ -11,7 +11,8 @@ border-color : ${({theme}) => theme.demoProjectButtonBorderColor};
 color : ${({theme}) => theme.demoProjectButtonTextColor};
 
 &:hover {
-    background : ${({theme}) => theme.demoProjectButtonTextColorOnHover};
+    background-color : ${({theme}) => theme.demoProjectButtonBackgroundColorOnHover};
+    color : ${({theme}) => theme.demoProjectButtonTextColorOnHover};
 }
 
 `;

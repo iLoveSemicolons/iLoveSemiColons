@@ -5,10 +5,10 @@
 .subscribeBoxContainer{
 
   display: flex;
+  flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: #1A1A1A;
   border-radius: 10px;
 
 
@@ -32,10 +32,26 @@
 
 .subscribeBoxText{
   font-size: $fontsizeSmallMedium;
-  color: $colorWhiter;
   line-height: 1.8;
 }
 
 .subscribeButtonContainer{
   margin-top: 10px;
+}
+
+
+@media screen and (max-width: 600px){
+  .subscribeBoxContainer{
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .subscribeBoxText{
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .subscribeButtonContainer{
+    text-align: center;
+  }
 }

@@ -1,22 +1,20 @@
 @import "../globalFontStyling";
 
 
-
-.footer{
+.footer {
   position: absolute;
 
   bottom: 0;
   width: 100%;
   height: 40px;
-  //background-color: $colorBlack;
-  //color: $colorGrey;
+
   font-size: $fontsizeSmall;
 
-  transition : 0.3s;
+  transition: 0.3s;
 
 }
 
-.footerContainer{
+.footerContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,19 +24,17 @@
 }
 
 
-
-.footerRightContainer{
+.footerRightContainer {
   display: flex;
 }
 
-.separator{
+.separator {
   margin: 0 4px 0 4px;
 }
 
 
 //===============================================================================
 
-//TODO media query of upperLining
 
 .footerContentContainerUpperLining {
   display: flex;
@@ -61,11 +57,48 @@
 }
 
 .sunMoonUpperLining {
-  border-bottom: 3px  solid #FCC21B;
+  border-bottom: 3px solid #FCC21B;
   width: 28px; //it is sunMoon width
 }
 
 .navIconUpperLining {
-  border-bottom: 3px  solid #1B7CD1;
+  border-bottom: 3px solid #1B7CD1;
   width: 35px; // it is navIcon width
+}
+
+@media screen and (max-width: 600px) {
+  .footerContainer{
+    width: 90%;
+  }
+
+  .footerContentContainerUpperLining {
+    width: 90%;
+
+  }
+
+  .footerLeftContentUpperLining {
+    max-width: 220px; //logo width while responsive design
+  }
+
+  .footerRightContentUpperLining {
+    justify-content: space-around;
+  }
+
+  .sunMoonUpperLining {
+    max-width: 24px;
+  }
+
+  .navIconUpperLining {
+    max-width: 30px;
+
+  }
+
+}
+
+@media screen and (max-width: 440px) {
+  .footerContainer{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
 }
