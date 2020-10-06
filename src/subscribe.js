@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import {Helmet} from "react-helmet";
 
-//TODO handling security issues on submit in backend
-
+//TODO handling security issues on submit in backend.
+//TODO handling required.
 
 const SubscriberThankBox = styled.div`
 background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
@@ -13,11 +13,11 @@ color : ${({theme}) => theme.subscriberThankBoxTextColor};
 `;
 
 
-const SubscribeBox  = styled.form`
+const SubscribeBox = styled.form`
 background-color : ${({theme}) => theme.subscribeBoxBackgroundColor};
 `;
 
-const SubscribeBoxTextInput = styled.input `
+const SubscribeBoxTextInput = styled.input`
 background-color : ${({theme}) => theme.subscribeBoxTextInputBackgroundColor};
 color : ${({theme}) => theme.subscribeBoxTextInputColor};
 
@@ -47,12 +47,8 @@ export default class Subscribe extends React.Component {
     }
 
     handleSubmit(event) {
-        console.log(this.state.isSubscribed);
         this.setState({isSubscribed: true});
-        console.log(this.state.isSubscribed);
         event.preventDefault();
-
-
         let date = new Date();
         date = date.toISOString().slice(0, 19).replace("T", ' ');
 
@@ -90,20 +86,22 @@ export default class Subscribe extends React.Component {
             <div>
                 <Helmet>
                     <title>Subscribe</title>
+                    <meta name={"description"}
+                          content={"Subscribe to my newsletter and receive my weekly article and programming projects updates."}/>
+                    <meta name={"keywords"}
+                          content={"Open Source newsletter, RSS feeds, email, Open Source, newsletter, subscribe Open Source, Subscribe, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
                 </Helmet>
-
 
 
                 {isSubscribed
                     ? <SubscriberThankBox className={styles.subscriberThanksBox}>
                         <div>
-                            Merci !, Vous êtes maintenant abonné à mon Newsletter, je ne vais pas vous
-                            gêner...promis :)
+                            Thank you for subscribing to my newsletter. this means a lot to me :)
                         </div>
                         <div className={styles.subscriberThankButtonContainer}>
                             <Link to={"../../"}>
                                 <button className={styles.subscriberThankButton}>
-                                    Retourner à l'acceuil
+                                    Return to Home page
                                 </button>
                             </Link>
                         </div>
@@ -111,10 +109,12 @@ export default class Subscribe extends React.Component {
                     </SubscriberThankBox>
 
                     : <SubscribeBox className={styles.subscribeBox} onSubmit={this.handleSubmit}>
-                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text" placeholder="Un Prénom"
-                               value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
-                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="email" placeholder="Un Mail"
-                               value={this.state.emailValue} onChange={this.handleEmailChange}/>
+                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text"
+                                               placeholder="Un Prénom"
+                                               value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
+                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="email"
+                                               placeholder="Un Mail"
+                                               value={this.state.emailValue} onChange={this.handleEmailChange}/>
                         <div className={styles.subscribeButtonContainer}>
                             <input className={styles.subscribeButton} type="submit" value="Subscribe"/>
                         </div>

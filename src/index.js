@@ -26,6 +26,14 @@ import {Helmet} from "react-helmet";
 
 //===========================================================
 
+
+//TODO Meta tag images
+//TODO Meta tag property OG
+//TODO Meta name=Theme-color
+//TODO Meta cards example <meta data-react-helmet="true" name="twitter:image" content="https://www.taniarascia.com/logo.png">
+//TODO follow me on twitter/LInkedin
+
+
 export const AppContext = createContext();
 
 function App() {
@@ -40,7 +48,6 @@ function App() {
                     <AppContext.Provider value={{...themeState, dispatch}}>
                         <GlobalStyles />
                         <Helmet>
-                            <meta name="author" content="Sirage AL DBIYAT" />
                             <meta name="copyright" content="Sirage AL DBIYAT"/>
                             <meta name="robots" content="index,follow"/>
                             <meta httpEquiv="expires" content="43200"/>

@@ -61,6 +61,8 @@ export default class Home extends React.Component {
             <div>
                 <Helmet>
                     <title>Home Page</title>
+                    <meta name="description" content="My personal blog where I put my opensource projects and weekly articles about programming and web development."/>
+                    <meta name="keywords" content="Open Source blog, Open Source, website, Lyon, portfolio, Sirage AL DBIAT, it, freelance, web development, web programming, full stack web developer, full stack"/>
                 </Helmet>
 
                 <div className="introContainer">

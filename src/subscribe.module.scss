@@ -58,9 +58,8 @@
   border-radius: 15px;
   border: none;
 
-  transition: background-color 200ms ease-in-out;
 
-  padding: 8px;
+  padding: 6px 8px 6px 8px;
   margin-top: 20px;
 
 
@@ -83,7 +82,7 @@
   cursor: pointer;
 
   color: #EEEEEE;
-  font-size: $fontsizeSmallMedium;
+  font-size: $fontsizeSmall;
   font-family: inherit;
   font-weight: bold;
   border-radius: 15px;

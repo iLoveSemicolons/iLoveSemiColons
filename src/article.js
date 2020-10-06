@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom";
 import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import Error from "./Error";
 import styled from "styled-components";
+import {Helmet} from "react-helmet";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
@@ -15,6 +16,7 @@ import styled from "styled-components";
 //TODO buttoms to be continued
 //TODO check errors in F12 on this page
 //TODO reseolve date problems from the api ...
+
 
 const ArticleTitle = styled.div`
 color ${({theme}) => theme.articleTitleTextColor};
@@ -86,9 +88,9 @@ export default class Article extends React.Component {
     }
 
 
-    articlePostDateReformatting(date){
-        date = date.slice(0,10);
-       date = date.split("-");
+    articlePostDateReformatting(date) {
+        date = date.slice(0, 10);
+        date = date.split("-");
 
         const newDateFormat = [];
         newDateFormat.push(date[2]);
@@ -125,22 +127,28 @@ export default class Article extends React.Component {
         const articleContent = {__html: this.state.articleContent};
         return (
             <div>
-                {articleObject.map((article,id) =>
+                {articleObject.map((article, id) =>
                     <div key={article.idPost}>
+
+                        <Helmet>
+                            <title>{article.title}</title>
+                            <meta name={"description"} content={article.metaDescription}/>
+                            <meta name={"keywords"} content={article.metaKeywords}/>
+                        </Helmet>
                         <div className={"articleTopContainer"}>
                             <ArticleTitle className="articleTitle">
-                            {article.title}
-                        </ArticleTitle>
+                                {article.title}
+                            </ArticleTitle>
 
                             <DatePosted className="datePosted">
                                 {/*{article.datePosted.slice(0,10).replace("-","/")}*/}
                                 {this.articlePostDateReformatting(article.datePosted)}
                             </DatePosted>
-                            
+
                         </div>
 
                         <div className="articleHashtagContainer">
-                            <Hashtag  hashtags={article.hashtags}/>
+                            <Hashtag hashtags={article.hashtags}/>
                         </div>
 
                         <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent}/>

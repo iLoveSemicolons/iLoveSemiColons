@@ -43,6 +43,8 @@ export default class Project extends React.Component {
             <div>
                 <Helmet>
                     <title>Projects</title>
+                    <meta name={"description"} content={"Learn, discover, and contribute to my open source projects."}/>
+                    <meta name={"keywords"} content={"Open Source Project, interesting open source, interesting, contribute, opensource, open source, GitHub, fork, it, Sirage Al dbiyat, web development"}/>
                 </Helmet>
                 <PageTitle title="Projects"/>
 

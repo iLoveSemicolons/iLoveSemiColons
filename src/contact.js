@@ -168,6 +168,8 @@ export default class Contact extends React.Component {
             <div>
                 <Helmet>
                     <title>Contact</title>
+                    <meta name={"keywords"} content={"contact, contact Sirage Al dbiyat, contact ilovesemicolons, ilovesemicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
+                    <meta name={"description"} content={"Get in touch with me via the contact form"}/>
                 </Helmet>
                 <PageTitle title="Contact"/>
                 {
@@ -178,7 +180,7 @@ export default class Contact extends React.Component {
                             </div>
                             <div className={style.contactThankButtonContainer}>
                                 <Link to={"./../../../"}>
-                                    <button className={style.contactThankButton}>Return to Home Page</button>
+                                    <button className={style.contactThankButton}>Return to Home page</button>
                                 </Link>
                             </div>
                         </ContactThanksBox>

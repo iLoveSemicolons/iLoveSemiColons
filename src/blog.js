@@ -41,6 +41,8 @@ export default class Blog extends React.Component {
             <div>
                 <Helmet>
                     <title>Blog</title>
+                    <meta name={"keywords"} content={"open source, blog open source, posts, articles, open source article, technology, open source creator, programmer, software developer, Lyon, France"}/>
+                    <meta name={"description"} content={"Read about Open Source projects and learn new topics"}/>
                 </Helmet>
                 <PageTitle title="BLog"/>
 
