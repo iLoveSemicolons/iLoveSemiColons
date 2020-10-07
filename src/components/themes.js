@@ -117,11 +117,15 @@ const lightTheme = {
 
     articleContentTextColor : globalColorStyling.colorBlack,
     articleTitleTextColor : globalColorStyling.colorBlack,
+    articleEstimatedReadingTimeTextColor : globalColorStyling.colorBlack,
 
 //=================================================================================
 
     legalNoticeTextColor : globalColorStyling.colorBlack,
 
+//=================================================================================
+
+    NormalTextTextColor : globalColorStyling.colorBlack,
 }
 
 const darkTheme = {
@@ -193,11 +197,16 @@ const darkTheme = {
 
     articleContentTextColor : globalColorStyling.colorWhite,
     articleTitleTextColor : globalColorStyling.colorWhite,
+    articleEstimatedReadingTimeTextColor : globalColorStyling.colorWhite,
+
 
 //=================================================================================
 
     legalNoticeTextColor : globalColorStyling.colorWhite,
 
+//=================================================================================
+
+    NormalTextTextColor : globalColorStyling.colorWhite,
 }
 
 

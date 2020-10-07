@@ -4,7 +4,6 @@ import ArticleCell from "./components/articleCell/ArticleCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import {Helmet} from "react-helmet";
 
-//TODO slice the date and show only the important digits
 
 
 export default class Blog extends React.Component {

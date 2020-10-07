@@ -94,6 +94,14 @@
   }
 }
 
+
+.errorNotification{
+  color: #E66767;
+  font-size: $fontsizeSmallMedium;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 600px) {
   .subscribeBox {
     padding: 5px 20px 20px 20px;

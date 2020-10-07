@@ -86,15 +86,15 @@ export default class NewIdeaBox extends React.Component {
                 <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} </IdeaBoxTitle>
                 <form className={style.ideaBox} onSubmit={this.handleSubmit}>
                     <IdeaTextInput className={style.textInput} value={this.state.ideaField} type="text"
-                           onChange={this.handleIdeaFieldOnChange} placeholder="Votre Idée en quelques mots ?"/>
+                           onChange={this.handleIdeaFieldOnChange} placeholder="Your idea in a few words ?"/>
 
                     <div className={style.ideaBoxBottomContainer}>
                         <IdeaTextInput className={style.textInput + " " + style.emailField}
                                value={this.state.emailField} type="email"
                                onChange={this.handleEmailFieldOnChange}
-                               placeholder="Votre email"/>
+                               placeholder="Your email"/>
                         <div className={style.submitButtonContainer}>
-                            <input className={style.submitButton} type="submit" value="Envoyer"/>
+                            <input className={style.submitButton} type="submit" value="Send"/>
                         </div>
                     </div>
                 </form>

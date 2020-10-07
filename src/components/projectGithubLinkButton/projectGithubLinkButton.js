@@ -1,7 +1,6 @@
 import React from "react"
 import "./projectGithubLinkButton.scss"
 
-
 export default function ProjectGithubLinkButton(props) {
     return (
         <div className="buttonContainer">
@@ -12,9 +11,6 @@ export default function ProjectGithubLinkButton(props) {
                 <div>
                     Source
                 </div>
-{/*                <div className="pushes">
-                    {props.pushes}
-                </div>*/}
             </a>
         </div>
     );

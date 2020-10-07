@@ -4,6 +4,10 @@ import style from "./contact.module.scss";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import {Helmet} from "react-helmet";
+import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
+
+
+
 
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
@@ -79,8 +83,6 @@ export default class Contact extends React.Component {
             await this.checkInputRequired(this.state.messageField);
             await this.checkInputRequired(this.state.subjectField);
             await this.checkInputRequired(this.state.lastNameField);
-
-            console.log(this.state.error);
 
             if (this.state.error === 0) {
                 fetch('http://localhost:9000/contact', {
@@ -162,7 +164,7 @@ export default class Contact extends React.Component {
         const formIsSent = this.state.formIsSent;
         const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
-
+        console.log(inputErrors);
 
         return (
             <div>
@@ -212,6 +214,8 @@ export default class Contact extends React.Component {
                                 </div>
                         </Form>
                 }
+
+                <SocialNetworkingContainer />
             </div>
 
         );

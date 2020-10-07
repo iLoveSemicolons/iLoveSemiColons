@@ -1,0 +1,25 @@
+@import "./components/globalFontStyling.scss";
+
+
+
+.subTitle{
+  font-size: $fontsizeBig;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.normalText{
+  margin-top: 20px;
+  font-size: $fontsizeSmallMedium;
+  line-height: 1.3;
+}
+
+.semiColon{
+  color: $colorBluer;
+  font-weight: bolder;
+}
+
+
+.icon{
+  margin-right: 10px;
+}

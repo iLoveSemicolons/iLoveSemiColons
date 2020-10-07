@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 
 
-//TODO legal notice
 
 const FooterContainer = styled.div`
 background : ${({theme}) => theme.footerBackgroundColor};

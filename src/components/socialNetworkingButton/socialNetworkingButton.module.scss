@@ -1,20 +1,24 @@
 @import "../globalFontStyling";
 
-.buttonContainer{
+.buttonContainer {
   background-color: #EEEEEE;
   display: inline-block;
   border-radius: 14px;
 
-  &:hover{
+  cursor: pointer;
+  margin-top: 10px;
+
+
+  &:hover {
     box-shadow: $colorGrey 0px 0px 8px;
   }
 }
 
-.gitHubIcon{
-  width:20px;
+.socialNetworkingIcon {
+  width: 20px;
 }
 
-.gitHubButton{
+.socialNetworkingButton {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,6 +29,7 @@
   font-weight: bold;
 }
 
-.gitHubButton div{
-  padding : 0 6px 0 6px;
+.socialNetworkingButton div {
+  padding: 0 6px 0 6px;
 }
+
