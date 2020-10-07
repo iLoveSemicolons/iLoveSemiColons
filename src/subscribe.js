@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import {Helmet} from "react-helmet";
 import style from "./contact.module.scss";
+import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 
 //TODO handling security issues on submit in backend.
 //TODO handling required.
@@ -39,7 +40,7 @@ export default class Subscribe extends React.Component {
 
             error: 0,
             formIsSent: false,
-            submitButtonIsCLicked: false,
+            submitButtonIsClicked: false,
 
 
         }
@@ -48,6 +49,7 @@ export default class Subscribe extends React.Component {
         this.handleEmailChange = this.handleEmailChange.bind(this);
 
         this.checkInputRequired = this.checkInputRequired.bind(this);
+        this.checkInputEmail = this.checkInputEmail.bind(this);
     }
 
     handleSubmit(event) {
@@ -59,9 +61,9 @@ export default class Subscribe extends React.Component {
         this.setState({submitButtonIsClicked: true});
 
         const inputValidationOnSubmit = async () => {
+            await this.checkInputEmail(this.state.emailValue);
+            await this.checkInputRequired(this.state.emailValue);
             await this.checkInputRequired(this.state.firstNameValue);
-            await this.checkInputRequired(this.state.emailValue)
-
 
             if (this.state.error === 0) {
                 fetch('http://localhost:9000/subscribe', {
@@ -93,9 +95,18 @@ export default class Subscribe extends React.Component {
 
         //resetting error state to 0 after submitting !
         this.setState({error: 0});
-
-
     }
+
+    handleFirstNameChange(event) {
+        this.setState({firstNameValue: event.target.value});
+    }
+
+    handleEmailChange(event) {
+        this.setState({emailValue: event.target.value});
+    }
+
+
+//=== VALIDATION =========================================================
 
     checkInputRequired(inputValue) {
         let regex = /^\s+/;
@@ -108,23 +119,24 @@ export default class Subscribe extends React.Component {
         }
     }
 
-
-    handleFirstNameChange(event) {
-        this.setState({firstNameValue: event.target.value});
+    checkInputEmail(inputValue) {
+        let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (regex.test(String(inputValue).toLowerCase())) {
+            this.setState({error: this.state.error + 1})
+        } else {
+            this.setState({error: this.state.error});
+        }
     }
 
-    handleEmailChange(event) {
-        this.setState({emailValue: event.target.value});
-    }
+//==================================================================
 
 
     render() {
 
         const isSubscribed = this.state.isSubscribed;
-        const submitButtonIsClicked = this.state.submitButtonIsCLicked;
+        const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
 
-        console.log(inputErrors);
         return (
             <div>
                 <Helmet>
@@ -142,7 +154,7 @@ export default class Subscribe extends React.Component {
                             Thank you for subscribing to my newsletter. this means a lot to me :)
                         </div>
                         <div className={styles.subscriberThankButtonContainer}>
-                            <Link to={"../../"}>
+                            <Link to={"./../../../"}>
                                 <button className={styles.subscriberThankButton}>
                                     Return to Home page
                                 </button>
@@ -151,13 +163,14 @@ export default class Subscribe extends React.Component {
 
                     </SubscriberThankBox>
 
+
                     : <SubscribeBox className={styles.subscribeBox} onSubmit={this.handleSubmit}>
+
                         {(submitButtonIsClicked && !(inputErrors === 0)) &&
                         <div className={style.errorNotification}>
                             Please, verify your entries.
                         </div>
                         }
-
 
                         <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text"
                                                placeholder="First Name"
@@ -168,8 +181,12 @@ export default class Subscribe extends React.Component {
                         <div className={styles.subscribeButtonContainer}>
                             <input className={styles.subscribeButton} type="submit" value="Subscribe"/>
                         </div>
+
                     </SubscribeBox>
                 }
+                <SocialNetworkingContainer />
+
+
             </div>
         );
     }

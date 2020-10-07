@@ -164,7 +164,8 @@ export default class Contact extends React.Component {
         const formIsSent = this.state.formIsSent;
         const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
-        console.log(inputErrors);
+
+
 
         return (
             <div>
@@ -178,7 +179,7 @@ export default class Contact extends React.Component {
                     formIsSent
                         ? <ContactThanksBox className={style.contactThanksBox}>
                             <div>
-                                Thank you for contacting me, i will recontact you as soon as possible :)
+                                Thank you for contacting me, i will recontact you as soon as possible :-)
                             </div>
                             <div className={style.contactThankButtonContainer}>
                                 <Link to={"./../../../"}>
