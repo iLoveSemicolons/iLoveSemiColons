@@ -34,6 +34,8 @@
   line-height: 1.5 !important;
 }
 
+
+
 .readButtonContainer{
   padding-left: 10px;
 }
@@ -41,7 +43,6 @@
 
 .articleCellHashtagContainer{
   padding-left: 15px;
-  margin-top: 15px;
 
 }
 .articleCellHashtagContainer div{
@@ -49,7 +50,10 @@
   margin-right: 10px;
 }
 
-
+.articleCellLikesContainer{
+  margin-top: 15px;
+  padding-left: 15Px;
+}
 
 @media screen and (max-width: 600px) {
   .articleCellTopSideContainer{

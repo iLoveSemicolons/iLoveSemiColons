@@ -14,7 +14,6 @@ export default class Hashtag extends React.Component {
         return hashtagArray.map((hashtag, index) => <div key={index} className="hashtagText"># {hashtag}</div>);
     }
 
-
     hashtagsToArrayOfHashtags(hashtags){
         return hashtags.split(',');
     }

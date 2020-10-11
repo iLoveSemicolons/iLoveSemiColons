@@ -6,6 +6,7 @@ import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import Error from "./Error";
 import styled from "styled-components";
 import {Helmet} from "react-helmet";
+import Likes from "./components/likes/likes";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
@@ -142,6 +143,10 @@ export default class Article extends React.Component {
                                 {article.title}
                             </ArticleTitle>
 
+                            <div className={"articleLikesContainer"}>
+                                <Likes idPost={article.idPost} likes={article.likes}/>
+                            </div>
+
                             <ArticleEstimatedReadingTime className="estimatedReadingTime">
                                 Reading Time : {article.estimatedReadingTime} min
                             </ArticleEstimatedReadingTime>
@@ -162,6 +167,9 @@ export default class Article extends React.Component {
 
 
                         <div className="articleSubTitleContainer">
+
+                            <Likes idPost={article.idPost} likes={article.likes}/>
+
 
                             <div className="copyAndShareButtonContainer">
                                 <button onClick={this.copyToClipboard} className="copyAndShareButton">

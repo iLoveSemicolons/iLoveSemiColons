@@ -12,6 +12,12 @@
    padding-left: 15px;
  }
 
+ .articleLikesContainer{
+   display: inherit;
+   padding-left: 15Px;
+   margin-top: 10px;
+ }
+
  .estimatedReadingTime{
    font-size: $fontsizeSmall;
    margin-top: 10px;
@@ -71,6 +77,10 @@
  }
 
 
+.copyAndShareButtonContainer{
+  margin-left: 20px;
+
+}
 .goToBlogPageButtonContainer{
   margin-left: 20px;
 }
@@ -80,6 +90,7 @@
    margin-top: 40px;
    font-size: $fontsizeSmallMedium;
    line-height: 1.8;
+   text-align: justify;
  }
 
 
@@ -88,6 +99,12 @@
    .articleSubTitleContainer{
      flex-direction: column;
      align-items : flex-start;
+   }
+
+
+   .copyAndShareButtonContainer{
+     margin-left: 0;
+     margin-top: 20px;
    }
 
    .goToBlogPageButtonContainer{

@@ -126,10 +126,12 @@ export default class Home extends React.Component {
 
                         {articles.map((article) =>
                             <ArticleCell key={article.idPost}
+                                         idPost = {article.idPost}
                                          title={article.title}
                                          sourceLink={article.sourceLink}
                                          hashtags={article.hashtags}
                                          datePosted={article.datePosted}
+                                         likes={article.likes}
                             />
                         )}
                         <ShowAll goTo="/blog" text="View all my articles"/>
