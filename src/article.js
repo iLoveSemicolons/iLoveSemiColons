@@ -144,7 +144,7 @@ export default class Article extends React.Component {
                             </ArticleTitle>
 
                             <div className={"articleLikesContainer"}>
-                                <Likes idPost={article.idPost} likes={article.likes}/>
+                                <Likes idPost={article.idPost} />
                             </div>
 
                             <ArticleEstimatedReadingTime className="estimatedReadingTime">
@@ -168,7 +168,7 @@ export default class Article extends React.Component {
 
                         <div className="articleSubTitleContainer">
 
-                            <Likes idPost={article.idPost} likes={article.likes}/>
+                            <Likes idPost={article.idPost}/>
 
 
                             <div className="copyAndShareButtonContainer">

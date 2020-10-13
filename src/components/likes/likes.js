@@ -19,30 +19,44 @@ export default class Likes extends React.Component {
         this.state = {
             likes: props.likes,
             idPost: props.idPost,
-            oneLike: 1,
+            likesNumber: []
         };
 
         this.handleLikeCLick = this.handleLikeCLick.bind(this);
         this.plusOneLike = this.plusOneLike.bind(this);
-        this.getNewLikesNumber = this.getNewLikesNumber.bind(this);
+        this.getLikesNumber = this.getLikesNumber.bind(this);
         this.updateLikesNumber = this.updateLikesNumber.bind(this);
     }
 
 
+
+    //getLikeNumber here calling the api
+    componentDidMount() {
+        this.getLikesNumber();
+    }
+
+
+    //posting plus one like to the database and then await...
     handleLikeCLick() {
         const liking = async () => {
-            await this.plusOneLike();
-            // this.updateLikesNumber();
+            this.plusOneLike();
+            let that = this;
+            setTimeout(function(){
+                that.getLikesNumber();
+
+            },(100));
+
         }
 
         liking()
             .catch(function (error) {
                 console.log(error);
             })
+
     }
 
     plusOneLike() {
-        fetch("http://localhost:9000/like", {
+        fetch("http://localhost:9000/plusLike", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -57,9 +71,15 @@ export default class Likes extends React.Component {
     }
 
     //get the new likes number after updating to the database
-    getNewLikesNumber() {
-
+    getLikesNumber() {
+        fetch("http://localhost:9000/getLikesNumber/"+this.state.idPost)
+            .then(response => response.json())
+            .then(response => this.setState({likesNumber: response}))
+            .catch(function (error) {
+                console.log(error);
+            })
     }
+
 
     //update the actual likes number in the component by fetching the api
     updateLikesNumber() {
@@ -68,12 +88,18 @@ export default class Likes extends React.Component {
 
 
     render() {
+
+        const likesNumber = this.state.likesNumber;
         return (
             <div className={"likesWrapper"}>
                 <div className={"likesSubWrapper"}>
                     <div onClick={this.handleLikeCLick} className={"likeButton"}>
                         <img src={process.env.PUBLIC_URL + "/like.png"} alt={"likeIcon"} className={"likeIcon"}/>
-                        <LikesNumber className={"likesNumber"}>{this.state.likes}</LikesNumber>
+                        {/*<LikesNumber className={"likesNumber"}>{this.state.likes}</LikesNumber>*/}
+
+                        {likesNumber.map((likesNumber, id) =>
+                            <LikesNumber  key={id} className={"likesNumber"}>{likesNumber.likes}</LikesNumber>
+                        )}
                         <PlusOne className={"plusOneLike"}>+ 1</PlusOne>
                     </div>
                 </div>
