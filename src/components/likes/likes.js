@@ -3,7 +3,6 @@ import "./likes.scss"
 import styled from "styled-components";
 
 
-
 const LikesNumber = styled.div`
     color : ${({theme}) => theme.NormalTextTextColor};
     `;
@@ -12,61 +11,60 @@ const PlusOne = styled.span`
     `;
 
 
-
-
-/*
-*  =========== WHAT IS HAPPENING HERE ?? ============================
-*  1- the "to be liked post id" idPost is getting passed to this component via props.
-*  2- querying the node server,
-*  3- node server is will add +1 to the value
-*  4- this component likes number is getting updated by getting likes number from the node server
-* */
-
-export default class Likes extends React.Component{
+export default class Likes extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.state={
+        this.state = {
             likes: props.likes,
-            idPost : props.idPost,
+            idPost: props.idPost,
+            oneLike: 1,
         };
 
         this.handleLikeCLick = this.handleLikeCLick.bind(this);
         this.plusOneLike = this.plusOneLike.bind(this);
-        this.getLikesNumber = this.getLikesNumber.bind(this);
+        this.getNewLikesNumber = this.getNewLikesNumber.bind(this);
         this.updateLikesNumber = this.updateLikesNumber.bind(this);
     }
 
-    componentDidMount(){
 
-    }
-
-    handleLikeCLick(){
+    handleLikeCLick() {
         const liking = async () => {
-            await this.getLikesNumber();
-            await this.updateLikesNumber();
+            await this.plusOneLike();
+            // this.updateLikesNumber();
         }
 
         liking()
-            .catch(function(error){
+            .catch(function (error) {
                 console.log(error);
             })
     }
 
-    plusOneLike(){
+    plusOneLike() {
+        fetch("http://localhost:9000/like", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                idPost: this.state.idPost
+            })
+        })
+            .then(response => response.json())
+            .catch(err => console.log(err));
+    }
+
+    //get the new likes number after updating to the database
+    getNewLikesNumber() {
 
     }
 
-    getLikesNumber(){
+    //update the actual likes number in the component by fetching the api
+    updateLikesNumber() {
 
     }
-
-
-    updateLikesNumber(){
-
-    }
-
 
 
     render() {
