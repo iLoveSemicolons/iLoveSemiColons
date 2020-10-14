@@ -19,7 +19,7 @@ export default class Likes extends React.Component {
         this.state = {
             likes: props.likes,
             idPost: props.idPost,
-            likesNumber: []
+            likesNumber: [],
         };
 
         this.handleLikeCLick = this.handleLikeCLick.bind(this);
@@ -27,7 +27,6 @@ export default class Likes extends React.Component {
         this.getLikesNumber = this.getLikesNumber.bind(this);
         this.updateLikesNumber = this.updateLikesNumber.bind(this);
     }
-
 
 
     //getLikeNumber here calling the api
@@ -40,11 +39,13 @@ export default class Likes extends React.Component {
     handleLikeCLick() {
         const liking = async () => {
             this.plusOneLike();
+            this.likeButtonIsClicked();
+
             let that = this;
-            setTimeout(function(){
+            setTimeout(function () {
                 that.getLikesNumber();
 
-            },(100));
+            }, (100));
 
         }
 
@@ -53,6 +54,8 @@ export default class Likes extends React.Component {
                 console.log(error);
             })
 
+        //I KNOW THIS IS NOT A SOLUTION BUT ....
+        this.restrictDoubleLike();
     }
 
     plusOneLike() {
@@ -72,7 +75,7 @@ export default class Likes extends React.Component {
 
     //get the new likes number after updating to the database
     getLikesNumber() {
-        fetch("http://localhost:9000/getLikesNumber/"+this.state.idPost)
+        fetch("http://localhost:9000/getLikesNumber/" + this.state.idPost)
             .then(response => response.json())
             .then(response => this.setState({likesNumber: response}))
             .catch(function (error) {
@@ -80,6 +83,10 @@ export default class Likes extends React.Component {
             })
     }
 
+    //I KNOW THIS IS NOT A SOLUTION BUT ....
+    restrictDoubleLike() {
+        this.handleLikeCLick = null;
+    }
 
     //update the actual likes number in the component by fetching the api
     updateLikesNumber() {
@@ -93,15 +100,13 @@ export default class Likes extends React.Component {
         return (
             <div className={"likesWrapper"}>
                 <div className={"likesSubWrapper"}>
-                    <div onClick={this.handleLikeCLick} className={"likeButton"}>
-                        <img src={process.env.PUBLIC_URL + "/like.png"} alt={"likeIcon"} className={"likeIcon"}/>
-                        {/*<LikesNumber className={"likesNumber"}>{this.state.likes}</LikesNumber>*/}
-
-                        {likesNumber.map((likesNumber, id) =>
-                            <LikesNumber  key={id} className={"likesNumber"}>{likesNumber.likes}</LikesNumber>
-                        )}
-                        <PlusOne className={"plusOneLike"}>+ 1</PlusOne>
-                    </div>
+                    {likesNumber.map((likesNumber, id) =>
+                        <div key={id} onClick={this.handleLikeCLick} className={"likeButton"}>
+                            <img src={process.env.PUBLIC_URL + "/like.png"} alt={"likeIcon"} className={"likeIcon"}/>
+                            <LikesNumber className={"likesNumber"}>{likesNumber.likes}</LikesNumber>
+                            <PlusOne className={"plusOneLike"}>+ 1</PlusOne>
+                        </div>
+                    )}
                 </div>
             </div>
         );

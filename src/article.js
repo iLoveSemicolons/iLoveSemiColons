@@ -168,7 +168,7 @@ export default class Article extends React.Component {
 
                         <div className="articleSubTitleContainer">
 
-                            <Likes idPost={article.idPost}/>
+                            {/*<Likes idPost={article.idPost}/>*/}
 
 
                             <div className="copyAndShareButtonContainer">

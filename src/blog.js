@@ -54,7 +54,7 @@ export default class Blog extends React.Component {
                                      sourceLink={article.sourceLink}
                                      hashtags={article.hashtags}
                                      datePosted={article.datePosted}
-                                     likes={article.likes}
+                                     idPost={article.idPost}
                         />
                     </div>
                 )}
