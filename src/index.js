@@ -53,8 +53,8 @@ function App() {
                                 <MainLayout>
 
                                     <style>
-                                        @import
-                                        url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+                                        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+                                        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
                                     </style>
                                     <Switch>
                                         <Route path="/" component={Home} exact/>

@@ -13,12 +13,14 @@ export default function IlovesemicolonsLogo() {
 
         const DarkModeLogo = () => {
             return (
-                <img src="/ilovesemicolonslogoDarkMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+                <img src="/ilovesemicolonsLogoDarkMode.png" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+
+            // <img src="/ilovesemicolonslogoDarkMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
             );
         }
         const LightModeLogo = () => {
             return (
-                <img src="/ilovesemicolonslogoLightMode.svg" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
+                <img src="/ilovesemicolonsLogoLightMode.png" alt="ilovesemiolcons logo" className="ilovesemicolonslogo"/>
             );
         }
         if (currentTheme === "dark") {

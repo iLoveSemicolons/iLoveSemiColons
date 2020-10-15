@@ -39,7 +39,6 @@ export default class Likes extends React.Component {
     handleLikeCLick() {
         const liking = async () => {
             this.plusOneLike();
-            this.likeButtonIsClicked();
 
             let that = this;
             setTimeout(function () {
