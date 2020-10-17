@@ -28,7 +28,6 @@ export default class Project extends React.Component {
             });
     }
 
-
     componentDidMount() {
         this.callAPI();
     }
@@ -39,7 +38,6 @@ export default class Project extends React.Component {
         const projects = this.state.apiResponse;
 
         return (
-
             <div>
                 <Helmet>
                     <title>Projects</title>
@@ -58,8 +56,6 @@ export default class Project extends React.Component {
                                  demoLink={project.linkToDemo}/>
                 )}
             </div>
-
-
         );
     }
 
