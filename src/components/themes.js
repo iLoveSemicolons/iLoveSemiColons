@@ -97,6 +97,12 @@ const lightTheme = {
     ideaBoxTextInputBackgroundColor : globalColorStyling.colorWhite,
     ideaBoxTextInputColor : globalColorStyling.colorBlack,
     ideaTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+
+
+    IdeaThanksBoxBackgroundColor : globalColorStyling.colorGrey,
+    IdeaThanksBoxBoxTextColor : globalColorStyling.colorBlack,
+
+
 //=================================================================================
 
     subscribeBoxContainerBackgroundColor : globalColorStyling.colorWhiter,
@@ -177,6 +183,10 @@ const darkTheme = {
     ideaBoxTextInputBackgroundColor : globalColorStyling.colorBlacker,
     ideaBoxTextInputColor : globalColorStyling.colorWhite,
     ideaTextInputPlaceholderColor : globalColorStyling.colorDarkGray,
+
+
+    IdeaThanksBoxBackgroundColor : globalColorStyling.colorBlacker,
+    IdeaThanksBoxBoxTextColor : globalColorStyling.colorGrey,
 //=================================================================================
 
     subscribeBoxContainerBackgroundColor : globalColorStyling.colorBlacker,

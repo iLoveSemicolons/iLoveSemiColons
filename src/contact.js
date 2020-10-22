@@ -95,7 +95,7 @@ export default class Contact extends React.Component {
                         lastName: this.state.lastNameField,
                         email: this.state.emailField,
                         subject: this.state.subjectField,
-                        message: this.state.message,
+                        message: this.state.messageField,
                         date: date
                     })
                 })
