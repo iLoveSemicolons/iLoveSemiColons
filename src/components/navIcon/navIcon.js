@@ -4,6 +4,9 @@ import "../navBar/navBar.scss";
 import {NavLink} from "react-router-dom";
 
 
+
+//TODO what happenns when touch screen...
+
 export default class NavIcon extends React.Component {
 
     constructor(props) {

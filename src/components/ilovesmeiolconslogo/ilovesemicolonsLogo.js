@@ -3,7 +3,7 @@ import "./ilovesemicolonslogo.scss";
 import {NavLink} from "react-router-dom";
 import {AppContext} from "../../index";
 
-
+//TODO what happenns when touch screen
 export default function IlovesemicolonsLogo() {
 
 

@@ -24,6 +24,9 @@ color : ${({theme}) => theme.ideaTextInputPlaceholderColor};
 `;
 
 
+
+
+
 const IdeaThanksBox = styled.div`
         background-color : ${({theme}) => theme.IdeaThanksBoxBackgroundColor};
         color : ${({theme}) => theme.IdeaThanksBoxBoxTextColor};

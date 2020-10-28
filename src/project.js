@@ -52,7 +52,7 @@ export default class Project extends React.Component {
                 {projects.map(project =>
                     <ProjectCell projectTitle={project.title}
                                  projectResume={project.description}
-                                 goTo={project.linkToSource}
+                                 linkToSource={project.linkToSource}
                                  demoLink={project.linkToDemo}/>
                 )}
             </div>

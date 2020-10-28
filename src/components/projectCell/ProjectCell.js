@@ -27,9 +27,9 @@ export default function ProjectCell(props) {
                     }
 
 
-                    {props.goTo !== "noGoTo" &&
+                    {props.linkToSource !== "noSourceCode" &&
                     <div>
-                        <ProjectGithubLinkButton goTo={props.goTo} pushes={props.pushes}/>
+                        <ProjectGithubLinkButton projectTitle={props.projectTitle} linkToSource={props.linkToSource} pushes={props.pushes}/>
                     </div>
                     }
 

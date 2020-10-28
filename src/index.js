@@ -9,6 +9,7 @@ import contact from "./contact";
 import blog from "./blog";
 import Home from "./home";
 import article from "./article";
+import PrivateRepoRequest from "./privateRepoRequest";
 import "./App.scss"
 import Subscribe from "./subscribe";
 
@@ -65,6 +66,8 @@ function App() {
                                         <Route path="/contact" component={contact}/>
                                         <Route path="/legalNotice" component={LegalNotice}/>
                                         <Route path="/subscribe" component={Subscribe}/>
+                                        <Route path="/privateRepoRequest" component={PrivateRepoRequest}/>
+
                                         <Route path="/article/:articleLocalFileName" component={article}/>
                                         <Route component={Error}/>
                                     </Switch>
