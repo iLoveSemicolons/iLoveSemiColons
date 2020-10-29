@@ -6,7 +6,6 @@ import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import {Helmet} from "react-helmet";
 
 
-//TODO what to do in case there is no source code but only demo
 
 export default class Project extends React.Component {
 

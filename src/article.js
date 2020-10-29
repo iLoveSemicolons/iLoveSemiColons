@@ -11,7 +11,6 @@ import Likes from "./components/likes/likes";
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
 //TODO copy link icon instead of the big button ...
-//TODO add like button feature
 //TODO add comment feature
 
 

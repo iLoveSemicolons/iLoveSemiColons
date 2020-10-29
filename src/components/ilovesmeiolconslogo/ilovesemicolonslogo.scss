@@ -1,6 +1,10 @@
 .ilovesemicolonslogo {
   max-width: 276px;
   cursor: pointer;
+  outline: none;
+  &:focus{
+    outline: none;
+  }
 }
 
 @media screen and (max-width: 600px){

@@ -5,8 +5,6 @@ import {NavLink} from "react-router-dom";
 
 
 
-//TODO what happenns when touch screen...
-
 export default class NavIcon extends React.Component {
 
     constructor(props) {
@@ -62,7 +60,7 @@ export default class NavIcon extends React.Component {
 
         return (
             <div>
-                <div onTouchStart={this.handleClick} onClick={this.handleClick} className="icon nav-icon-5">
+                <div  onClick={this.handleClick} className="icon nav_icon_5">
                     <span></span>
                     <span></span>
                     <span></span>

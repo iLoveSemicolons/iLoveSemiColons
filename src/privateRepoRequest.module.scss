@@ -7,10 +7,21 @@
   max-width: 600px;
   margin: 50px auto auto auto;
   border-radius: 10px;
-  padding: 0 50px 20px 50px; //padding-top is 0 because first element has margin top of 20 px
-
+  padding: 0 50px 20px 50px; //padding top is 0 because formTitleContainer padding top is 20px;
 }
 
+
+
+.formTitleContainer{
+  padding-top: 20px;
+}
+
+
+.formTitle{
+  font-size: $fontsizeSmallMedium;
+  padding-left : 20px;
+  border-left: 8px $colorBluer solid;
+}
 
 .errorNotification{
   color: #E66767;
@@ -84,7 +95,7 @@
 
 
 //==================================================================
-.contactThanksBox{
+.PrivateRequestThankBox{
   max-width: 400px;
 
 
@@ -95,17 +106,19 @@
   line-height: 1.3;
 
   padding: 20px 50px 20px 50px;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
 
   display: flex;
   flex-direction: column;
 }
-.contactThankButtonContainer{
+.privateRequestThankBoxContainer{
   margin-top: 20px;
   text-align: center;
 }
 
-.contactThankButton{
+.PrivateRequestGoBackButton{
   background-image: linear-gradient(to right, #3036FE,#009EFF );
   border: none;
   cursor: pointer;

@@ -2,8 +2,8 @@ import React from 'react'
 import PageTitle from "./components/pageTitle/pageTitle";
 import style from './privateRepoRequest.module.scss';
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
-//TODO add form is sent container
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
         `
@@ -18,6 +18,14 @@ const TextInput = styled.input`
          }
         `
 
+const FormTitle = styled.div`
+color ${({theme}) => theme.NormalTextTextColor};
+`
+
+const PrivateRequestThankBox = styled.div`
+        background-color : ${({theme}) => theme.contactThanksBoxBackgroundColor};
+        color : ${({theme}) => theme.contactThanksBoxTextColor};
+        `
 
 
 export default class PrivateRepoRequest extends React.Component {
@@ -26,17 +34,17 @@ export default class PrivateRepoRequest extends React.Component {
         super(props);
 
         this.state = {
-            firstName : '',
-            lastName : '',
-            githubUserName : '',
-            email : '',
+            firstName: '',
+            lastName: '',
+            githubUserName: '',
+            email: '',
 
             //project title is getting passed from projectGithubLinkButton component
             projectTitle: this.props.location.state.projectTitle,
 
-            error : 0,
-            formIsSent : false,
-            submitButtonIsClicked : false,
+            error: 0,
+            formIsSent: false,
+            submitButtonIsClicked: false,
         }
 
 
@@ -49,13 +57,12 @@ export default class PrivateRepoRequest extends React.Component {
     }
 
 
-    handleSubmit(event){
+    handleSubmit(event) {
         event.preventDefault();
-        this.setState({submitButtonIsClicked : true});
+        this.setState({submitButtonIsClicked: true});
 
 
-
-        const submitAfterValidation = async() => {
+        const submitAfterValidation = async () => {
             await this.checkInputEmail(this.state.email);
             await this.checkInputRequired(this.state.email);
             await this.checkInputRequired(this.state.firstName);
@@ -63,24 +70,24 @@ export default class PrivateRepoRequest extends React.Component {
             await this.checkInputRequired(this.state.githubUserName);
 
 
-            if(this.state.error === 0) {
+            if (this.state.error === 0) {
                 fetch('http://localhost:9000/postPrivateRepoRequest', {
 
-                    method : 'POST',
+                    method: 'POST',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    body : JSON.stringify({
-                        email : this.state.email,
-                        firstName : this.state.firstName,
-                        lastName : this.state.lastName,
-                        githubUserName : this.state.githubUserName,
-                        projectTitle : this.state.projectTitle
+                    body: JSON.stringify({
+                        email: this.state.email,
+                        firstName: this.state.firstName,
+                        lastName: this.state.lastName,
+                        githubUserName: this.state.githubUserName,
+                        projectTitle: this.state.projectTitle
                     })
                 })
                     .then((response) => {
-                        this.setState({formIsSent : true});
+                        this.setState({formIsSent: true});
                         return response;
                     })
                     .then(response => response.json())
@@ -95,28 +102,28 @@ export default class PrivateRepoRequest extends React.Component {
         this.setState({error: 0});
     }
 
-    handleFirstNameChange(event){
-        this.setState({firstName : event.target.value});
+    handleFirstNameChange(event) {
+        this.setState({firstName: event.target.value});
     }
 
-    handleLastNameChange(event){
-        this.setState({lastName : event.target.value});
-
-    }
-    handleGithubUserNameChange(event){
-        this.setState({githubUserName : event.target.value});
+    handleLastNameChange(event) {
+        this.setState({lastName: event.target.value});
 
     }
 
-    handleEmailChange(event){
-        this.setState({email : event.target.value});
+    handleGithubUserNameChange(event) {
+        this.setState({githubUserName: event.target.value});
+
+    }
+
+    handleEmailChange(event) {
+        this.setState({email: event.target.value});
     }
 
 
-    goBack(){
+    goBack() {
         window.history.back();
     }
-
 
 
 //=== VALIDATION =========================================================
@@ -130,6 +137,7 @@ export default class PrivateRepoRequest extends React.Component {
             this.setState({error: this.state.error});
         }
     }
+
     checkInputEmail(inputValue) {
         let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (regex.test(String(inputValue).toLowerCase())) {
@@ -138,9 +146,8 @@ export default class PrivateRepoRequest extends React.Component {
             this.setState({error: this.state.error});
         }
     }
+
 //========================================================================
-
-
 
 
     render() {
@@ -154,37 +161,58 @@ export default class PrivateRepoRequest extends React.Component {
         return (
             <div>
                 <PageTitle title={"Access Reqeust | " + this.state.projectTitle}/>
-                <div>
-                    in order to have an access to my my private GitHub repository please fill this form and i will reply to you by mail.
-                </div>
 
-                <Form className={style.form} onSubmit={this.handleSubmit}>
-                    {(submitButtonIsClicked && !(inputErrors === 0)) &&
-                    <div className={style.errorNotification}>
-                        Please, verify your entries.
-                    </div>
-                    }
 
-                    <TextInput className={style.textInput} type="text" value={this.state.firstName}
-                               onChange={this.handleFirstNameChange}
-                               placeholder="First Name (Required)"/>
+                {
+                    formIsSent
+                        ? <PrivateRequestThankBox className={style.PrivateRequestThankBox}>
+                            <div>
+                                Your request has been sent, i will reply to you as soon as possible :)
+                            </div>
+                            <div className={style.privateRequestThankBoxContainer}>
+                                <button onClick={this.goBack} className={style.PrivateRequestGoBackButton}>Return to Home
+                                    page
+                                </button>
+                            </div>
+                        </PrivateRequestThankBox>
 
-                    <TextInput className={style.textInput} type="text" value={this.state.lastName}
-                               onChange={this.handleLastNameChange}
-                               placeholder="Last Name (Required)"/>
 
-                    <TextInput className={style.textInput} type="text" value={this.state.githubUserName}
-                               onChange={this.handleGithubUserNameChange}
-                               placeholder="GitHub Username (Required)"/>
+                        : <Form className={style.form} onSubmit={this.handleSubmit}>
 
-                    <TextInput className={style.textInput} type="email" value={this.state.email}
-                               onChange={this.handleEmailChange}
-                               placeholder="Email (Required)"/>
-                    <div>
-                        <input className={style.submitButton} type="submit" value="Send Request"/>
-                    </div>
-                </Form>
+                            <div className={style.formTitleContainer}>
+                                <FormTitle className={style.formTitle}>
+                                    in order to have an access to my my private GitHub repository please fill this form and
+                                    i
+                                    will reply to you by email.
+                                </FormTitle>
+                            </div>
 
+                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                            <div className={style.errorNotification}>
+                                Please, verify your entries.
+                            </div>
+                            }
+
+                            <TextInput className={style.textInput} type="text" value={this.state.firstName}
+                                       onChange={this.handleFirstNameChange}
+                                       placeholder="First Name (Required)"/>
+
+                            <TextInput className={style.textInput} type="text" value={this.state.lastName}
+                                       onChange={this.handleLastNameChange}
+                                       placeholder="Last Name (Required)"/>
+
+                            <TextInput className={style.textInput} type="text" value={this.state.githubUserName}
+                                       onChange={this.handleGithubUserNameChange}
+                                       placeholder="GitHub Username (Required)"/>
+
+                            <TextInput className={style.textInput} type="email" value={this.state.email}
+                                       onChange={this.handleEmailChange}
+                                       placeholder="Email (Required)"/>
+                            <div>
+                                <input className={style.submitButton} type="submit" value="Send Request"/>
+                            </div>
+                        </Form>
+                }
             </div>
         );
     }

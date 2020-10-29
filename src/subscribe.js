@@ -6,8 +6,6 @@ import {Helmet} from "react-helmet";
 import style from "./contact.module.scss";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 
-//TODO handling security issues on submit in backend.
-//TODO handling required.
 
 const SubscriberThankBox = styled.div`
 background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
