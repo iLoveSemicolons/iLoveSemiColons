@@ -25,7 +25,7 @@ export default class Home extends React.Component {
 
     callProjectTopicAPI() {
 
-        fetch("http://142.93.39.216/homePageProjectTopic")
+        fetch("http://142.93.39.216:9000/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
