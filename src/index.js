@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from "react";
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Switch, Route} from "react-router-dom";
+import {BrowserRouter, Switch, Route, Router} from "react-router-dom";
 import Project from "./project";
 import Error from './Error';
 // import design from "./design";
@@ -23,6 +23,7 @@ import {ThemeProvider} from "styled-components";
 import {GlobalStyles} from "./components/globalStyles";
 import {initialThemeState, themeReducer} from "./components/themeReducer";
 import {Helmet} from "react-helmet";
+import ScrollToTop from "./components/scrollToTop";
 
 
 //===========================================================
@@ -40,6 +41,7 @@ function App() {
 
         return (
             <BrowserRouter>
+                <ScrollToTop />
                 <ThemeProvider theme={currentTheme}>
                     <AppContext.Provider value={{...themeState, dispatch}}>
                         <GlobalStyles />
@@ -57,8 +59,8 @@ function App() {
                                         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
                                         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
                                     </style>
-                                    <Switch>
-                                        <Route path="/" component={Home} exact/>
+                                    <Switch >
+                                        <Route On path="/" component={Home} exact/>
                                         <Route path="/project" component={Project}/>
                                         {/*<Route path="/design" component={design}/>*/}
                                         <Route path="/blog" component={blog}/>
