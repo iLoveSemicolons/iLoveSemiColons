@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {Helmet} from "react-helmet";
 import style from "./contact.module.scss";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
-
+import toBeUsedIP from "./components/globalIP";
 
 const SubscriberThankBox = styled.div`
 background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
@@ -64,7 +64,7 @@ export default class Subscribe extends React.Component {
             await this.checkInputRequired(this.state.firstNameValue);
 
             if (this.state.error === 0) {
-                fetch('http://localhost:9000/subscribe', {
+                fetch("http://"+toBeUsedIP.IP+":9000/subscribe", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

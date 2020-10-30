@@ -3,7 +3,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import {Helmet} from "react-helmet";
-
+import toBeUsedIP from "./components/globalIP";
 
 
 export default class Blog extends React.Component {
@@ -18,7 +18,7 @@ export default class Blog extends React.Component {
 
 
     callBlogAPI() {
-        fetch("http://localhost:9000/blog")
+        fetch("http://"+toBeUsedIP.IP+":9000/blog")
             .then(response => response.json())
             .then(response => this.setState({blogAPIResponse: response}))
             .catch(function () {

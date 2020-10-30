@@ -2,7 +2,7 @@ import React from 'react'
 import PageTitle from "./components/pageTitle/pageTitle";
 import style from './privateRepoRequest.module.scss';
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import toBeUsedIP from "./components/globalIP";
 
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
@@ -71,7 +71,7 @@ export default class PrivateRepoRequest extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch('http://localhost:9000/postPrivateRepoRequest', {
+                fetch("http://"+toBeUsedIP.IP+":9000/postPrivateRepoRequest", {
 
                     method: 'POST',
                     headers: {

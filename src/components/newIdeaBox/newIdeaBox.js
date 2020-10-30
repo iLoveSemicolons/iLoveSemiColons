@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./newIdeaBox.module.scss";
 import styled from "styled-components";
 import {Link} from "react-router-dom";
-
+import toBeUsedIP from "../globalIP";
 
 const IdeaBoxContainer = styled.div`
 background-color : ${({theme}) => theme.ideaBoxContainerBackgroundColor};
@@ -103,7 +103,7 @@ export default class NewIdeaBox extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch('http://localhost:9000/newidea', {
+                fetch("http://"+toBeUsedIP.IP+":9000/newidea", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

@@ -4,7 +4,6 @@ import ReadArticleButton from "../readArticleButton/ReadArticleButton";
 import Hashtag from "../hashtag/hashtag";
 import Likes from "../likes/likes";
 
-
 export default function ArticleCell(props) {
     return (
         <div className="articleCellContainer">

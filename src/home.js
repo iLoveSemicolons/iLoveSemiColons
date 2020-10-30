@@ -8,8 +8,7 @@ import ProjectCell from "./components/projectCell/ProjectCell";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 import {Helmet} from "react-helmet";
-
-
+import toBeUsedIP from "./components/globalIP";
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -24,7 +23,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
-        fetch("http://142.93.39.216:9000/homePageProjectTopic")
+        fetch("http://"+toBeUsedIP.IP+":9000/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
@@ -34,7 +33,7 @@ export default class Home extends React.Component {
 
 
     callPostTopicAPI() {
-        fetch("http://localhost:9000/homePagePostTopic")
+        fetch("http://"+toBeUsedIP.IP+":9000/homePagePostTopic")
             .then(response => response.json())
             .then(response => this.setState({postTopicAPIResponse: response}))
             .catch(function () {
