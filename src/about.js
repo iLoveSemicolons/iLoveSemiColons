@@ -7,6 +7,8 @@ import BlueText from "./components/blueText/blueText";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 
 
+//TODO change i to I;
+
 const NormalText = styled.div`
 color: ${({theme}) => theme.NormalTextTextColor};
 `
@@ -38,7 +40,7 @@ export default function About() {
             <NormalText className={Styles.normalText}>
                 <img src={"school-24px.svg"} alt={"education icon"} className={Styles.icon}/>
                 A <BlueText text={"self-taught"}/> programmer, I enrolled in many certified online courses where I
-                acquired knowledge in front-end, back-end, UI/UX. The most important is that what i did was not only
+                acquired knowledge in front-end, back-end, UI/UX. The most important is that what I did was not only
                 about learning new technologies but
                 also <BlueText text={"applying these technologies in the real life"}/>
             </NormalText>
