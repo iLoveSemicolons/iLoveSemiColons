@@ -6,7 +6,7 @@ let IPs = {
 };
 
 const toBeUsedIP = {
-  IP : IPs.producIP,
+  IP : IPs.devIP,
 };
 
 export default toBeUsedIP;

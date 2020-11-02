@@ -19,7 +19,7 @@ export default class Project extends React.Component {
     }
 
     callAPI() {
-        fetch("http://"+toBeUsedIP.IP+":9000/project")
+        fetch("http://" + toBeUsedIP.IP + ":9000/project")
             .then(response => response.json())
             .then(response => this.setState({apiResponse: response}))
             .catch(function () {
@@ -41,7 +41,8 @@ export default class Project extends React.Component {
                 <Helmet>
                     <title>Projects</title>
                     <meta name={"description"} content={"Learn, discover, and contribute to my open source projects."}/>
-                    <meta name={"keywords"} content={"Open Source Project, interesting open source, interesting, contribute, opensource, open source, GitHub, fork, it, Sirage Al dbiyat, web development"}/>
+                    <meta name={"keywords"}
+                          content={"Open Source Project, interesting open source, interesting, contribute, opensource, open source, GitHub, fork, it, Sirage Al dbiyat, web development"}/>
                 </Helmet>
                 <PageTitle title="Projects"/>
 
@@ -49,7 +50,8 @@ export default class Project extends React.Component {
 
 
                 {projects.map(project =>
-                    <ProjectCell projectTitle={project.title}
+                    <ProjectCell key={project.idProject}
+                                 projectTitle={project.title}
                                  projectResume={project.description}
                                  linkToSource={project.linkToSource}
                                  demoLink={project.linkToDemo}/>

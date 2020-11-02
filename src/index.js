@@ -1,6 +1,6 @@
 import React, {createContext, useReducer} from "react";
 import ReactDOM from 'react-dom'
-import {BrowserRouter, Switch, Route, Router} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Project from "./project";
 import Error from './Error';
 // import design from "./design";

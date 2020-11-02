@@ -54,7 +54,6 @@ export default class Home extends React.Component {
         //const designs = this.state.designTopicAPIResponse;
         const articles = this.state.postTopicAPIResponse;
 
-        console.log(articles);
         return (
             <div>
                 <Helmet>

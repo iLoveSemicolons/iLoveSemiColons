@@ -125,8 +125,6 @@ export default class Article extends React.Component {
     render() {
 
         const articleObject = this.state.articleAPIResponse;
-
-        console.log(articleObject);
         const articleContent = {__html: this.state.articleContent};
         return (
             <div>

@@ -30,9 +30,9 @@ export default function About() {
             <NormalText className={Styles.normalText}>
                 <img className={Styles.icon} src={"person_search-24px.svg"} alt={"loop on me icon"}/>
 
-                Sirage AL DBIYAT, a <BlueText text={"Full-Stack Web Developer"}/>, passionate by <BlueText
-                text={"open source"}/> projects and the contribution to the web modernization.
-                This is my personal website where I host my projects and articles, I called it iLoveSemicolons because
+                Sirage AL DBIYAT, a <BlueText text={"Full-Stack Web Developer"}/>, passionate about <BlueText
+                text={"open source"}/> projects and the contribution to web modernization.
+                This is my personal website where I host my projects and posts which i called iLoveSemicolons because
                 obviously ... I love semicolons <span className={Styles.semiColon}>;</span>
             </NormalText>
 
@@ -40,14 +40,14 @@ export default function About() {
             <NormalText className={Styles.normalText}>
                 <img src={"school-24px.svg"} alt={"education icon"} className={Styles.icon}/>
                 A <BlueText text={"self-taught"}/> programmer, I enrolled in many certified online courses where I
-                acquired knowledge in front-end, back-end, UI/UX. The most important is that what I did was not only
-                about learning new technologies but
-                also <BlueText text={"applying these technologies in the real life"}/>
+                acquired knowledge in front-end, back-end, UI/UX. The most important thing is that what I did was not only
+                to learn new technologies but
+                also to <BlueText text={"apply these technologies in real life"}/>
             </NormalText>
             <NormalText className={Styles.normalText}>
                 <img className={Styles.icon} src={"code-24px.svg"} alt={"code icon"}/>
-                Very competent in algorithms, data structure and design pattern. Because coding is not only about typing
-                code, but also thinking about the performance and the code architecture.
+                Quite experienced in algorithms, data structure and design patterns. Since coding is not only about typing
+                code, but also about the performance and the code architecture.
             </NormalText>
 
             <SocialNetworkingContainer/>
