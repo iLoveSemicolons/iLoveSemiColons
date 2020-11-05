@@ -23,7 +23,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
-        fetch("http://"+toBeUsedIP.IP+":9000/homePageProjectTopic")
+        fetch("https://"+toBeUsedIP.IP+":9000/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
