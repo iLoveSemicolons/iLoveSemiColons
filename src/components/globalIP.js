@@ -2,7 +2,7 @@
 
 let IPs = {
   devIP : "localhost",
-  producIP : "142.93.39.216"
+  producIP : "ilovesemicolons.io"
 };
 
 const toBeUsedIP = {
