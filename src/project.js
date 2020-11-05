@@ -4,7 +4,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import {Helmet} from "react-helmet";
-import toBeUsedIP from "./components/globalIP";
+import toBeUsedAddress from "./components/globalIP";
 
 
 export default class Project extends React.Component {
@@ -19,7 +19,7 @@ export default class Project extends React.Component {
     }
 
     callAPI() {
-        fetch("http://" + toBeUsedIP.IP + ":9000/project")
+        fetch(toBeUsedAddress.address + ":9000/project")
             .then(response => response.json())
             .then(response => this.setState({apiResponse: response}))
             .catch(function () {

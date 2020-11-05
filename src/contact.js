@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import styled from "styled-components";
 import {Helmet} from "react-helmet";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
-import toBeUsedIP from "./components/globalIP";
+import toBeUsedAddress from "./components/globalIP";
 
 
 
@@ -85,7 +85,7 @@ export default class Contact extends React.Component {
             await this.checkInputRequired(this.state.lastNameField);
 
             if (this.state.error === 0) {
-                fetch("http://"+toBeUsedIP.IP+":9000/contact", {
+                fetch(toBeUsedAddress.address+":9000/contact", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

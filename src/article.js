@@ -8,6 +8,7 @@ import styled from "styled-components";
 import {Helmet} from "react-helmet";
 import Likes from "./components/likes/likes";
 import toBeUsedIP from "./components/globalIP";
+import toBeUsedAddress from "./components/globalIP";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
@@ -55,7 +56,7 @@ export default class Article extends React.Component {
 
         const articleLocalFileName = this.articleLocalFileName;
 
-        fetch("http://"+toBeUsedIP.IP+":9000/article", {
+        fetch(toBeUsedAddress.address+":9000/article", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
