@@ -33,7 +33,7 @@ export default class Home extends React.Component {
 
 
     callPostTopicAPI() {
-        fetch("//"+toBeUsedIP.IP+":9000/homePagePostTopic")
+        fetch(toBeUsedAddress.address+":9000/homePagePostTopic")
             .then(response => response.json())
             .then(response => this.setState({postTopicAPIResponse: response}))
             .catch(function () {
