@@ -23,11 +23,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
-<<<<<<< HEAD
-        fetch("//"+toBeUsedIP.IP+":9000/homePageProjectTopic")
-=======
         fetch(toBeUsedAddress.address+":9000/homePageProjectTopic")
->>>>>>> 7b53b667721f37e7c6d107fa1bf13cf059666ef4
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
@@ -37,11 +33,7 @@ export default class Home extends React.Component {
 
 
     callPostTopicAPI() {
-<<<<<<< HEAD
         fetch("//"+toBeUsedIP.IP+":9000/homePagePostTopic")
-=======
-        fetch(toBeUsedAddress.address+":9000/homePagePostTopic")
->>>>>>> 7b53b667721f37e7c6d107fa1bf13cf059666ef4
             .then(response => response.json())
             .then(response => this.setState({postTopicAPIResponse: response}))
             .catch(function () {
