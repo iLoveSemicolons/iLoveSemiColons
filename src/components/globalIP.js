@@ -1,12 +1,12 @@
 
 
-let IPs = {
-  devIP : "localhost",
-  producIP : "142.93.39.216"
+let address = {
+  developmentAddress : "//localhost",
+  productionAddress : "ilovesemicolons.io"
 };
 
-const toBeUsedIP = {
-  IP : IPs.producIP,
+const toBeUsedAddress = {
+  address : address.productionAddress,
 };
 
-export default toBeUsedIP;
+export default toBeUsedAddress;

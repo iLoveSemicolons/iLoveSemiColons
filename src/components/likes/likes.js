@@ -1,7 +1,7 @@
 import React from "react";
 import "./likes.scss"
 import styled from "styled-components";
-import toBeUsedIP from "../globalIP";
+import toBeUsedAddress from "../globalIP";
 
 const LikesNumber = styled.div`
     color : ${({theme}) => theme.NormalTextTextColor};
@@ -58,7 +58,7 @@ export default class Likes extends React.Component {
     }
 
     plusOneLike() {
-        fetch("http://"+toBeUsedIP.IP+":9000/plusLike", {
+        fetch(toBeUsedAddress.address+":9000/plusLike", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -74,7 +74,7 @@ export default class Likes extends React.Component {
 
     //get the new likes number after updating to the database
     getLikesNumber() {
-        fetch("http://"+toBeUsedIP.IP+":9000/getLikesNumber/" + this.state.idPost)
+        fetch(toBeUsedAddress.address+":9000/getLikesNumber/" + this.state.idPost)
             .then(response => response.json())
             .then(response => this.setState({likesNumber: response}))
             .catch(function (error) {
