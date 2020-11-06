@@ -118,7 +118,7 @@ export default class Home extends React.Component {
                     </div>
 
 
-                    <TopicTitle title="Last Articles"/>
+                    <TopicTitle title="Latest Posts"/>
                     <div>
 
                         {articles.map((article) =>
@@ -131,7 +131,7 @@ export default class Home extends React.Component {
                                          likes={article.likes}
                             />
                         )}
-                        <ShowAll goTo="/blog" text="View all my articles"/>
+                        <ShowAll goTo="/blog" text="View all my posts"/>
 
                     </div>
 

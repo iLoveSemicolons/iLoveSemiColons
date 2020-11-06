@@ -8,7 +8,7 @@
 /coverage
 
 #globalIP changes between produc and dev
-#/src/components/globalIP.js
+/src/components/globalIP.js
 
 # misc
 .DS_Store
