@@ -4,15 +4,15 @@
 
 .projectCell {
   display: flex;
-  border-left: solid 6px $colorBluer;
+  border-left: solid 6px $colorGreenCalm;
+
+  padding: 10px 5px 10px 0;
+  border-radius: 5px;
 }
 
 .projectCellContainer {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  border-bottom: 2px solid;
-  border-bottom-color : #141414;
-
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .projectCellTitle {
@@ -24,7 +24,6 @@
 
 
 .projectResume {
-  color: $colorGrey;
   padding: 0 15px 0 15px;
   line-height: 1.5;
   flex: 3 1;

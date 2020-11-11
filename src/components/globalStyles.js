@@ -24,18 +24,6 @@ color : ${({theme}) => theme.homePageIntroRightContainerColor};
 }
 
 
-.articleCellContainer , .projectCellContainer{
-border-bottom-color : ${({theme}) => theme.CellBorderBottom}
-}
-
-.articleCellTitle , .projectCellTitle{
-color : ${({theme}) => theme.cellTitleColor}
-}
-
-.projectResume{
-color : ${({theme}) => theme.projectResumeColor}
-}
-
 .hashtagText{
 background : ${({theme}) => theme.hashtagTextBackgroundColor}
 }
@@ -43,6 +31,4 @@ background : ${({theme}) => theme.hashtagTextBackgroundColor}
 .pageTitle{
 color : ${({theme}) => theme.pageTitleTextColor}
 }
-
-
 `

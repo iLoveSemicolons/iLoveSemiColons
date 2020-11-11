@@ -2,6 +2,7 @@ const globalColorStyling = {
 
     colorWhite: "#D4D4D4",
     colorWhiter: "#EEEEEE",
+    colorDarkWhite : "#C8C8C8",
     colorGrey: "#B3B9C5",
     colorGreyBlue: "#848991",
     colorTrueGray: "#4D5055",
@@ -9,7 +10,11 @@ const globalColorStyling = {
     colorBlue: "#009EFF",
     colorBluer: "#1B7CD1",
     colorYellow: "#FFE087",
+    colorGreenCalm : "#50CF96",
+    colorGrayer : "#333",
     colorYellower: "#FCC21B",
+    colorOrange : "#ff9e2c",
+
     colorBlack: "#202020",
     colorBlacker: "#1A1A1A",
 }
@@ -37,15 +42,13 @@ const lightTheme = {
 
 //=================================================================================
 
-    CellBorderBottom: globalColorStyling.colorGrey,
+    projectCellTitleColor: globalColorStyling.colorBlack,
 
 //=================================================================================
 
-    cellTitleColor: globalColorStyling.colorBlack,
-
-//=================================================================================
 
     projectResumeColor:globalColorStyling.colorTrueGray,
+    projectBackgroundColor : globalColorStyling.colorDarkWhite,
 
 //=================================================================================
 
@@ -63,9 +66,9 @@ const lightTheme = {
 
 //=================================================================================
 
-    readButtonBorderColor : globalColorStyling.colorYellower,
+    readButtonBorderColor : globalColorStyling.colorOrange,
     readButtonTextColor : globalColorStyling.colorBlack,
-    readButtonBackgroundColorOnHover : globalColorStyling.colorYellower,
+    readButtonBackgroundColorOnHover : globalColorStyling.colorOrange,
 
 //=================================================================================
 
@@ -108,6 +111,7 @@ const lightTheme = {
     subscribeBoxContainerBackgroundColor : globalColorStyling.colorWhiter,
     subscribeBoxContainerTextColor : globalColorStyling.colorDarkGray,
 
+
 //=================================================================================
 
     subscriberThankBoxBackgroundColor : globalColorStyling.colorGrey,
@@ -121,10 +125,19 @@ const lightTheme = {
 
 //=================================================================================
 
+
+
+
+//=================================================================================
+
     articleContentTextColor : globalColorStyling.colorBlack,
     articleTitleTextColor : globalColorStyling.colorBlack,
     articleEstimatedReadingTimeTextColor : globalColorStyling.colorBlack,
 
+//=================================================================================
+
+    articleCellTitleTextColor: globalColorStyling.colorBlack,
+    articleCellBackgroundColor : globalColorStyling.colorDarkWhite,
 //=================================================================================
 
     legalNoticeTextColor : globalColorStyling.colorBlack,
@@ -192,6 +205,14 @@ const darkTheme = {
     subscribeBoxContainerBackgroundColor : globalColorStyling.colorBlacker,
     subscribeBoxContainerTextColor : globalColorStyling.colorWhite,
 
+
+//=================================================================================
+
+    projectResumeColor:globalColorStyling.colorGrey,
+    projectBackgroundColor : globalColorStyling.colorGrayer,
+
+
+
 //=================================================================================
 
     subscriberThankBoxBackgroundColor : globalColorStyling.colorBlacker,
@@ -209,6 +230,10 @@ const darkTheme = {
     articleTitleTextColor : globalColorStyling.colorWhite,
     articleEstimatedReadingTimeTextColor : globalColorStyling.colorWhite,
 
+//=================================================================================
+
+    articleCellTitleTextColor : globalColorStyling.colorWhite,
+    articleCellBackgroundColor : globalColorStyling.colorGrayer,
 
 //=================================================================================
 

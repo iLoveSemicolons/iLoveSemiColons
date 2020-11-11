@@ -2,20 +2,34 @@ import React from "react";
 import "./projectCell.scss";
 import ProjectGithubLinkButton from "../projectGithubLinkButton/projectGithubLinkButton";
 import DemoButton from "../demoButton/DemoButton";
+import styled from "styled-components";
+
 
 export default function ProjectCell(props) {
+    const ProjectResume = styled.div`
+        color : ${({theme}) => theme.projectResumeColor};
+    `;
+
+    const ProjectCell = styled.div`
+       background-color : ${({theme}) => theme.projectBackgroundColor};
+    `;
+
+
+    const ProjectCellTitle = styled.div`
+        color : ${({theme}) => theme.projectCellTitleColor};
+    `;
+
     return (
-
         <div className="projectCellContainer">
-            <div className="projectCell">
+            <ProjectCell className="projectCell">
 
-                <div className="projectCellTitle">
+                <ProjectCellTitle className="projectCellTitle">
                     {props.projectTitle}
-                </div>
+                </ProjectCellTitle>
 
-                <div className="projectResume">
+                <ProjectResume className="projectResume">
                     {props.projectResume}
-                </div>
+                </ProjectResume>
 
                 <div className="projectCellButtons">
 
@@ -34,7 +48,7 @@ export default function ProjectCell(props) {
                     }
 
                 </div>
-            </div>
+            </ProjectCell>
         </div>
     );
 }
