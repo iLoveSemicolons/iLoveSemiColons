@@ -12,6 +12,7 @@ import article from "./article";
 import PrivateRepoRequest from "./privateRepoRequest";
 import "./App.scss"
 import Subscribe from "./subscribe";
+import ArticleTesting from "./articleTesting"
 
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
@@ -27,6 +28,8 @@ import ScrollToTop from "./components/scrollToTop";
 
 
 //===========================================================
+
+
 
 
 
@@ -69,7 +72,7 @@ function App() {
                                         <Route path="/legalNotice" component={LegalNotice}/>
                                         <Route path="/subscribe" component={Subscribe}/>
                                         <Route path="/privateRepoRequest" component={PrivateRepoRequest}/>
-
+                                        <Route path="/articleTesting/:articleLocalFileName" component={ArticleTesting} />
                                         <Route path="/article/:articleLocalFileName" component={article}/>
                                         <Route component={Error}/>
                                     </Switch>

@@ -20,7 +20,7 @@ const ArticleTitle = styled.div`
 color ${({theme}) => theme.articleTitleTextColor};
 `;
 
-const ArticleContent = styled.p`
+const ArticleContent = styled.div`
 color : ${({theme}) => theme.articleContentTextColor};
 `;
 
@@ -128,7 +128,7 @@ export default class Article extends React.Component {
         const articleObject = this.state.articleAPIResponse;
         const articleContent = {__html: this.state.articleContent};
         return (
-            <div>
+            <div className={"articleSupContainer"}>
                 {articleObject.map((article, id) =>
                     <div key={article.idPost}>
 

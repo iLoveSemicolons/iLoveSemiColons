@@ -1,5 +1,10 @@
 @import "src/components/globalFontStyling";
 
+//overwriting font properties
+.articleSupContainer{
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 .articleTopContainer{
   border-left: solid 6px $colorBluer;
@@ -7,7 +12,7 @@
 }
 
  .articleTitle{
-   font-size: $fontsizeBig;
+   font-size: $fontsizeBiggest;
    font-weight: bold;
    padding-left: 15px;
  }
@@ -79,7 +84,6 @@
 
 .copyAndShareButtonContainer{
   //margin-left: 20px;
-
 }
 .goToBlogPageButtonContainer{
   margin-left: 20px;
@@ -88,7 +92,7 @@
 
  .articleContent{
    margin-top: 40px;
-   font-size: $fontsizeSmallMedium;
+   font-size: $fontsizeMedium;
    line-height: 1.8;
    text-align: justify;
  }
