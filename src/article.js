@@ -41,13 +41,14 @@ export default class Article extends React.Component {
         super(props);
 
         this.articleLocalFileName = this.props.match.params.articleLocalFileName;
-
+        this.copyToClipboard = this.copyToClipboard.bind(this);
         this.articleSourceLink = '/articles/' + this.articleLocalFileName;
 
         this.state = {
             articleContent: "",
             articleAPIResponse: [],
-            errorOccurred: false
+            errorOccurred: false,
+            linkCopied: false,
         }
     }
 
@@ -56,7 +57,7 @@ export default class Article extends React.Component {
 
         const articleLocalFileName = this.articleLocalFileName;
 
-        fetch(toBeUsedAddress.address+":9000/article", {
+        fetch(toBeUsedAddress.address + ":9000/article", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -121,12 +122,14 @@ export default class Article extends React.Component {
         dummyLinkHolder.select();
         document.execCommand("copy");
         document.body.removeChild(dummyLinkHolder);
+        this.setState({linkCopied: true});
     }
 
     render() {
 
         const articleObject = this.state.articleAPIResponse;
         const articleContent = {__html: this.state.articleContent};
+        const linkCopied = this.state.linkCopied;
         return (
             <div className={"articleSupContainer"}>
                 {articleObject.map((article, id) =>
@@ -143,7 +146,7 @@ export default class Article extends React.Component {
                             </ArticleTitle>
 
                             <div className={"articleLikesContainer"}>
-                                <Likes idPost={article.idPost} />
+                                <Likes idPost={article.idPost}/>
                             </div>
 
                             <ArticleEstimatedReadingTime className="estimatedReadingTime">
@@ -169,17 +172,21 @@ export default class Article extends React.Component {
 
                             {/*<Likes idPost={article.idPost}/>*/}
 
-
                             <div className="copyAndShareButtonContainer">
-                                <button onClick={this.copyToClipboard} className="copyAndShareButton">
-                                    Copy link and share
-                                </button>
-                            </div>
+                                {linkCopied
+                                    ? <button className="copyAndShareButton">
+                                        Copied
+                                    </button>
 
+                                    : <button onClick={this.copyToClipboard} className="copyAndShareButton">
+                                        Copy link
+                                    </button>
+                                }
+                            </div>
 
                             <div className="goToBlogPageButtonContainer">
                                 <NavLink to={"../../../blog"}>
-                                    <button className="goToBlogPageButton">View all my articles</button>
+                                    <button className="goToBlogPageButton">View all my posts</button>
                                 </NavLink>
                             </div>
                         </div>

@@ -27,9 +27,7 @@ export default function SubscribeBox() {
             </div>
             <div className={styles.subscribeBoxRightContainer}>
                 <SubscribeBoxText className={styles.subscribeBoxText}>
-                    Je suis développeur web Fullstack. passionné
-                    par les projets OpenSource et la contribution
-                    à la modernisation du Web.
+                    I am a full stack web developer, passionate about open-source projects and the contribution to web modernization
                 </SubscribeBoxText>
 
                 <div className={styles.subscribeButtonContainer}>

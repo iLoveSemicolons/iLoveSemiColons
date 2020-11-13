@@ -68,8 +68,7 @@ export default class Home extends React.Component {
                             Hey, I am Sirage
                         </div>
                         <div className="introText">
-                            A full stack web developer, Passionate by <span className="blueSpan">OpenSource</span>  projects and the contribution
-                            to the modernization of the Web.
+                            A full stack web developer, passionate about <span className="blueSpan">open-source</span> projects and the contribution to web modernization
                         </div>
 
                         <div>
