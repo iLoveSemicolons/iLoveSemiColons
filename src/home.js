@@ -9,6 +9,8 @@ import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 import {Helmet} from "react-helmet";
 import toBeUsedAddress from "./components/globalIP";
+import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
+import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -74,7 +76,7 @@ export default class Home extends React.Component {
                         </div>
 
                         <div>
-                            <div className="buttonContainer">
+{/*                            <div className="buttonContainer">
                                 <a className="gitHubButton" href="https://github.com/iLoveSemicolons"
                                    rel="noopener noreferrer" target="_blank">
                                     <div>
@@ -85,7 +87,8 @@ export default class Home extends React.Component {
                                     </div>
 
                                 </a>
-                            </div>
+                            </div>*/}
+                            <SocialNetworkingContainer />
                         </div>
                     </div>
 
