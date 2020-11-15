@@ -3,6 +3,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import style from './privateRepoRequest.module.scss';
 import styled from "styled-components";
 import toBeUsedAddress from "./components/globalIP";
+import {Helmet} from "react-helmet";
 
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
@@ -160,6 +161,12 @@ export default class PrivateRepoRequest extends React.Component {
 
         return (
             <div>
+                <Helmet>
+                    <meta name="robots" content="noindex"/>
+                </Helmet>
+
+
+
                 <PageTitle title={"Access Reqeust | " + this.state.projectTitle}/>
 
 

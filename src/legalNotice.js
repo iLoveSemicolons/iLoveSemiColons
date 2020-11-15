@@ -15,6 +15,7 @@ export default function LegalNotice(props) {
         <div>
             <Helmet>
                 <title>Legal Notice</title>
+                <meta name="robots" content="noindex"/>
             </Helmet>
             <LegalNoticeContainer className={styles.legalNoticeContainer}>
                 <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser
@@ -35,7 +36,7 @@ export default function LegalNotice(props) {
                     <strong>Responsable publication</strong> : Sirage AL DBIYAT – ilovesemicolons@hotmail.com<br/>
                     Le responsable publication est une personne physique ou une personne morale.<br/>
                     <strong>Webmaster</strong> : Sirage AL DBIYAT – ilovesemicolons@hotmail.com<br/>
-                    <strong>Hébergeur</strong> : Hébergeur – adresse postale de l'hébergeur<br/>
+                    <strong>Hébergeur</strong> : DigitalOcean – 101 6th Ave, New York, NY 10013, United States<br/>
                     Crédits : <br/>
                     Le modèle de mentions légales est offert par Subdelirium.com <a target="_blank"
                                                                                     rel="noopener noreferrer"

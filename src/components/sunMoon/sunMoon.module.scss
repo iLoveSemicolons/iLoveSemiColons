@@ -1,5 +1,7 @@
+@import "../globalFontStyling.scss";
 .sunMoonContainer{
     display : inline-block;
+    background-color: green;
 }
 .sunMoon{
     cursor : pointer;
