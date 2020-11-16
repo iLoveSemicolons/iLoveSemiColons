@@ -65,7 +65,7 @@ export default class Subscribe extends React.Component {
             await this.checkInputRequired(this.state.firstNameValue);
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address+":9000/subscribe", {
+                fetch(toBeUsedAddress.address + ":9000/subscribe", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -146,12 +146,19 @@ export default class Subscribe extends React.Component {
                     <meta name={"keywords"}
                           content={"Open Source newsletter, RSS feeds, email, newsletter, subscribe Open Source, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
                     <meta name="robots" content="index,follow"/>
+
                     {/*=======================================================================*/}
 
                     {/*Social media cards*/}
                     <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
                     <meta property="og:description"
                           content="Get weekly updated and keep up-to-date on trending web development technologies."/>
+
+                    <meta property="og:image" content="/semicolonsOG.png"/>
+                    <meta property="og:type" content="Website"/>
+                    <meta property="og:locale" content="en_GB"/>
+                    <meta name="author" content="Sirage Al dbiyat"/>
+                    <meta name="copyright" content="Sirage Al dbiyat"/>
                     {/*=======================================================================*/}
 
 
@@ -161,11 +168,16 @@ export default class Subscribe extends React.Component {
                           content="Subscribe and get weekly updated about web development"/>
                     <meta property="twitter:description"
                           content="Get weekly updated and keep up-to-date on trending web development technologies."/>
+
+                    <meta property="twitter:card" content="summary"/>
+                    <meta property="twitter:image" content="/semicolonsOG.png"/>
+                    <meta name="twitter:site" content="@iLoveSemicolon"/>
+                    <meta name="twitter:creator" content="@iLoveSemicolon"/>
                     {/*=======================================================================*/}
 
                 </Helmet>
 
-                <PageTitle title={"Subscribe"} />
+                <PageTitle title={"Subscribe"}/>
 
                 {isSubscribed
                     ? <SubscriberThankBox className={styles.subscriberThanksBox}>
@@ -203,7 +215,7 @@ export default class Subscribe extends React.Component {
 
                     </SubscribeBox>
                 }
-                <SocialNetworkingContainer />
+                <SocialNetworkingContainer/>
 
 
             </div>

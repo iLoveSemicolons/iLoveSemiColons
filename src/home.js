@@ -68,10 +68,16 @@ export default class Home extends React.Component {
                     <meta name="robots" content="index,follow"/>
                     {/*=======================================================================*/}
 
-                     {/*Social media card eg. linkedin*/}
+                    {/*Social media card eg. linkedin*/}
                     <meta property="og:title" content="Opensource projects and blog posts about web development"/>
                     <meta property="og:description"
                           content="Opensource projects and weekly articles about programming and web development."/>
+
+                    <meta property="og:image" content="/semicolonsOG.png"/>
+                    <meta property="og:type" content="Website"/>
+                    <meta property="og:locale" content="en_GB"/>
+                    <meta name="author" content="Sirage Al dbiyat"/>
+                    <meta name="copyright" content="Sirage Al dbiyat"/>
                     {/*=======================================================================*/}
 
 
@@ -81,6 +87,11 @@ export default class Home extends React.Component {
                           content="Opensource projects and blog posts about web development"/>
                     <meta property="twitter:description"
                           content="Opensource projects and weekly articles about programming and web development."/>
+
+                    <meta property="twitter:card" content="summary"/>
+                    <meta property="twitter:image" content="/semicolonsOG.png"/>
+                    <meta name="twitter:site" content="@iLoveSemicolon"/>
+                    <meta name="twitter:creator" content="@iLoveSemicolon"/>
                     {/*=======================================================================*/}
                 </Helmet>
 

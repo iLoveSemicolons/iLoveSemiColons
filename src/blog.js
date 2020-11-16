@@ -47,6 +47,7 @@ export default class Blog extends React.Component {
                     <meta name={"keywords"}
                           content={"blog open source, trends, web, posts, articles, open source article, technology, open source creator, programmer, software developer, Lyon, France"}/>
                     <meta name="robots" content="index,follow"/>
+
                     {/*=======================================================================*/}
 
 
@@ -54,6 +55,12 @@ export default class Blog extends React.Component {
                     <meta property="og:title" content="Blog posts and tutorials about web development"/>
                     <meta property="og:description"
                           content="Read and learn about new topics and trending technologies in web development to remain ahead of the wave."/>
+
+                    <meta property="og:image" content="/semicolonsOG.png"/>
+                    <meta property="og:type" content="Website"/>
+                    <meta property="og:locale" content="en_GB"/>
+                    <meta name="author" content="Sirage Al dbiyat"/>
+                    <meta name="copyright" content="Sirage Al dbiyat"/>
                     {/*=======================================================================*/}
 
 
@@ -63,6 +70,11 @@ export default class Blog extends React.Component {
                           content="Blog posts and tutorials about web development"/>
                     <meta property="twitter:description"
                           content="Read and learn about new topics and trending technologies in web development to remain ahead of the wave."/>
+
+                    <meta property="twitter:card" content="summary"/>
+                    <meta property="twitter:image" content="/semicolonsOG.png"/>
+                    <meta name="twitter:site" content="@iLoveSemicolon"/>
+                    <meta name="twitter:creator" content="@iLoveSemicolon"/>
                     {/*=======================================================================*/}
 
                 </Helmet>
