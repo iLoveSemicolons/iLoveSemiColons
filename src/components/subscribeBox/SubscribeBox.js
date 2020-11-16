@@ -4,22 +4,15 @@ import SubscribeButton from "../subscribeButton/SubscribeButton";
 import styled from "styled-components";
 
 
-
-
-
-export default function SubscribeBox() {
-
-
-    const SubscribeBoxContainer = styled.div`
+const SubscribeBoxContainer = styled.div`
     background-color : ${({theme}) => theme.subscribeBoxContainerBackgroundColor};
     `;
 
-    const SubscribeBoxText  = styled.div`
+const SubscribeBoxText  = styled.div`
    color : ${({theme}) => theme.subscribeBoxContainerTextColor}; 
     `;
 
-
-
+export default function SubscribeBox() {
     return (
         <SubscribeBoxContainer className={styles.subscribeBoxContainer}>
             <div className={styles.subscribeBoxLeftContainer}>
