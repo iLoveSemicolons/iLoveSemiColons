@@ -163,39 +163,11 @@ export default class Contact extends React.Component {
                 <Helmet>
                     {/*Search engines*/}
                     <title>Get in touch with me, always here to help in new projects</title>
-{/*                    <meta name={"description"}
+                    <meta name={"description"}
                           content={"Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."}/>
                     <meta name={"keywords"}
                           content={"contact, contacter, contact Sirage Al dbiyat, contact ilovesemicolons, I love semicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
-                    <meta name="robots" content="index,follow"/>*/}
-                    {/*=======================================================================*/}
-
-                    {/*Social media cards*/}
-{/*                    <meta property="og:title" content="Get in touch with me, always here to help in new projects"/>
-                    <meta property="og:description"
-                          content="Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."/>
-
-                    <meta property="og:image" content="/semicolonsOG.png"/>
-                    <meta property="og:type" content="Website"/>
-                    <meta property="og:locale" content="en_GB"/>
-                    <meta name="author" content="Sirage Al dbiyat"/>
-                    <meta name="copyright" content="Sirage Al dbiyat"/>*/}
-                    {/*=======================================================================*/}
-
-
-                    {/*TWITTER CARD*/}
-{/*                    <meta property="twitter:url" content="https://ilovesemicolons.io/contact"/>
-                    <meta property="twitter:title"
-                          content="Get in touch with me, always here to help in new projects"/>
-                    <meta property="twitter:description"
-                          content="Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."/>
-
-                    <meta property="twitter:card" content="summary"/>
-                    <meta property="twitter:image" content="/semicolonsOG.png"/>
-                    <meta name="twitter:site" content="@iLoveSemicolon"/>
-                    <meta name="twitter:creator" content="@iLoveSemicolon"/>*/}
-                    {/*=======================================================================*/}
-
+                    <meta name="robots" content="index,follow"/>
                 </Helmet>
                 <PageTitle title="Contact"/>
                 {

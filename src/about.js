@@ -20,39 +20,12 @@ export default function About() {
 
                 {/*Search engines*/}
                 <title>About Sirage al dbiyat, a blogger and and open source developer</title>
-{/*                <meta name={"description"}
+                <meta name={"description"}
                       content={"About Sirage Al dbiyat, a creator of several opensource projects and a blogger."}/>
                 <meta name={"keywords"}
                       content={"About Sirage AL DBIYAT, sirage aldbiyat, open source creator, programmer, software developer, Lyon, France, web developer, coder, blogger, GitHub, fullstack"}/>
-                <meta name="robots" content="index,follow"/>*/}
-                {/*=======================================================================*/}
+                <meta name="robots" content="index,follow"/>
 
-
-                {/*Social media cards*/}
-{/*                <meta property="og:title" content="About Sirage al dbiyat, a blogger and and open source developer"/>
-                <meta property="og:description"
-                      content="About Sirage Al dbiyat, a creator of several opensource projects and a blogger."/>
-
-                <meta property="og:image" content="/semicolonsOG.png"/>
-                <meta property="og:type" content="Website"/>
-                <meta property="og:locale" content="en_GB"/>
-                <meta name="author" content="Sirage Al dbiyat"/>
-                <meta name="copyright" content="Sirage Al dbiyat"/>*/}
-                {/*=======================================================================*/}
-
-
-                {/*TWITTER CARD*/}
-{/*                <meta property="twitter:url" content="https://ilovesemicolons.io/about"/>
-                <meta property="twitter:title"
-                      content="About Sirage al dbiyat, a blogger and and open source developer"/>
-                <meta property="twitter:description"
-                      content="About Sirage Al dbiyat, a creator of several opensource projects and a blogger."/>
-
-                <meta property="twitter:card" content="summary"/>
-                <meta property="twitter:image" content="/semicolonsOG.png"/>
-                <meta name="twitter:site" content="@iLoveSemicolon"/>
-                <meta name="twitter:creator" content="@iLoveSemicolon"/>*/}
-                {/*=======================================================================*/}
             </Helmet>
 
 
