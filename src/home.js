@@ -10,7 +10,7 @@ import ShowAll from "./components/showAll/showAll";
 import {Helmet} from "react-helmet";
 import toBeUsedAddress from "./components/globalIP";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
-import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
+// import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
 
 export default class Home extends React.Component {
     constructor(props) {

@@ -5,23 +5,25 @@ import DemoButton from "../demoButton/DemoButton";
 import styled from "styled-components";
 
 
-export default function ProjectCell(props) {
-    const ProjectResume = styled.div`
+
+const ProjectResume = styled.div`
         color : ${({theme}) => theme.projectResumeColor};
     `;
 
-    const ProjectCell = styled.div`
+const ProjectCellStyled = styled.div`
        background-color : ${({theme}) => theme.projectBackgroundColor};
     `;
 
 
-    const ProjectCellTitle = styled.div`
+const ProjectCellTitle = styled.div`
         color : ${({theme}) => theme.projectCellTitleColor};
     `;
 
+export default function ProjectCell(props) {
+
     return (
         <div className="projectCellContainer">
-            <ProjectCell className="projectCell">
+            <ProjectCellStyled className="projectCell">
 
                 <ProjectCellTitle className="projectCellTitle">
                     {props.projectTitle}
@@ -48,7 +50,7 @@ export default function ProjectCell(props) {
                     }
 
                 </div>
-            </ProjectCell>
+            </ProjectCellStyled>
         </div>
     );
 }

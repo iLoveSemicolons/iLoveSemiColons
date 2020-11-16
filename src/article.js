@@ -7,7 +7,6 @@ import Error from "./Error";
 import styled from "styled-components";
 import {Helmet} from "react-helmet";
 import Likes from "./components/likes/likes";
-import toBeUsedIP from "./components/globalIP";
 import toBeUsedAddress from "./components/globalIP";
 
 //TODO copy to clipboard will make a notification window

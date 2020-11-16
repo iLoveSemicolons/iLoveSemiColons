@@ -13,10 +13,6 @@ color: ${({theme}) => theme.showAllButtonColor};
 `;
 
 
-
-
-
-
 export default function ShowAll(props) {
     return (
         <div className={Styles.showAllContainer}>

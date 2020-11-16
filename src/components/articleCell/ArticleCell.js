@@ -6,20 +6,19 @@ import Likes from "../likes/likes";
 import styled from "styled-components";
 
 
-
-export default function ArticleCell(props) {
-
-    const ArticleCellTitle = styled.div`
+const ArticleCellTitle = styled.div`
         color : ${({theme}) => theme.articleCellTitleTextColor};
     `;
 
-    const ArticleCell = styled.div`
+const ArticleCellStyled = styled.div`
         background-color : ${({theme}) => theme.articleCellBackgroundColor};
     `;
+export  default function  ArticleCell (props){
+
 
     return (
         <div className="articleCellContainer">
-            <ArticleCell className="articleCell">
+            <ArticleCellStyled className="articleCell">
                 <div className="articleCellTopSideContainer">
                     <ArticleCellTitle className="articleCellTitle">
                         <div>
@@ -44,7 +43,7 @@ export default function ArticleCell(props) {
                 <div className={"articleCellLikesContainer"}>
                     <Likes idPost={props.idPost} likes={props.likes}/>
                 </div>
-            </ArticleCell>
+            </ArticleCellStyled>
         </div>
     );
 }

@@ -25,7 +25,6 @@ export default class Likes extends React.Component {
         this.handleLikeCLick = this.handleLikeCLick.bind(this);
         this.plusOneLike = this.plusOneLike.bind(this);
         this.getLikesNumber = this.getLikesNumber.bind(this);
-        this.updateLikesNumber = this.updateLikesNumber.bind(this);
     }
 
 
@@ -88,9 +87,7 @@ export default class Likes extends React.Component {
     }
 
     //update the actual likes number in the component by fetching the api
-    updateLikesNumber() {
 
-    }
 
 
     render() {
