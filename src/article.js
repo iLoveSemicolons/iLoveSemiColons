@@ -137,8 +137,10 @@ export default class Article extends React.Component {
 
                         <Helmet>
                             <title>{article.title}</title>
+{/*
                             <meta name={"description"} content={article.metaDescription}/>
                             <meta name={"keywords"} content={article.metaKeywords}/>
+*/}
 
 
 

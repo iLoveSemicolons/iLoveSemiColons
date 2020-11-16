@@ -141,16 +141,16 @@ export default class Subscribe extends React.Component {
                 <Helmet>
                     {/*Search engines*/}
                     <title>Subscribe and get weekly updated about web development</title>
-                    <meta name={"description"}
+{/*                    <meta name={"description"}
                           content={"Get weekly updated and keep up-to-date on trending web development technologies."}/>
                     <meta name={"keywords"}
                           content={"Open Source newsletter, RSS feeds, email, newsletter, subscribe Open Source, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
-                    <meta name="robots" content="index,follow"/>
+                    <meta name="robots" content="index,follow"/>*/}
 
                     {/*=======================================================================*/}
 
                     {/*Social media cards*/}
-                    <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
+{/*                    <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
                     <meta property="og:description"
                           content="Get weekly updated and keep up-to-date on trending web development technologies."/>
 
@@ -158,12 +158,12 @@ export default class Subscribe extends React.Component {
                     <meta property="og:type" content="Website"/>
                     <meta property="og:locale" content="en_GB"/>
                     <meta name="author" content="Sirage Al dbiyat"/>
-                    <meta name="copyright" content="Sirage Al dbiyat"/>
+                    <meta name="copyright" content="Sirage Al dbiyat"/>*/}
                     {/*=======================================================================*/}
 
 
                     {/*TWITTER CARD*/}
-                    <meta property="twitter:url" content="https://ilovesemicolons.io/subscribe"/>
+{/*                    <meta property="twitter:url" content="https://ilovesemicolons.io/subscribe"/>
                     <meta property="twitter:title"
                           content="Subscribe and get weekly updated about web development"/>
                     <meta property="twitter:description"
@@ -172,7 +172,7 @@ export default class Subscribe extends React.Component {
                     <meta property="twitter:card" content="summary"/>
                     <meta property="twitter:image" content="/semicolonsOG.png"/>
                     <meta name="twitter:site" content="@iLoveSemicolon"/>
-                    <meta name="twitter:creator" content="@iLoveSemicolon"/>
+                    <meta name="twitter:creator" content="@iLoveSemicolon"/>*/}
                     {/*=======================================================================*/}
 
                 </Helmet>

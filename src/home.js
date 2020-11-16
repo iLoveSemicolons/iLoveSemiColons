@@ -61,15 +61,15 @@ export default class Home extends React.Component {
                 <Helmet>
                     {/*Search engines*/}
                     <title>Opensource projects and blog posts about web development</title>
-                    <meta name="description"
+{/*                    <meta name="description"
                           content="Opensource projects and weekly posts about programming and web development."/>
                     <meta name="keywords"
                           content="i love semicolons, ilovesemicolons, Lyon, France, homepage, home page, opensource, blog, Open Source, website, portfolio, Sirage AL DBIYAT, ALDBIYAT, it, freelance, freelancing, autoentrepreneur, web development, web programming, full stack web developer, full stack"/>
-                    <meta name="robots" content="index,follow"/>
+                    <meta name="robots" content="index,follow"/>*/}
                     {/*=======================================================================*/}
 
                     {/*Social media card eg. linkedin*/}
-                    <meta property="og:title" content="Opensource projects and blog posts about web development"/>
+{/*                    <meta property="og:title" content="Opensource projects and blog posts about web development"/>
                     <meta property="og:description"
                           content="Opensource projects and weekly articles about programming and web development."/>
 
@@ -77,12 +77,12 @@ export default class Home extends React.Component {
                     <meta property="og:type" content="Website"/>
                     <meta property="og:locale" content="en_GB"/>
                     <meta name="author" content="Sirage Al dbiyat"/>
-                    <meta name="copyright" content="Sirage Al dbiyat"/>
+                    <meta name="copyright" content="Sirage Al dbiyat"/>*/}
                     {/*=======================================================================*/}
 
 
                     {/*TWITTER CARD*/}
-                    <meta property="twitter:url" content="https://ilovesemicolons.io/"/>
+{/*                    <meta property="twitter:url" content="https://ilovesemicolons.io/"/>
                     <meta property="twitter:title"
                           content="Opensource projects and blog posts about web development"/>
                     <meta property="twitter:description"
@@ -91,7 +91,7 @@ export default class Home extends React.Component {
                     <meta property="twitter:card" content="summary"/>
                     <meta property="twitter:image" content="/semicolonsOG.png"/>
                     <meta name="twitter:site" content="@iLoveSemicolon"/>
-                    <meta name="twitter:creator" content="@iLoveSemicolon"/>
+                    <meta name="twitter:creator" content="@iLoveSemicolon"/>*/}
                     {/*=======================================================================*/}
                 </Helmet>
 
