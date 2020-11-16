@@ -8,7 +8,6 @@ import SocialNetworkingContainer from "./components/socialNetworkingContainer/so
 import toBeUsedAddress from "./components/globalIP";
 
 
-
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
         `
@@ -37,13 +36,6 @@ const ContactThanksBox = styled.div`
         background-color : ${({theme}) => theme.contactThanksBoxBackgroundColor};
         color : ${({theme}) => theme.contactThanksBoxTextColor};
         `
-
-
-
-
-
-
-
 
 
 export default class Contact extends React.Component {
@@ -85,7 +77,7 @@ export default class Contact extends React.Component {
             await this.checkInputRequired(this.state.lastNameField);
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address+":9000/contact", {
+                fetch(toBeUsedAddress.address + ":9000/contact", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -166,13 +158,33 @@ export default class Contact extends React.Component {
         const inputErrors = this.state.error;
 
 
-
         return (
             <div>
                 <Helmet>
-                    <title>Contact</title>
-                    <meta name={"keywords"} content={"contact, contact Sirage Al dbiyat, contact ilovesemicolons, ilovesemicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
-                    <meta name={"description"} content={"Get in touch with me via the contact form"}/>
+                    {/*Search engines*/}
+                    <title>Get in touch with me, always here to help in new projects</title>
+                    <meta name={"description"}
+                          content={"Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."}/>
+                    <meta name={"keywords"}
+                          content={"contact, contacter, contact Sirage Al dbiyat, contact ilovesemicolons, I love semicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
+                    <meta name="robots" content="index,follow"/>
+                    {/*=======================================================================*/}
+
+                    {/*Social media cards*/}
+                    <meta property="og:title" content="Get in touch with me, always here to help in new projects"/>
+                    <meta property="og:description"
+                          content="Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."/>
+                    {/*=======================================================================*/}
+
+
+                    {/*TWITTER CARD*/}
+                    <meta property="twitter:url" content="https://ilovesemicolons.io/contact"/>
+                    <meta property="twitter:title"
+                          content="Get in touch with me, always here to help in new projects"/>
+                    <meta property="twitter:description"
+                          content="Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."/>
+                    {/*=======================================================================*/}
+
                 </Helmet>
                 <PageTitle title="Contact"/>
                 {
@@ -197,26 +209,26 @@ export default class Contact extends React.Component {
                             </div>
                             }
 
-                                <TextInput className={style.textInput} type="text" value={this.state.lastNameField}
-                                           onChange={this.handleLastNameFieldChange}
-                                           placeholder="Last Name (Required)"/>
-                                <TextInput className={style.textInput} type="email" value={this.state.emailField}
-                                           onChange={this.handleEmailFieldChange}
-                                           placeholder="Email (Required)"/>
-                                <TextInput className={style.textInput} type="text" value={this.state.subjectField}
-                                           onChange={this.handleSubjectFieldChange}
-                                           placeholder="Subject (Required)"/>
-                                <TextArea className={style.textInput + " " + style.textarea}
-                                          value={this.state.messageField}
-                                          onChange={this.handleMessageFieldChange}
-                                          placeholder="Message (Required)"/>
-                                <div>
-                                    <input className={style.submitButton} type="submit" value="Send"/>
-                                </div>
+                            <TextInput className={style.textInput} type="text" value={this.state.lastNameField}
+                                       onChange={this.handleLastNameFieldChange}
+                                       placeholder="Last Name (Required)"/>
+                            <TextInput className={style.textInput} type="email" value={this.state.emailField}
+                                       onChange={this.handleEmailFieldChange}
+                                       placeholder="Email (Required)"/>
+                            <TextInput className={style.textInput} type="text" value={this.state.subjectField}
+                                       onChange={this.handleSubjectFieldChange}
+                                       placeholder="Subject (Required)"/>
+                            <TextArea className={style.textInput + " " + style.textarea}
+                                      value={this.state.messageField}
+                                      onChange={this.handleMessageFieldChange}
+                                      placeholder="Message (Required)"/>
+                            <div>
+                                <input className={style.submitButton} type="submit" value="Send"/>
+                            </div>
                         </Form>
                 }
 
-                <SocialNetworkingContainer />
+                <SocialNetworkingContainer/>
             </div>
 
         );

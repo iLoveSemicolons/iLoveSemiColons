@@ -162,7 +162,8 @@ export default class PrivateRepoRequest extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <meta name="robots" content="noindex"/>
+                    <meta name="robots" content="None"/>
+                    <title>{"Access Reqeust | " + this.state.projectTitle}</title>
                 </Helmet>
 
 

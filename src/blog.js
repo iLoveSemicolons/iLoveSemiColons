@@ -39,24 +39,46 @@ export default class Blog extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <title>Blog</title>
+
+                    {/*Search Engines*/}
+                    <title>Blog posts and tutorials about web development</title>
+                    <meta name={"description"}
+                          content={"Read and learn about new topics and trending technologies in web development to remain ahead of the wave."}/>
                     <meta name={"keywords"}
-                          content={"open source, blog open source, posts, articles, open source article, technology, open source creator, programmer, software developer, Lyon, France"}/>
-                    <meta name={"description"} content={"Read about Open Source projects and learn new topics"}/>
+                          content={"blog open source, trends, web, posts, articles, open source article, technology, open source creator, programmer, software developer, Lyon, France"}/>
+                    <meta name="robots" content="index,follow"/>
+                    {/*=======================================================================*/}
+
+
+                    {/*Social media cards*/}
+                    <meta property="og:title" content="Blog posts and tutorials about web development"/>
+                    <meta property="og:description"
+                          content="Read and learn about new topics and trending technologies in web development to remain ahead of the wave."/>
+                    {/*=======================================================================*/}
+
+
+                    {/*TWITTER CARD*/}
+                    <meta property="twitter:url" content="https://ilovesemicolons.io/blog"/>
+                    <meta property="twitter:title"
+                          content="Blog posts and tutorials about web development"/>
+                    <meta property="twitter:description"
+                          content="Read and learn about new topics and trending technologies in web development to remain ahead of the wave."/>
+                    {/*=======================================================================*/}
+
                 </Helmet>
                 <PageTitle title="Blog"/>
 
                 <NewIdeaBox ideaBoxTitle="You have an idea for an article or can't wait to learn about a topic ?"/>
 
                 {articles.map((article) =>
-                        <ArticleCell
-                            idPost={article.idPost}
-                            key={article.idPost}
-                            title={article.title}
-                            sourceLink={article.sourceLink}
-                            hashtags={article.hashtags}
-                            datePosted={article.datePosted}
-                        />
+                    <ArticleCell
+                        idPost={article.idPost}
+                        key={article.idPost}
+                        title={article.title}
+                        sourceLink={article.sourceLink}
+                        hashtags={article.hashtags}
+                        datePosted={article.datePosted}
+                    />
                 )}
             </div>
         );

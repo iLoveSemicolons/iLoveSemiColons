@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 import style from "./contact.module.scss";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import toBeUsedAddress from "./components/globalIP";
+import PageTitle from "./components/pageTitle/pageTitle";
 
 const SubscriberThankBox = styled.div`
 background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
@@ -138,13 +139,33 @@ export default class Subscribe extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <title>Subscribe</title>
+                    {/*Search engines*/}
+                    <title>Subscribe and get weekly updated about web development</title>
                     <meta name={"description"}
-                          content={"Subscribe to my newsletter and receive my weekly article and programming projects updates."}/>
+                          content={"Get weekly updated and keep up-to-date on trending web development technologies."}/>
                     <meta name={"keywords"}
-                          content={"Open Source newsletter, RSS feeds, email, Open Source, newsletter, subscribe Open Source, Subscribe, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
+                          content={"Open Source newsletter, RSS feeds, email, newsletter, subscribe Open Source, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
+                    <meta name="robots" content="index,follow"/>
+                    {/*=======================================================================*/}
+
+                    {/*Social media cards*/}
+                    <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
+                    <meta property="og:description"
+                          content="Get weekly updated and keep up-to-date on trending web development technologies."/>
+                    {/*=======================================================================*/}
+
+
+                    {/*TWITTER CARD*/}
+                    <meta property="twitter:url" content="https://ilovesemicolons.io/subscribe"/>
+                    <meta property="twitter:title"
+                          content="Subscribe and get weekly updated about web development"/>
+                    <meta property="twitter:description"
+                          content="Get weekly updated and keep up-to-date on trending web development technologies."/>
+                    {/*=======================================================================*/}
+
                 </Helmet>
 
+                <PageTitle title={"Subscribe"} />
 
                 {isSubscribed
                     ? <SubscriberThankBox className={styles.subscriberThanksBox}>

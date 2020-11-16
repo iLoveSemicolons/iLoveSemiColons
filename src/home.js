@@ -25,7 +25,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
-        fetch(toBeUsedAddress.address+":9000/homePageProjectTopic")
+        fetch(toBeUsedAddress.address + ":9000/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
@@ -35,7 +35,7 @@ export default class Home extends React.Component {
 
 
     callPostTopicAPI() {
-        fetch(toBeUsedAddress.address+":9000/homePagePostTopic")
+        fetch(toBeUsedAddress.address + ":9000/homePagePostTopic")
             .then(response => response.json())
             .then(response => this.setState({postTopicAPIResponse: response}))
             .catch(function () {
@@ -59,11 +59,29 @@ export default class Home extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <title>Home Page</title>
-                    <meta property="og:title" content="Home Page" />
-                    <meta property="og:description" content="My personal blog where I put my opensource projects and weekly articles about programming and web development." />
-                    <meta name="description" content="My personal blog where I put my opensource projects and weekly articles about programming and web development."/>
-                    <meta name="keywords" content="Lyon, France, homepage, home page, Open Source blog, Open Source, website, Lyon, portfolio, Sirage AL DBIYAT, it, freelance, web development, web programming, full stack web developer, full stack"/>
+                    {/*Search engines*/}
+                    <title>Opensource projects and blog posts about web development</title>
+                    <meta name="description"
+                          content="Opensource projects and weekly posts about programming and web development."/>
+                    <meta name="keywords"
+                          content="i love semicolons, ilovesemicolons, Lyon, France, homepage, home page, opensource, blog, Open Source, website, portfolio, Sirage AL DBIYAT, ALDBIYAT, it, freelance, freelancing, autoentrepreneur, web development, web programming, full stack web developer, full stack"/>
+                    <meta name="robots" content="index,follow"/>
+                    {/*=======================================================================*/}
+
+                     {/*Social media card eg. linkedin*/}
+                    <meta property="og:title" content="Opensource projects and blog posts about web development"/>
+                    <meta property="og:description"
+                          content="Opensource projects and weekly articles about programming and web development."/>
+                    {/*=======================================================================*/}
+
+
+                    {/*TWITTER CARD*/}
+                    <meta property="twitter:url" content="https://ilovesemicolons.io/"/>
+                    <meta property="twitter:title"
+                          content="Opensource projects and blog posts about web development"/>
+                    <meta property="twitter:description"
+                          content="Opensource projects and weekly articles about programming and web development."/>
+                    {/*=======================================================================*/}
                 </Helmet>
 
                 <div className="introContainer">
@@ -72,11 +90,12 @@ export default class Home extends React.Component {
                             Hey, I am Sirage
                         </div>
                         <div className="introText">
-                            A full stack web developer, passionate about <span className="blueSpan">open-source</span> projects and the contribution to web modernization
+                            A full stack web developer, passionate about <span
+                            className="blueSpan">open-source</span> projects and the contribution to web modernization
                         </div>
 
                         <div>
-{/*                            <div className="buttonContainer">
+                            {/*                            <div className="buttonContainer">
                                 <a className="gitHubButton" href="https://github.com/iLoveSemicolons"
                                    rel="noopener noreferrer" target="_blank">
                                     <div>
@@ -88,7 +107,7 @@ export default class Home extends React.Component {
 
                                 </a>
                             </div>*/}
-                            <SocialNetworkingContainer />
+                            <SocialNetworkingContainer/>
                         </div>
                     </div>
 
@@ -115,7 +134,7 @@ export default class Home extends React.Component {
                         {projects.map((project, index) =>
                             <ProjectCell key={project.idProject} projectTitle={project.title}
                                          projectResume={project.description}
-                                         linkToSource ={project.linkToSource}
+                                         linkToSource={project.linkToSource}
                                          demoLink={project.linkToDemo}/>
                         )}
                         <ShowAll goTo="/project" text="View all my projects"/>
@@ -127,7 +146,7 @@ export default class Home extends React.Component {
 
                         {articles.map((article) =>
                             <ArticleCell key={article.idPost}
-                                         idPost = {article.idPost}
+                                         idPost={article.idPost}
                                          title={article.title}
                                          sourceLink={article.sourceLink}
                                          hashtags={article.hashtags}

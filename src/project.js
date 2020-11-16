@@ -39,10 +39,29 @@ export default class Project extends React.Component {
         return (
             <div>
                 <Helmet>
-                    <title>Projects</title>
-                    <meta name={"description"} content={"Learn, discover, and contribute to my open source projects."}/>
+                    {/*Search engines*/}
+                    <title>Opensource projects following web development trends</title>
+                    <meta name={"description"} content={"Discover and contribute to development of trending opensource projects that support other programmers across the globe."}/>
                     <meta name={"keywords"}
-                          content={"Open Source Project, interesting open source, interesting, contribute, opensource, open source, GitHub, fork, it, Sirage Al dbiyat, web development"}/>
+                          content={"Open Source Project, interesting open source, interesting, contribute, opensource, open source, GitHub, clone, it, Sirage Al dbiyat, web development"}/>
+                    <meta name="robots" content="index,follow"/>
+                    {/*=======================================================================*/}
+
+
+                    {/*Social media cards*/}
+                    <meta property="og:title" content="Opensource projects following web development trends"/>
+                    <meta property="og:description"
+                          content="Discover and contribute to development of trending opensource projects that support other programmers across the globe."/>
+                    {/*=======================================================================*/}
+
+
+                    {/*TWITTER CARD*/}
+                    <meta property="twitter:url" content="https://ilovesemicolons.io/project"/>
+                    <meta property="twitter:title"
+                          content="Opensource projects following web development trends"/>
+                    <meta property="twitter:description"
+                          content="Discover and contribute to development of trending opensource projects that support other programmers across the globe."/>
+                    {/*=======================================================================*/}
                 </Helmet>
                 <PageTitle title="Projects"/>
 

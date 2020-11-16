@@ -7,8 +7,6 @@ import BlueText from "./components/blueText/blueText";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 
 
-//TODO change i to I;
-
 const NormalText = styled.div`
 color: ${({theme}) => theme.NormalTextTextColor};
 `
@@ -19,12 +17,34 @@ export default function About() {
     return (
         <div>
             <Helmet>
-                <title>About Me</title>
+
+                {/*Search engines*/}
+                <title>About Sirage al dbiyat, a blogger and and open source developer</title>
                 <meta name={"description"}
-                      content={"I am a Full Stack web developer and an Open Source Creator"}/>
+                      content={"About Sirage Al dbiyat, a creator of several opensource projects and a blogger."}/>
                 <meta name={"keywords"}
-                      content={"    About Sirage AL DBIYAT, Sirage AL DBIYAT, open source creator, programmer, software developer, Lyon, France, web developer, coder, blogger, GitHub"}/>
+                      content={"About Sirage AL DBIYAT, sirage aldbiyat, open source creator, programmer, software developer, Lyon, France, web developer, coder, blogger, GitHub, fullstack"}/>
+                <meta name="robots" content="index,follow"/>
+                {/*=======================================================================*/}
+
+
+                {/*Social media cards*/}
+                <meta property="og:title" content="About Sirage al dbiyat, a blogger and and open source developer"/>
+                <meta property="og:description"
+                      content="About Sirage Al dbiyat, a creator of several opensource projects and a blogger."/>
+                {/*=======================================================================*/}
+
+
+                {/*TWITTER CARD*/}
+                <meta property="twitter:url" content="https://ilovesemicolons.io/about"/>
+                <meta property="twitter:title"
+                      content="About Sirage al dbiyat, a blogger and and open source developer"/>
+                <meta property="twitter:description"
+                      content="About Sirage Al dbiyat, a creator of several opensource projects and a blogger."/>
+                {/*=======================================================================*/}
             </Helmet>
+
+
             <PageTitle title="I am : "/>
 
             <NormalText className={Styles.normalText}>
@@ -40,13 +60,15 @@ export default function About() {
             <NormalText className={Styles.normalText}>
                 <img src={"school-24px.svg"} alt={"education icon"} className={Styles.icon}/>
                 A <BlueText text={"self-taught"}/> programmer, I enrolled in many certified online courses where I
-                acquired knowledge in front-end, back-end, UI/UX. The most important thing is that what I did was not only
+                acquired knowledge in front-end, back-end, UI/UX. The most important thing is that what I did was not
+                only
                 to learn new technologies but
                 also to <BlueText text={"apply these technologies in real life"}/>
             </NormalText>
             <NormalText className={Styles.normalText}>
                 <img className={Styles.icon} src={"code-24px.svg"} alt={"code icon"}/>
-                Quite experienced in algorithms, data structure and design patterns. Since coding is not only about typing
+                Quite experienced in algorithms, data structure and design patterns. Since coding is not only about
+                typing
                 code, but also about the performance and the code architecture.
             </NormalText>
 

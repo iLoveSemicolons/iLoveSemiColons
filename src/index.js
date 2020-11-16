@@ -48,16 +48,8 @@ function App() {
                 <ThemeProvider theme={currentTheme}>
                     <AppContext.Provider value={{...themeState, dispatch}}>
                         <GlobalStyles />
-                        <Helmet>
-                            <meta name="copyright" content="Sirage AL DBIYAT"/>
-                            <meta name="robots" content="index,follow"/>
-                            <meta httpEquiv="expires" content="43200"/>
-
-
-                        </Helmet>
                             <PageLayout>
                                 <MainLayout>
-
                                     <style>
                                         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
                                         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');

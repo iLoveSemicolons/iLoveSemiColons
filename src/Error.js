@@ -8,7 +8,8 @@ export default function Error() {
     return (
         <div className={styles.errorContainer}>
             <Helmet>
-                <meta name="robots" content="noindex"/>
+                <title>Page not found -  404 </title>
+                <meta name="robots" content="None"/>
             </Helmet>
 
             <div className={styles.textCode}>
@@ -17,7 +18,7 @@ export default function Error() {
                 <span className={styles.textCodeRight} >4</span>
             </div>
             <div className={styles.text} >
-                Page unfound
+                Page not found
             </div>
             <div>
                 <Link to={"../../"}>

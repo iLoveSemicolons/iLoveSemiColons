@@ -15,7 +15,7 @@ export default function LegalNotice(props) {
         <div>
             <Helmet>
                 <title>Legal Notice</title>
-                <meta name="robots" content="noindex"/>
+                <meta name="robots" content="None"/>
             </Helmet>
             <LegalNoticeContainer className={styles.legalNoticeContainer}>
                 <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser
