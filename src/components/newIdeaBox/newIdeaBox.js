@@ -102,7 +102,7 @@ export default class NewIdeaBox extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address+":9000/newidea", {
+                fetch(toBeUsedAddress.address+":5000/newidea", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

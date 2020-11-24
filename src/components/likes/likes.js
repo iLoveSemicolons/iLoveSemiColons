@@ -56,7 +56,7 @@ export default class Likes extends React.Component {
     }
 
     plusOneLike() {
-        fetch(toBeUsedAddress.address+":9000/plusLike", {
+        fetch(toBeUsedAddress.address+":5000/plusLike", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -72,7 +72,7 @@ export default class Likes extends React.Component {
 
     //get the new likes number after updating to the database
     getLikesNumber() {
-        fetch(toBeUsedAddress.address+":9000/getLikesNumber/" + this.state.idPost)
+        fetch(toBeUsedAddress.address+":5000/getLikesNumber/" + this.state.idPost)
             .then(response => response.json())
             .then(response => this.setState({likesNumber: response}))
             .catch(function (error) {

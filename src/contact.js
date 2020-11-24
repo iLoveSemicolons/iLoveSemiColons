@@ -79,7 +79,7 @@ export default class Contact extends React.Component {
             await this.checkInputRequired(this.state.lastNameField);
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address + ":9000/contact", {
+                fetch(toBeUsedAddress.address + ":5000/contact", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

@@ -55,7 +55,7 @@ export default class Argo extends React.Component {
     // CRUD OPERATIONS #####################################################################################################################
 
     getCrewMember() {
-        fetch(toBeUsedAddress.address + ":9000/crewMember/getCrewMember")
+        fetch(toBeUsedAddress.address + ":5000/crewMember/getCrewMember")
             .then(response => response.json())
             .then((response) => {
                 ((response.length !== 0) ? this.setState({shipIsEmpty: false}) : this.setState({shipIsEmpty: true}));
@@ -69,7 +69,7 @@ export default class Argo extends React.Component {
 
     // ask the api to insert a new member
     insertCrewMember() {
-        fetch(toBeUsedAddress.address + ":9000/crewMember/insertCrewMember", {
+        fetch(toBeUsedAddress.address + ":5000/crewMember/insertCrewMember", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -84,7 +84,7 @@ export default class Argo extends React.Component {
 
     // ask the api to delete a member
     deleteCrewMember() {
-        fetch(toBeUsedAddress.address + ":9000/crewMember/deleteCrewMember", {
+        fetch(toBeUsedAddress.address + ":5000/crewMember/deleteCrewMember", {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

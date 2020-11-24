@@ -74,7 +74,7 @@ export default class PrivateRepoRequest extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address + ":9000/postPrivateRepoRequest", {
+                fetch(toBeUsedAddress.address + ":5000/postPrivateRepoRequest", {
 
                     method: 'POST',
                     headers: {
