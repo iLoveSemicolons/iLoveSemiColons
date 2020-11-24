@@ -4,6 +4,8 @@ import style from './privateRepoRequest.module.scss';
 import styled from "styled-components";
 import toBeUsedAddress from "./components/globalIP";
 import {Helmet} from "react-helmet";
+import PageLayout from "./components/pageLayout/pageLayout";
+import MainLayout from "./components/mainLayout/mainLayout";
 
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
@@ -72,7 +74,7 @@ export default class PrivateRepoRequest extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address+":9000/postPrivateRepoRequest", {
+                fetch(toBeUsedAddress.address + ":9000/postPrivateRepoRequest", {
 
                     method: 'POST',
                     headers: {
@@ -160,68 +162,71 @@ export default class PrivateRepoRequest extends React.Component {
         console.log(this.state.projectTitle);
 
         return (
-            <div>
-                <Helmet>
-                    <meta name="robots" content="None"/>
-                    <title>{"Access Reqeust | " + this.state.projectTitle}</title>
-                </Helmet>
+            <PageLayout>
+                <MainLayout>
+                    <Helmet>
+                        <meta name="robots" content="None"/>
+                        <title>{"Access Reqeust | " + this.state.projectTitle}</title>
+                    </Helmet>
 
 
-
-                <PageTitle title={"Access Reqeust | " + this.state.projectTitle}/>
-
-
-                {
-                    formIsSent
-                        ? <PrivateRequestThankBox className={style.PrivateRequestThankBox}>
-                            <div>
-                                Your request has been sent, i will reply to you as soon as possible :)
-                            </div>
-                            <div className={style.privateRequestThankBoxContainer}>
-                                <button onClick={this.goBack} className={style.PrivateRequestGoBackButton}>Return to Home
-                                    page
-                                </button>
-                            </div>
-                        </PrivateRequestThankBox>
+                    <PageTitle title={"Access Reqeust | " + this.state.projectTitle}/>
 
 
-                        : <Form className={style.form} onSubmit={this.handleSubmit}>
+                    {
+                        formIsSent
+                            ? <PrivateRequestThankBox className={style.PrivateRequestThankBox}>
+                                <div>
+                                    Your request has been sent, i will reply to you as soon as possible :)
+                                </div>
+                                <div className={style.privateRequestThankBoxContainer}>
+                                    <button onClick={this.goBack} className={style.PrivateRequestGoBackButton}>Return to
+                                        Home
+                                        page
+                                    </button>
+                                </div>
+                            </PrivateRequestThankBox>
 
-                            <div className={style.formTitleContainer}>
-                                <FormTitle className={style.formTitle}>
-                                    in order to have an access to my my private GitHub repository please fill this form and
-                                    i
-                                    will reply to you by email.
-                                </FormTitle>
-                            </div>
 
-                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
-                            <div className={style.errorNotification}>
-                                Please, verify your entries.
-                            </div>
-                            }
+                            : <Form className={style.form} onSubmit={this.handleSubmit}>
 
-                            <TextInput className={style.textInput} type="text" value={this.state.firstName}
-                                       onChange={this.handleFirstNameChange}
-                                       placeholder="First Name (Required)"/>
+                                <div className={style.formTitleContainer}>
+                                    <FormTitle className={style.formTitle}>
+                                        in order to have an access to my my private GitHub repository please fill this form
+                                        and
+                                        i
+                                        will reply to you by email.
+                                    </FormTitle>
+                                </div>
 
-                            <TextInput className={style.textInput} type="text" value={this.state.lastName}
-                                       onChange={this.handleLastNameChange}
-                                       placeholder="Last Name (Required)"/>
+                                {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                                <div className={style.errorNotification}>
+                                    Please, verify your entries.
+                                </div>
+                                }
 
-                            <TextInput className={style.textInput} type="text" value={this.state.githubUserName}
-                                       onChange={this.handleGithubUserNameChange}
-                                       placeholder="GitHub Username (Required)"/>
+                                <TextInput className={style.textInput} type="text" value={this.state.firstName}
+                                           onChange={this.handleFirstNameChange}
+                                           placeholder="First Name (Required)"/>
 
-                            <TextInput className={style.textInput} type="email" value={this.state.email}
-                                       onChange={this.handleEmailChange}
-                                       placeholder="Email (Required)"/>
-                            <div>
-                                <input className={style.submitButton} type="submit" value="Send Request"/>
-                            </div>
-                        </Form>
-                }
-            </div>
+                                <TextInput className={style.textInput} type="text" value={this.state.lastName}
+                                           onChange={this.handleLastNameChange}
+                                           placeholder="Last Name (Required)"/>
+
+                                <TextInput className={style.textInput} type="text" value={this.state.githubUserName}
+                                           onChange={this.handleGithubUserNameChange}
+                                           placeholder="GitHub Username (Required)"/>
+
+                                <TextInput className={style.textInput} type="email" value={this.state.email}
+                                           onChange={this.handleEmailChange}
+                                           placeholder="Email (Required)"/>
+                                <div>
+                                    <input className={style.submitButton} type="submit" value="Send Request"/>
+                                </div>
+                            </Form>
+                    }
+                </MainLayout>
+            </PageLayout>
         );
     }
 

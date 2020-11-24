@@ -9,13 +9,12 @@ import contact from "./contact";
 import blog from "./blog";
 import Home from "./home";
 import article from "./article";
+
 import PrivateRepoRequest from "./privateRepoRequest";
 import "./App.scss"
 import Subscribe from "./subscribe";
 import ArticleTesting from "./articleTesting"
 
-import PageLayout from "./components/pageLayout/pageLayout";
-import MainLayout from "./components/mainLayout/mainLayout";
 import LegalNotice from "./legalNotice";
 
 //===========================================================
@@ -25,13 +24,10 @@ import {GlobalStyles} from "./components/globalStyles";
 import {initialThemeState, themeReducer} from "./components/themeReducer";
 import {Helmet} from "react-helmet";
 import ScrollToTop from "./components/scrollToTop";
-
+import MyHomePage from "./myspace/myHomePage";
+import Argo from "./myspace/argo";
 
 //===========================================================
-
-
-
-
 
 
 export const AppContext = createContext();
@@ -41,43 +37,44 @@ function App() {
     const [themeState, dispatch] = useReducer(themeReducer, initialThemeState);
     const {currentTheme} = themeState;
 
+    return (
 
-        return (
-            <BrowserRouter>
-                <ScrollToTop />
-                <ThemeProvider theme={currentTheme}>
-                    <AppContext.Provider value={{...themeState, dispatch}}>
-                        <GlobalStyles />
-                        <Helmet>
-                            <meta name="robots" content="index,follow"/>
-                        </Helmet>
-                            <PageLayout>
-                                <MainLayout>
+        <BrowserRouter>
+            <ScrollToTop/>
+            <ThemeProvider theme={currentTheme}>
+                <AppContext.Provider value={{...themeState, dispatch}}>
+                    <GlobalStyles/>
+                    <Helmet>
+                        <meta name="robots" content="index,follow"/>
+                    </Helmet>
+                    <style>
+                        @import
+                        url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+                        @import
+                        url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
+                    </style>
+                    <Switch>
+                        <Route On path="/" component={Home} exact/>
+                        <Route exact path="/project" component={Project}/>
+                        {/*<Route path="/design" component={design}/>*/}
+                        <Route exact path="/blog" component={blog}/>
+                        <Route exact path="/about" component={about}/>
+                        <Route exact path="/contact" component={contact}/>
+                        <Route exact path="/legalNotice" component={LegalNotice}/>
+                        <Route exact path="/subscribe" component={Subscribe}/>
+                        <Route exact path="/myspace" component={MyHomePage}/>
+                        <Route exact path="/myspace/argo" component={Argo}/>
+                        <Route exact path="/privateRepoRequest" component={PrivateRepoRequest}/>
+                        <Route exact path="/articleTesting/:articleLocalFileName" component={ArticleTesting}/>
+                        <Route exact path="/article/:articleLocalFileName" component={article}/>
 
-                                    <style>
-                                        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-                                        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
-                                    </style>
-                                    <Switch >
-                                        <Route On path="/" component={Home} exact/>
-                                        <Route path="/project" component={Project}/>
-                                        {/*<Route path="/design" component={design}/>*/}
-                                        <Route path="/blog" component={blog}/>
-                                        <Route path="/about" component={about}/>
-                                        <Route path="/contact" component={contact}/>
-                                        <Route path="/legalNotice" component={LegalNotice}/>
-                                        <Route path="/subscribe" component={Subscribe}/>
-                                        <Route path="/privateRepoRequest" component={PrivateRepoRequest}/>
-                                        <Route path="/articleTesting/:articleLocalFileName" component={ArticleTesting} />
-                                        <Route path="/article/:articleLocalFileName" component={article}/>
-                                        <Route component={Error}/>
-                                    </Switch>
-                                </MainLayout>
-                            </PageLayout>
-                    </AppContext.Provider>
-                </ThemeProvider>
-            </BrowserRouter>
-        );
+                        <Route component={Error}/>
+                    </Switch>
+
+                </AppContext.Provider>
+            </ThemeProvider>
+        </BrowserRouter>
+    );
 }
 
 

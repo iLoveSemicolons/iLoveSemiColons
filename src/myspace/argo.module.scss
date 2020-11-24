@@ -1,0 +1,254 @@
+@import "src/components/globalFontStyling";
+
+
+.sailingShipContainer{
+text-align: center;
+  margin-top: 40px;
+}
+
+.sailingShipText{
+  color: $colorBlueGrey;
+  font-size: $fontsizeBig;
+  font-weight: bold;
+}
+
+.sailingShipIcon {
+  max-width : 200px;
+  margin-top: 40px;
+}
+
+
+.notification{
+  position: absolute;
+  top:-40px;
+  left: 0;
+  background-color: #1B7CD1;
+  width: 100%;
+}
+
+
+.schoolLogo{
+  width: 100px;
+  margin-left: 20px;
+}
+
+.headerContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+//===CREW MEMBER ======================================================
+.crewMemberWrapper{
+  display: inline-block;
+}
+
+.crewMemberContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.crewMemberContainer input {
+  display: none;
+}
+
+.checkMark {
+  position: absolute;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border-radius: 7px;
+  background-color: $colorBlack;
+  transition: background-color 0.15s;
+  border : 2px solid $colorDarkWhite;
+}
+
+.memberName {
+  margin-left: 30px;
+}
+
+.crewMemberContainer:hover .checkMark {
+  background-color: $colorGrey;
+}
+
+.crewMemberContainer input:checked ~ .checkMark {
+  background-color: $colorBlue;
+}
+
+.checkMark ::after {
+  position: absolute;
+  display: none;
+}
+
+.crewMemberContainer input:checked ~ .checkMark :after {
+  display: block;
+}
+
+//================================================================================
+.crudButtonContainer{
+  margin-top: 40px;
+  border-bottom: 2px solid $colorGrayer;
+}
+
+.crudButtonWrapper {
+  display: inline-block;
+}
+
+.crudButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 4px 8px 4px 4px;
+  background-color: $colorGrayer;
+  margin-bottom: 20px;
+}
+
+
+.addMemberForm {
+  display: flex;
+  align-items: center;
+}
+
+
+.addButton {
+  &:not(.addButtonClicked) {
+    padding-right: 8px;
+  }
+
+  &.addButtonClicked {
+    padding-right: 4px;
+  }
+}
+
+
+.addMemberInput {
+  &:not(.addButtonClicked) {
+    opacity: 0;
+    max-width: 0;
+
+    background-color: $colorWhite;
+    border: none;
+    font-size: $fontsizeSmallMedium;
+    color: $colorGrayer;
+    border-radius: 15px;
+    padding: 2px 0 2px 0;
+    margin-right: 0;
+    transition: max-width 200ms;
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &.addButtonClicked {
+    opacity: 1;
+    max-width: 200px;
+
+    background-color: $colorWhite;
+    border: none;
+    font-size: $fontsizeSmallMedium;
+    color: $colorGrayer;
+    border-radius: 15px;
+    padding: 2px 10px 2px 10px;
+    margin-right: 10px;
+    transition: max-width 200ms;
+
+  }
+
+
+}
+
+.submitIcon {
+  &:not(.addButtonClicked) {
+    visibility: hidden;
+    width: 0;
+    margin-right: 0;
+    transition: transform 0.2s;
+  }
+
+  &.addButtonClicked {
+    visibility: visible;
+    width: 23px;
+    margin-right: 0;
+    transition: transform 0.2s;
+  }
+}
+
+
+.addIcon {
+  &:not(.addButtonClicked) {
+    visibility: visible;
+    width: 23px;
+    margin-right: 8px;
+    transition: transform 0.2s;
+  }
+
+  &.addButtonClicked {
+    visibility: hidden;
+    width: 0;
+    margin-right: 0;
+    transition: transform 0.2s;
+  }
+}
+
+
+.addButtonText {
+  &:not(.addButtonClicked) {
+    visibility: visible;
+  }
+
+  &.addButtonClicked {
+    visibility: hidden;
+    width: 0;
+
+  }
+}
+
+
+.crudIcon {
+  width: 23px;
+  margin-right: 8px;
+  transition: 0.2s;
+}
+
+.crudButton:hover .crudIcon {
+  transform: rotate(0deg);
+}
+
+.crudButton:hover .crudIcon {
+  transform: rotate(-90deg);
+}
+
+.crudButton:hover .submitIcon {
+  transform: rotate(0deg);
+}
+
+.crudButton:hover .submitIcon {
+  transform: rotate(-90deg);
+}
+
+//================================================================================
+
+
+.crewMembersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tableRow{
+  width: 100%;
+  display: flex;
+}
+
+.tableCell {
+  padding-bottom: 20px;
+  flex: 1 0;
+  max-width: 33%;
+}
+
+
+

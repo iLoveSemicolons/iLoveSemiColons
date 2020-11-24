@@ -44,7 +44,6 @@ export default class Likes extends React.Component {
                 that.getLikesNumber();
 
             }, (100));
-
         }
 
         liking()

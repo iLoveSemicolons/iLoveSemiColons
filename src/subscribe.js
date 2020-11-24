@@ -7,6 +7,8 @@ import style from "./contact.module.scss";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import toBeUsedAddress from "./components/globalIP";
 import PageTitle from "./components/pageTitle/pageTitle";
+import PageLayout from "./components/pageLayout/pageLayout";
+import MainLayout from "./components/mainLayout/mainLayout";
 
 const SubscriberThankBox = styled.div`
 background-color : ${({theme}) => theme.subscriberThankBoxBackgroundColor};
@@ -137,20 +139,23 @@ export default class Subscribe extends React.Component {
         const inputErrors = this.state.error;
 
         return (
-            <div>
-                <Helmet>
-                    {/*Search engines*/}
-                    <title>Subscribe and get weekly updated about web development</title>
-{/*                    <meta name={"description"}
+            <PageLayout>
+                <MainLayout>
+
+
+                    <Helmet>
+                        {/*Search engines*/}
+                        <title>Subscribe and get weekly updated about web development</title>
+                        {/*                    <meta name={"description"}
                           content={"Get weekly updated and keep up-to-date on trending web development technologies."}/>
                     <meta name={"keywords"}
                           content={"Open Source newsletter, RSS feeds, email, newsletter, subscribe Open Source, ilovesemicolons, I love semicolons, open source articles, articles, week, technology, posts, interesting articles"}/>
                     <meta name="robots" content="index,follow"/>*/}
 
-                    {/*=======================================================================*/}
+                        {/*=======================================================================*/}
 
-                    {/*Social media cards*/}
-{/*                    <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
+                        {/*Social media cards*/}
+                        {/*                    <meta property="og:title" content="Subscribe and get weekly updated about web development"/>
                     <meta property="og:description"
                           content="Get weekly updated and keep up-to-date on trending web development technologies."/>
 
@@ -159,11 +164,11 @@ export default class Subscribe extends React.Component {
                     <meta property="og:locale" content="en_GB"/>
                     <meta name="author" content="Sirage Al dbiyat"/>
                     <meta name="copyright" content="Sirage Al dbiyat"/>*/}
-                    {/*=======================================================================*/}
+                        {/*=======================================================================*/}
 
 
-                    {/*TWITTER CARD*/}
-{/*                    <meta property="twitter:url" content="https://ilovesemicolons.io/subscribe"/>
+                        {/*TWITTER CARD*/}
+                        {/*                    <meta property="twitter:url" content="https://ilovesemicolons.io/subscribe"/>
                     <meta property="twitter:title"
                           content="Subscribe and get weekly updated about web development"/>
                     <meta property="twitter:description"
@@ -173,52 +178,52 @@ export default class Subscribe extends React.Component {
                     <meta property="twitter:image" content="/semicolonsOG.png"/>
                     <meta name="twitter:site" content="@iLoveSemicolon"/>
                     <meta name="twitter:creator" content="@iLoveSemicolon"/>*/}
-                    {/*=======================================================================*/}
+                        {/*=======================================================================*/}
 
-                </Helmet>
+                    </Helmet>
 
-                <PageTitle title={"Subscribe"}/>
+                    <PageTitle title={"Subscribe"}/>
 
-                {isSubscribed
-                    ? <SubscriberThankBox className={styles.subscriberThanksBox}>
-                        <div>
-                            Thank you for subscribing to my newsletter. this means a lot to me :)
-                        </div>
-                        <div className={styles.subscriberThankButtonContainer}>
-                            <Link to={"./../../../"}>
-                                <button className={styles.subscriberThankButton}>
-                                    Return to Home page
-                                </button>
-                            </Link>
-                        </div>
+                    {isSubscribed
+                        ? <SubscriberThankBox className={styles.subscriberThanksBox}>
+                            <div>
+                                Thank you for subscribing to my newsletter. this means a lot to me :)
+                            </div>
+                            <div className={styles.subscriberThankButtonContainer}>
+                                <Link to={"./../../../"}>
+                                    <button className={styles.subscriberThankButton}>
+                                        Return to Home page
+                                    </button>
+                                </Link>
+                            </div>
 
-                    </SubscriberThankBox>
-
-
-                    : <SubscribeBox className={styles.subscribeBox} onSubmit={this.handleSubmit}>
-
-                        {(submitButtonIsClicked && !(inputErrors === 0)) &&
-                        <div className={style.errorNotification}>
-                            Please, verify your entries.
-                        </div>
-                        }
-
-                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text"
-                                               placeholder="First Name"
-                                               value={this.state.firstNameValue} onChange={this.handleFirstNameChange}/>
-                        <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="email"
-                                               placeholder="Email"
-                                               value={this.state.emailValue} onChange={this.handleEmailChange}/>
-                        <div className={styles.subscribeButtonContainer}>
-                            <input className={styles.subscribeButton} type="submit" value="Subscribe"/>
-                        </div>
-
-                    </SubscribeBox>
-                }
-                <SocialNetworkingContainer/>
+                        </SubscriberThankBox>
 
 
-            </div>
+                        : <SubscribeBox className={styles.subscribeBox} onSubmit={this.handleSubmit}>
+
+                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                            <div className={style.errorNotification}>
+                                Please, verify your entries.
+                            </div>
+                            }
+
+                            <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="text"
+                                                   placeholder="First Name"
+                                                   value={this.state.firstNameValue}
+                                                   onChange={this.handleFirstNameChange}/>
+                            <SubscribeBoxTextInput className={styles.subscribeBoxTextInput} type="email"
+                                                   placeholder="Email"
+                                                   value={this.state.emailValue} onChange={this.handleEmailChange}/>
+                            <div className={styles.subscribeButtonContainer}>
+                                <input className={styles.subscribeButton} type="submit" value="Subscribe"/>
+                            </div>
+
+                        </SubscribeBox>
+                    }
+                    <SocialNetworkingContainer/>
+                </MainLayout>
+            </PageLayout>
         );
     }
 

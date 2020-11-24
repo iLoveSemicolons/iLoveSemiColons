@@ -8,6 +8,8 @@ import styled from "styled-components";
 import {Helmet} from "react-helmet";
 import Likes from "./components/likes/likes";
 import toBeUsedAddress from "./components/globalIP";
+import PageLayout from "./components/pageLayout/pageLayout";
+import MainLayout from "./components/mainLayout/mainLayout";
 
 //TODO copy to clipboard will make a notification window
 //TODO add lazy loading for articles, article content should be gray lines
@@ -130,89 +132,87 @@ export default class Article extends React.Component {
         const articleContent = {__html: this.state.articleContent};
         const linkCopied = this.state.linkCopied;
         return (
-            <div className={"articleSupContainer"}>
-                {articleObject.map((article, id) =>
-                    <div key={article.idPost}>
+            <PageLayout>
+                <MainLayout>
+                    <div className={"articleSupContainer"}>
+                        {articleObject.map((article, id) =>
+                            <div key={article.idPost}>
 
-                        <Helmet>
-                            <title>{article.title}</title>
-{/*
+                                <Helmet>
+                                    <title>{article.title}</title>
+                                    {/*
                             <meta name={"description"} content={article.metaDescription}/>
                             <meta name={"keywords"} content={article.metaKeywords}/>
 */}
+                                </Helmet>
 
 
+                                <div className={"articleTopContainer"}>
+                                    <ArticleTitle className="articleTitle">
+                                        {article.title}
+                                    </ArticleTitle>
+
+                                    <div className={"articleLikesContainer"}>
+                                        <Likes idPost={article.idPost}/>
+                                    </div>
+
+                                    <ArticleEstimatedReadingTime className="estimatedReadingTime">
+                                        Reading Time : {article.estimatedReadingTime} min
+                                    </ArticleEstimatedReadingTime>
+
+                                    <DatePosted className="datePosted">
+                                        {/*{article.datePosted.slice(0,10).replace("-","/")}*/}
+                                        {this.articlePostDateReformatting(article.datePosted)}
+                                    </DatePosted>
 
 
+                                </div>
+
+                                <div className="articleHashtagContainer">
+                                    <Hashtag hashtags={article.hashtags}/>
+                                </div>
+
+                                <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent}/>
 
 
+                                <div className="articleSubTitleContainer">
+
+                                    {/*<Likes idPost={article.idPost}/>*/}
+
+                                    <div className="copyAndShareButtonContainer">
+                                        {linkCopied
+                                            ? <button className="copyAndShareButton">
+                                                Copied
+                                            </button>
+
+                                            : <button onClick={this.copyToClipboard} className="copyAndShareButton">
+                                                Copy link
+                                            </button>
+                                        }
+                                    </div>
+
+                                    <div className="goToBlogPageButtonContainer">
+                                        <NavLink to={"../../../blog"}>
+                                            <button className="goToBlogPageButton">View all my posts</button>
+                                        </NavLink>
+                                    </div>
+                                </div>
 
 
+                                <div>
+                                    <SubscribeBox/>
+                                </div>
 
-                        </Helmet>
-                        <div className={"articleTopContainer"}>
-                            <ArticleTitle className="articleTitle">
-                                {article.title}
-                            </ArticleTitle>
-
-                            <div className={"articleLikesContainer"}>
-                                <Likes idPost={article.idPost}/>
                             </div>
+                        )}
 
-                            <ArticleEstimatedReadingTime className="estimatedReadingTime">
-                                Reading Time : {article.estimatedReadingTime} min
-                            </ArticleEstimatedReadingTime>
+                        {this.state.errorOccurred === true &&
+                        <Error/>
+                        }
 
-                            <DatePosted className="datePosted">
-                                {/*{article.datePosted.slice(0,10).replace("-","/")}*/}
-                                {this.articlePostDateReformatting(article.datePosted)}
-                            </DatePosted>
-
-
-                        </div>
-
-                        <div className="articleHashtagContainer">
-                            <Hashtag hashtags={article.hashtags}/>
-                        </div>
-
-                        <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent}/>
-
-
-                        <div className="articleSubTitleContainer">
-
-                            {/*<Likes idPost={article.idPost}/>*/}
-
-                            <div className="copyAndShareButtonContainer">
-                                {linkCopied
-                                    ? <button className="copyAndShareButton">
-                                        Copied
-                                    </button>
-
-                                    : <button onClick={this.copyToClipboard} className="copyAndShareButton">
-                                        Copy link
-                                    </button>
-                                }
-                            </div>
-
-                            <div className="goToBlogPageButtonContainer">
-                                <NavLink to={"../../../blog"}>
-                                    <button className="goToBlogPageButton">View all my posts</button>
-                                </NavLink>
-                            </div>
-                        </div>
-
-
-                        <div>
-                            <SubscribeBox/>
-                        </div>
                     </div>
-                )}
-
-                {this.state.errorOccurred === true &&
-                <Error/>
-                }
-
-            </div>
+                </MainLayout>
+            </PageLayout>
         );
     }
 }

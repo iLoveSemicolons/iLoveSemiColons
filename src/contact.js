@@ -6,6 +6,8 @@ import styled from "styled-components";
 import {Helmet} from "react-helmet";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import toBeUsedAddress from "./components/globalIP";
+import PageLayout from "./components/pageLayout/pageLayout";
+import MainLayout from "./components/mainLayout/mainLayout";
 
 
 const Form = styled.form`
@@ -159,61 +161,62 @@ export default class Contact extends React.Component {
 
 
         return (
-            <div>
-                <Helmet>
-                    {/*Search engines*/}
-                    <title>Get in touch with me, always here to help in new projects</title>
-                    <meta name={"description"}
-                          content={"Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."}/>
-                    <meta name={"keywords"}
-                          content={"contact, contacter, contact Sirage Al dbiyat, contact ilovesemicolons, I love semicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
-                    <meta name="robots" content="index,follow"/>
-                </Helmet>
-                <PageTitle title="Contact"/>
-                {
-                    formIsSent
-                        ? <ContactThanksBox className={style.contactThanksBox}>
-                            <div>
-                                Thank you for contacting me, i will recontact you as soon as possible :-)
-                            </div>
-                            <div className={style.contactThankButtonContainer}>
-                                <Link to={"./../../../"}>
-                                    <button className={style.contactThankButton}>Return to Home page</button>
-                                </Link>
-                            </div>
-                        </ContactThanksBox>
+            <PageLayout>
+                <MainLayout>
+                    <Helmet>
+                        {/*Search engines*/}
+                        <title>Get in touch with me, always here to help in new projects</title>
+                        <meta name={"description"}
+                              content={"Get in touch with Sirage Al dbiyat the creator of iLoveSemicolons website."}/>
+                        <meta name={"keywords"}
+                              content={"contact, contacter, contact Sirage Al dbiyat, contact ilovesemicolons, I love semicolons, Sirage AL DBIYAT, email, phone number, Lyon tech, French tech, freelancing, freelance, programmer, web developer, full stack, developer, collaboration, get in touch"}/>
+                        <meta name="robots" content="index,follow"/>
+                    </Helmet>
+                    <PageTitle title="Contact"/>
+                    {
+                        formIsSent
+                            ? <ContactThanksBox className={style.contactThanksBox}>
+                                <div>
+                                    Thank you for contacting me, i will recontact you as soon as possible :-)
+                                </div>
+                                <div className={style.contactThankButtonContainer}>
+                                    <Link to={"./../../../"}>
+                                        <button className={style.contactThankButton}>Return to Home page</button>
+                                    </Link>
+                                </div>
+                            </ContactThanksBox>
 
 
-                        :
-                        <Form className={style.form} onSubmit={this.handleSubmit}>
-                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
-                            <div className={style.errorNotification}>
-                                Please, verify your entries.
-                            </div>
-                            }
+                            :
+                            <Form className={style.form} onSubmit={this.handleSubmit}>
+                                {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                                <div className={style.errorNotification}>
+                                    Please, verify your entries.
+                                </div>
+                                }
 
-                            <TextInput className={style.textInput} type="text" value={this.state.lastNameField}
-                                       onChange={this.handleLastNameFieldChange}
-                                       placeholder="Last Name (Required)"/>
-                            <TextInput className={style.textInput} type="email" value={this.state.emailField}
-                                       onChange={this.handleEmailFieldChange}
-                                       placeholder="Email (Required)"/>
-                            <TextInput className={style.textInput} type="text" value={this.state.subjectField}
-                                       onChange={this.handleSubjectFieldChange}
-                                       placeholder="Subject (Required)"/>
-                            <TextArea className={style.textInput + " " + style.textarea}
-                                      value={this.state.messageField}
-                                      onChange={this.handleMessageFieldChange}
-                                      placeholder="Message (Required)"/>
-                            <div>
-                                <input className={style.submitButton} type="submit" value="Send"/>
-                            </div>
-                        </Form>
-                }
+                                <TextInput className={style.textInput} type="text" value={this.state.lastNameField}
+                                           onChange={this.handleLastNameFieldChange}
+                                           placeholder="Last Name (Required)"/>
+                                <TextInput className={style.textInput} type="email" value={this.state.emailField}
+                                           onChange={this.handleEmailFieldChange}
+                                           placeholder="Email (Required)"/>
+                                <TextInput className={style.textInput} type="text" value={this.state.subjectField}
+                                           onChange={this.handleSubjectFieldChange}
+                                           placeholder="Subject (Required)"/>
+                                <TextArea className={style.textInput + " " + style.textarea}
+                                          value={this.state.messageField}
+                                          onChange={this.handleMessageFieldChange}
+                                          placeholder="Message (Required)"/>
+                                <div>
+                                    <input className={style.submitButton} type="submit" value="Send"/>
+                                </div>
+                            </Form>
+                    }
 
-                <SocialNetworkingContainer/>
-            </div>
-
+                    <SocialNetworkingContainer/>
+                </MainLayout>
+            </PageLayout>
         );
     }
 }

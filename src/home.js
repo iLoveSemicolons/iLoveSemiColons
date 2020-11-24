@@ -10,6 +10,8 @@ import ShowAll from "./components/showAll/showAll";
 import {Helmet} from "react-helmet";
 import toBeUsedAddress from "./components/globalIP";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
+import PageLayout from "./components/pageLayout/pageLayout";
+import MainLayout from "./components/mainLayout/mainLayout";
 // import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
 
 export default class Home extends React.Component {
@@ -61,89 +63,82 @@ export default class Home extends React.Component {
                 <Helmet>
                     {/*Search engines*/}
                     <title>Opensource projects and blog posts about web development</title>
-                   <meta name="description"
+                    <meta name="description"
                           content="Opensource projects and weekly posts about programming and web development."/>
                     <meta name="keywords"
                           content="i love semicolons, ilovesemicolons, Lyon, France, homepage, home page, opensource, blog, Open Source, website, portfolio, Sirage AL DBIYAT, ALDBIYAT, it, freelance, freelancing, autoentrepreneur, web development, web programming, full stack web developer, full stack"/>
                     <meta name="robots" content="index,follow"/>
 
                 </Helmet>
+                <PageLayout>
+                    <MainLayout>
+                        <div className="introContainer">
+                            <div className="homePageIntroLeftContainer">
+                                <div className="introTitle">
+                                    Hey, I am Sirage
+                                </div>
+                                <div className="introText">
+                                    A full stack web developer, passionate about <span
+                                    className="blueSpan">open-source</span> projects and the contribution to web
+                                    modernization
+                                </div>
 
-                <div className="introContainer">
-                    <div className="homePageIntroLeftContainer">
-                        <div className="introTitle">
-                            Hey, I am Sirage
-                        </div>
-                        <div className="introText">
-                            A full stack web developer, passionate about <span
-                            className="blueSpan">open-source</span> projects and the contribution to web modernization
-                        </div>
-
-                        <div>
-                            {/*                            <div className="buttonContainer">
-                                <a className="gitHubButton" href="https://github.com/iLoveSemicolons"
-                                   rel="noopener noreferrer" target="_blank">
-                                    <div>
-                                        <img src="/githubLogo.svg" alt="github logo" className="gitHubIcon"/>
-                                    </div>
-                                    <div>
-                                        iLoveSemicolons
-                                    </div>
-
-                                </a>
-                            </div>*/}
-                            <SocialNetworkingContainer/>
-                        </div>
-                    </div>
+                                <div>
+                                    <SocialNetworkingContainer/>
+                                </div>
+                            </div>
 
 
-                    <div className="homePageIntroRightContainer">
-                        <div>
-                            <img src="/me.svg" className="myImageHomePage" alt="Sirage AL DBIYAT"/>
-                        </div>
-                        <div className="rightContainerText">
-                            Be informed when there is
-                            a new project or an article
-                            on my page !
+                            <div className="homePageIntroRightContainer">
+                                <div>
+                                    <img src="/me.svg" className="myImageHomePage" alt="Sirage AL DBIYAT"/>
+                                </div>
+                                <div className="rightContainerText">
+                                    Be informed when there is
+                                    a new project or an article
+                                    on my page !
+                                </div>
+
+                                <div>
+                                    <SubscribeButton/>
+                                </div>
+                            </div>
                         </div>
 
-                        <div>
-                            <SubscribeButton/>
+                        <div className="topicsContainer">
+                            <TopicTitle title="Projects"/>
+                            <div>
+                                {projects.map((project, index) =>
+                                    <ProjectCell key={project.idProject} projectTitle={project.title}
+                                                 projectResume={project.description}
+                                                 linkToSource={project.linkToSource}
+                                                 demoLink={project.linkToDemo}/>
+                                )}
+                                <ShowAll goTo="/project" text="View all my projects"/>
+                            </div>
+
+
+                            <TopicTitle title="Latest Posts"/>
+                            <div>
+
+                                {articles.map((article) =>
+                                    <ArticleCell key={article.idPost}
+                                                 idPost={article.idPost}
+                                                 title={article.title}
+                                                 sourceLink={article.sourceLink}
+                                                 hashtags={article.hashtags}
+                                                 datePosted={article.datePosted}
+                                                 likes={article.likes}
+                                    />
+                                )}
+                                <ShowAll goTo="/blog" text="View all my posts"/>
+
+                            </div>
+
                         </div>
-                    </div>
-                </div>
+                    </MainLayout>
 
-                <div className="topicsContainer">
-                    <TopicTitle title="Projects"/>
-                    <div>
-                        {projects.map((project, index) =>
-                            <ProjectCell key={project.idProject} projectTitle={project.title}
-                                         projectResume={project.description}
-                                         linkToSource={project.linkToSource}
-                                         demoLink={project.linkToDemo}/>
-                        )}
-                        <ShowAll goTo="/project" text="View all my projects"/>
-                    </div>
-
-
-                    <TopicTitle title="Latest Posts"/>
-                    <div>
-
-                        {articles.map((article) =>
-                            <ArticleCell key={article.idPost}
-                                         idPost={article.idPost}
-                                         title={article.title}
-                                         sourceLink={article.sourceLink}
-                                         hashtags={article.hashtags}
-                                         datePosted={article.datePosted}
-                                         likes={article.likes}
-                            />
-                        )}
-                        <ShowAll goTo="/blog" text="View all my posts"/>
-
-                    </div>
-
-                </div>
+                </PageLayout>
             </div>
 
         );
