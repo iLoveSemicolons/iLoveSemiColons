@@ -27,7 +27,7 @@ export default class Home extends React.Component {
 
 
     callProjectTopicAPI() {
-        fetch(toBeUsedAddress.address + ":9000/homePageProjectTopic")
+        fetch(toBeUsedAddress.address + "/homePageProjectTopic")
             .then(response => response.json())
             .then(response => this.setState({projectTopicAPIResponse: response}))
             .catch(function () {
@@ -37,7 +37,7 @@ export default class Home extends React.Component {
 
 
     callPostTopicAPI() {
-        fetch(toBeUsedAddress.address + ":5000/homePagePostTopic")
+        fetch(toBeUsedAddress.address + "/homePagePostTopic")
             .then(response => response.json())
             .then(response => this.setState({postTopicAPIResponse: response}))
             .catch(function () {

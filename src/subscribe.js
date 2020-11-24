@@ -67,7 +67,7 @@ export default class Subscribe extends React.Component {
             await this.checkInputRequired(this.state.firstNameValue);
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address + ":5000/subscribe", {
+                fetch(toBeUsedAddress.address + "/subscribe", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',

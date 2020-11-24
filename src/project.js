@@ -21,7 +21,7 @@ export default class Project extends React.Component {
     }
 
     callAPI() {
-        fetch(toBeUsedAddress.address + ":5000/project")
+        fetch(toBeUsedAddress.address + "/project")
             .then(response => response.json())
             .then(response => this.setState({apiResponse: response}))
             .catch(function () {

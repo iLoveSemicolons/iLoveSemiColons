@@ -58,7 +58,7 @@ export default class Article extends React.Component {
 
         const articleLocalFileName = this.articleLocalFileName;
 
-        fetch(toBeUsedAddress.address + ":5000/article", {
+        fetch(toBeUsedAddress.address + "/article", {
             method: "POST",
             headers: {
                 'Accept': 'application/json',

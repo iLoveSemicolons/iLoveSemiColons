@@ -20,7 +20,7 @@ export default class Blog extends React.Component {
 
 
     callBlogAPI() {
-        fetch(toBeUsedAddress.address + ":5000/blog")
+        fetch(toBeUsedAddress.address + "/blog")
             .then(response => response.json())
             .then(response => this.setState({blogAPIResponse: response}))
             .catch(function () {
