@@ -51,7 +51,6 @@
 
 
 .languageContainer{
-
   display: flex;
 }
 
@@ -62,10 +61,10 @@
   align-items: center;
   margin-right: 25px;
   font-size: $fontsizeSmall;
+
 }
 
 .languageCircle{
-  display:inline-block;
   border-radius: 50%;
   background-color: $colorYellower;
   width: 13px;
@@ -86,11 +85,21 @@
   .projectCellButtons{
     flex: auto;
     justify-content: normal;
-    padding-left: 15px;
     margin-top: 15px;
+    margin-bottom: 15px;
+
   }
 
   .projectResume{
     margin-top: 15px;
+    padding-left: 0;
+  }
+
+
+  .languageContainer{
+    flex-direction: column;
+  }
+  .singleLanguageContainer{
+    margin-top: 5px;
   }
 }
