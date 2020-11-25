@@ -109,10 +109,13 @@ export default class Home extends React.Component {
                             <TopicTitle title="Projects"/>
                             <div>
                                 {projects.map((project, index) =>
-                                    <ProjectCell key={project.idProject} projectTitle={project.title}
+                                    <ProjectCell key={project.idProject}
+                                                 projectTitle={project.title}
                                                  projectResume={project.description}
                                                  linkToSource={project.linkToSource}
-                                                 demoLink={project.linkToDemo}/>
+                                                 demoLink={project.linkToDemo}
+                                                 language={project.language}
+                                    />
                                 )}
                                 <ShowAll goTo="/project" text="View all my projects"/>
                             </div>

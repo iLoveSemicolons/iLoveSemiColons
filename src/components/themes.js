@@ -49,6 +49,7 @@ const lightTheme = {
 
     projectResumeColor:globalColorStyling.colorTrueGray,
     projectBackgroundColor : globalColorStyling.colorDarkWhite,
+    projectLanguageColor : globalColorStyling.colorTrueGray,
 
 //=================================================================================
 
@@ -210,7 +211,7 @@ const darkTheme = {
 
     projectResumeColor:globalColorStyling.colorGrey,
     projectBackgroundColor : globalColorStyling.colorGrayer,
-
+    projectLanguageColor : globalColorStyling.colorGrey,
 
 
 //=================================================================================

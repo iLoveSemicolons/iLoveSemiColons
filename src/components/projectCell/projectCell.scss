@@ -1,24 +1,27 @@
 @import "../globalFontStyling";
 
-
-
-.projectCell {
-  display: flex;
-  border-left: solid 6px $colorGreenCalm;
-
-  padding: 10px 5px 10px 0;
-  border-radius: 5px;
-}
-
-.projectCellContainer {
+.projectCellWrapper{
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
+
+.projectCellContainer {
+  border-left: solid 6px $colorGreenCalm;
+  border-radius: 5px;
+  padding: 10px 5px 10px 15px;
+
+}
+
+
+.projectCell {
+  display: flex;
+  padding-bottom: 5px;
+}
+
+
 .projectCellTitle {
   color: $colorWhite;
-  padding-left: 15px;
-
   flex: 1 1;
 }
 
@@ -41,6 +44,36 @@
   display: flex;
   justify-content: flex-end;
 }
+
+
+
+
+
+
+.languageContainer{
+
+  display: flex;
+}
+
+
+
+.singleLanguageContainer{
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  font-size: $fontsizeSmall;
+}
+
+.languageCircle{
+  display:inline-block;
+  border-radius: 50%;
+  background-color: $colorYellower;
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+}
+
+
 
 
 @media screen and (max-width: 600px) {

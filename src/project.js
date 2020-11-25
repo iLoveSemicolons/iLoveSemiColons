@@ -37,7 +37,7 @@ export default class Project extends React.Component {
     render() {
 
         const projects = this.state.apiResponse;
-
+        console.log(projects);
         return (
             <PageLayout>
                 <MainLayout>
@@ -62,7 +62,9 @@ export default class Project extends React.Component {
                                      projectTitle={project.title}
                                      projectResume={project.description}
                                      linkToSource={project.linkToSource}
-                                     demoLink={project.linkToDemo}/>
+                                     demoLink={project.linkToDemo}
+                                     language = {project.language}
+                        />
                     )}
                 </MainLayout>
             </PageLayout>
