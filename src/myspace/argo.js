@@ -5,7 +5,7 @@ import toBeUsedAddress from "../components/globalIP";
 import MySpaceMainLayout from "../components/mySpaceMainLayout/mySpaceMainLayout";
 
 
-//EMPTY SHIP ###################################################################################
+//EMPTY SHIP BANNER ===============================================================================================================
 const shipIsEmptyBanner = () => {
     return (
         <div className={style.sailingShipContainer}>
@@ -38,6 +38,7 @@ export default class Argo extends React.Component {
         this.addingCrewMember = this.addingCrewMember.bind(this);
         this.manageMemberCrewCheckBox = this.manageMemberCrewCheckBox.bind(this);
         this.manageDeletion = this.manageDeletion.bind(this);
+        this.hideNoElementsToDeleteNotification = this.hideNoElementsToDeleteNotification.bind(this);
 
         this.addMemberForm = React.createRef();
         this.addButtonRef = React.createRef();
@@ -47,6 +48,7 @@ export default class Argo extends React.Component {
         this.addButtonTextRef = React.createRef();
         this.addButtonWrapperRef = React.createRef();
         this.notificationRef = React.createRef();
+        this.noElementsToDeleteNotification = React.createRef();
     }
 
 
@@ -55,7 +57,7 @@ export default class Argo extends React.Component {
     }
 
 
-    // CRUD OPERATIONS #####################################################################################################################
+    // CRUD OPERATIONS ===================================================================================================
 
     getCrewMember() {
         fetch(toBeUsedAddress.address + "/crewMember/getCrewMember")
@@ -137,29 +139,34 @@ export default class Argo extends React.Component {
     in all cases, deleteNotification will be hidded after the user response
     */
     manageDeletion(event) {
-        console.log(this.state.checkedMemberIdState)
-        this.showDeleteNotification();
-        let notificationResponseType = event.target.getAttribute("data-button-type");
-        if (notificationResponseType === "confirmDeletion") {
-            const deletingCrewMember = async () => {
-                await this.deleteCrewMember();
-                let that = this;
-                setTimeout(function () {
-                    that.getCrewMember();
-                }, (100));
+
+
+        if (this.state.checkedMemberIdState.length === 0) {
+            this.showNoElementsToDeleteNotification();
+        } else {
+            this.showDeleteNotification();
+            let notificationResponseType = event.target.getAttribute("data-button-type");
+            if (notificationResponseType === "confirmDeletion") {
+                const deletingCrewMember = async () => {
+                    await this.deleteCrewMember();
+                    let that = this;
+                    setTimeout(function () {
+                        that.getCrewMember();
+                    }, (100));
+                }
+                deletingCrewMember()
+                    .catch(function (error) {
+                        console.log(error);
+                    })
+
+                this.setState({checkedMemberIdState: []});
+                this.hideDeleteNotification();
+            } else if (notificationResponseType === "denyDeletion") {
+                //empty checked checkedMemberId state
+
+                this.setState({checkedMemberIdState: []});
+                this.hideDeleteNotification();
             }
-            deletingCrewMember()
-                .catch(function (error) {
-                    console.log(error);
-                })
-
-            this.setState({checkedMemberIdState: []});
-            this.hideDeleteNotification();
-        } else if (notificationResponseType === "denyDeletion") {
-            //empty checked checkedMemberId state
-
-            this.setState({checkedMemberIdState: []});
-            this.hideDeleteNotification();
         }
     }
 
@@ -184,10 +191,9 @@ export default class Argo extends React.Component {
         return rows;
     }
 
-    // #######################################################################################################################################
 
 
-    // VALIDATION #####################################################################################################################
+    // VALIDATION ===================================================================================================
 
     //check if a given input is required
     checkInputRequired(inputValue) {
@@ -201,7 +207,8 @@ export default class Argo extends React.Component {
         }
     }
 
-    // BUTTON ANIMATION #####################################################################################################################
+    // BUTTON ANIMATION ===================================================================================================
+
     //start animation on addButton when its clicked, remove animation when clicked outside the container
     handleAddButtonClick() {
         this.startAddButtonOnClickAnimation();
@@ -250,7 +257,10 @@ export default class Argo extends React.Component {
 
     }
 
-    // #######################################################################################################################################
+
+
+
+    // FORM HANDLING ===================================================================================================
 
     //handle crewMember input when it is changed and update the state of its value
     handleCrewMemberInputChange(event) {
@@ -279,9 +289,6 @@ export default class Argo extends React.Component {
     }
 
 
-
-
-
     //check the crewMemberApiResponse if it is empty in order to show/or not the shipIsEmptyBanner
     shipIsEmptyStateUpdater() {
         let crewMember = this.state.crewMemberApiResponse;
@@ -298,6 +305,18 @@ export default class Argo extends React.Component {
         notification.current.classList.add(style.notificationShown);
     }
 
+
+    showNoElementsToDeleteNotification() {
+        let notification = this.noElementsToDeleteNotification;
+        notification.current.classList.add(style.notificationShown);
+    }
+
+
+    // NO ELEMENTS TO DELETE NOTIFICATION ###################################################################################
+    hideNoElementsToDeleteNotification() {
+        let notification = this.noElementsToDeleteNotification;
+        notification.current.classList.remove(style.notificationShown);
+    }
     hideDeleteNotification() {
         let notification = this.notificationRef;
         notification.current.classList.remove(style.notificationShown);
@@ -313,13 +332,28 @@ export default class Argo extends React.Component {
                 <div ref={this.notificationRef} className={style.notificationContainer}>
                     <div className={style.notification}>
                         <span>
-                            Voulez-vous vraiment supprimer ces elements ?
+                            Voulez-vous vraiment supprimer les elements sélectionnés  ?
                         </span>
                         <div>
                             <span data-button-type={"confirmDeletion"} onClick={this.manageDeletion}
                                   className={style.notificationButtons + " " + style.notificationYesButton}>Oui</span>
                             <span data-button-type={"denyDeletion"} onClick={this.manageDeletion}
                                   className={style.notificationButtons + " " + style.notificationNoButton}>Non</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div ref={this.noElementsToDeleteNotification} className={style.notificationContainer}>
+                    <div className={style.notification}>
+                        <span>
+                            Veuillez sélectionner des éléments pour les supprimer
+                        </span>
+                        <div>
+                            <span
+                                onClick={this.hideNoElementsToDeleteNotification}
+                                className={style.notificationButtons + " " + style.notificationNoButton}>Fermer
+                            </span>
                         </div>
                     </div>
                 </div>
