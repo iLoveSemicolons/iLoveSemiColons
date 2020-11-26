@@ -28,14 +28,16 @@ export default class Argo extends React.Component {
             shipIsEmpty: true,
             error: 0,
             submitButtonIsClicked: false,
+
+            itemsDeletionConfirmation: false,
         }
 
 
         this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
         this.handleCrewMemberInputChange = this.handleCrewMemberInputChange.bind(this);
         this.addingCrewMember = this.addingCrewMember.bind(this);
-        this.memberCrewChecked = this.memberCrewChecked.bind(this);
-        this.deletingCrewMember = this.deletingCrewMember.bind(this);
+        this.manageMemberCrewCheckBox = this.manageMemberCrewCheckBox.bind(this);
+        this.manageDeletion = this.manageDeletion.bind(this);
 
         this.addMemberForm = React.createRef();
         this.addButtonRef = React.createRef();
@@ -44,6 +46,7 @@ export default class Argo extends React.Component {
         this.submitIconRef = React.createRef();
         this.addButtonTextRef = React.createRef();
         this.addButtonWrapperRef = React.createRef();
+        this.notificationRef = React.createRef();
     }
 
 
@@ -127,19 +130,37 @@ export default class Argo extends React.Component {
     }
 
 
-    // delete a member and then get all members again.
-    deletingCrewMember() {
-        const deletingCrewMember = async () => {
-            await this.deleteCrewMember();
-            let that = this;
-            setTimeout(function () {
-                that.getCrewMember();
-            }, (100));
+    /*
+    show delete notification
+    deleting a crew members will be done only if the clicked notificationButton is confirmation
+    otherwise it will not be deleted
+    in all cases, deleteNotification will be hidded after the user response
+    */
+    manageDeletion(event) {
+        console.log(this.state.checkedMemberIdState)
+        this.showDeleteNotification();
+        let notificationResponseType = event.target.getAttribute("data-button-type");
+        if (notificationResponseType === "confirmDeletion") {
+            const deletingCrewMember = async () => {
+                await this.deleteCrewMember();
+                let that = this;
+                setTimeout(function () {
+                    that.getCrewMember();
+                }, (100));
+            }
+            deletingCrewMember()
+                .catch(function (error) {
+                    console.log(error);
+                })
+
+            this.setState({checkedMemberIdState: []});
+            this.hideDeleteNotification();
+        } else if (notificationResponseType === "denyDeletion") {
+            //empty checked checkedMemberId state
+
+            this.setState({checkedMemberIdState: []});
+            this.hideDeleteNotification();
         }
-        deletingCrewMember()
-            .catch(function (error) {
-                console.log(error);
-            })
     }
 
 
@@ -212,7 +233,7 @@ export default class Argo extends React.Component {
     }
 
     //calling this function will remove animation on the addButton
-    removeAddButtonOnClickAnimation(event) {
+    removeAddButtonOnClickAnimation() {
 
         let addButton = this.addButtonRef;
         let addMemberInput = this.addMemberInputRef;
@@ -238,19 +259,48 @@ export default class Argo extends React.Component {
 
 
     // get the memberId of the checked member, put all memberIds in the checkedMemberIdState
-    memberCrewChecked(event) {
-        let checkedMemberId = event.target.getAttribute('data-key');
-        this.setState({checkedMemberIdState: [...this.state.checkedMemberIdState, checkedMemberId]});
+    manageMemberCrewCheckBox(event) {
+        let crewMember = event.target;
+        let checkedMemberId = crewMember.getAttribute('data-key');
+        let crewMemberCheckedStatus = crewMember.getAttribute('data-checkedstatus');
+
+        if (crewMemberCheckedStatus === "unchecked") {
+            this.setState({checkedMemberIdState: this.state.checkedMemberIdState.concat(checkedMemberId)});
+            crewMember.setAttribute("data-checkedstatus", "checked");
+        }
+
+        if (crewMemberCheckedStatus === "checked") {
+            //delete crewMemberId from checkedMemberIdState when it is unchecked
+            this.setState({checkedMemberIdState: this.state.checkedMemberIdState.splice(this.state.checkedMemberIdState, checkedMemberId)});
+            crewMember.setAttribute("data-checkedstatus", "unchecked");
+        }
+
+        console.log(this.state.checkedMemberIdState);
     }
+
+
+
+
 
     //check the crewMemberApiResponse if it is empty in order to show/or not the shipIsEmptyBanner
     shipIsEmptyStateUpdater() {
         let crewMember = this.state.crewMemberApiResponse;
         if (crewMember.length === 0) {
-            this.setState({shipIsEmpty: true})
+            this.setState({shipIsEmpty: true});
         } else {
             this.setState({shipIsEmpty: false});
         }
+    }
+
+
+    showDeleteNotification() {
+        let notification = this.notificationRef;
+        notification.current.classList.add(style.notificationShown);
+    }
+
+    hideDeleteNotification() {
+        let notification = this.notificationRef;
+        notification.current.classList.remove(style.notificationShown);
     }
 
 
@@ -259,6 +309,22 @@ export default class Argo extends React.Component {
         let shipIsEmpty = this.state.shipIsEmpty;
         return (
             <MySpaceMainLayout>
+
+                <div ref={this.notificationRef} className={style.notificationContainer}>
+                    <div className={style.notification}>
+                        <span>
+                            Voulez-vous vraiment supprimer ces elements ?
+                        </span>
+                        <div>
+                            <span data-button-type={"confirmDeletion"} onClick={this.manageDeletion}
+                                  className={style.notificationButtons + " " + style.notificationYesButton}>Oui</span>
+                            <span data-button-type={"denyDeletion"} onClick={this.manageDeletion}
+                                  className={style.notificationButtons + " " + style.notificationNoButton}>Non</span>
+                        </div>
+                    </div>
+                </div>
+
+
                 <header className={style.headerContainer}>
                     <PageTitle title={"Argonaute Challenge"}/>
                     <img
@@ -294,7 +360,9 @@ export default class Argo extends React.Component {
                         </div>
                     </div>
                     <div>
-                        <div onClick={this.deletingCrewMember} className={style.crudButtonWrapper}>
+                        {/*<div onClick={this.deletingCrewMember} className={style.crudButtonWrapper}>*/}
+                        <div onClick={this.manageDeletion} className={style.crudButtonWrapper}>
+
                             <div className={style.crudButton + " " + style.deleteButton}>
                                 <img src={"/deleteIcon.svg"} alt={"deleteIcon"} className={style.crudIcon}/>
                                 <div>Supprimer</div>
@@ -315,9 +383,11 @@ export default class Argo extends React.Component {
                                         <td className={style.tableCell} key={row.memberId}>
                                             <div className={style.crewMemberWrapper}>
                                                 <label className={style.crewMemberContainer}>
-                                                    <input type={"checkbox"} key={row.memberId}
+                                                    <input type={"checkbox"}
+                                                           key={row.memberId}
                                                            data-key={row.memberId}
-                                                           onChange={this.memberCrewChecked}/>
+                                                           data-checkedstatus={"unchecked"}
+                                                           onChange={this.manageMemberCrewCheckBox}/>
                                                     <span className={style.checkMark}/>
                                                     <div className={style.memberName}>
                                                         {row.memberName}

@@ -1,6 +1,73 @@
 @import "src/components/globalFontStyling";
 
 
+//=======================================================
+.notificationContainer{
+
+  &.notificationShown{
+    display: block;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: $colorBlacker;
+    width: 100%;
+    border-bottom: 2px solid #E66767;
+  }
+
+
+  &:not(.notificationShown){
+    display: none;
+  }
+}
+.notification{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-weight: bold;
+}
+
+
+
+.notificationButtons{
+  border-radius: 5px;
+  padding: 8px 15px 8px 15px;
+  cursor: pointer;
+
+}
+
+.notificationYesButton{
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: #E66767;
+}
+
+
+.notificationNoButton{
+
+  background-color: #1B7CD1;
+
+}
+
+//=======================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .sailingShipContainer{
 text-align: center;
   margin-top: 40px;
@@ -18,13 +85,7 @@ text-align: center;
 }
 
 
-.notification{
-  position: absolute;
-  top:-40px;
-  left: 0;
-  background-color: #1B7CD1;
-  width: 100%;
-}
+
 
 
 .schoolLogo{

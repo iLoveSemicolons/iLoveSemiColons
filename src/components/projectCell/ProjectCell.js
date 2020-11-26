@@ -47,6 +47,8 @@ const languageCircleColorChooser = (language) => {
             return <LanguageCircle backgroundColor={"#7300e6"} className={"languageCircle"}/>;
         case "SCSS":
             return <LanguageCircle backgroundColor={"#7300e6"} className={"languageCircle"}/>;
+        default :
+            return <LanguageCircle backgroundColor={"#EEEEEE"} className={"languageCircle"}/>;
     }
 }
 
