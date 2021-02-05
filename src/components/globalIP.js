@@ -8,7 +8,7 @@ let address = {
 
 
 const toBeUsedAddress = {
-  address : address.developmentAddress,
+  address : address.productionAddress,
 };
 
 export default toBeUsedAddress;
