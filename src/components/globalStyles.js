@@ -6,10 +6,6 @@ background : ${({theme}) => theme.body};
  }
 
 
-.header {
-background : ${({theme}) => theme.header};
-}
-
 .introTitle , .introText{
 color : ${({theme}) => theme.introTitleTextColor};
 }

@@ -12,6 +12,10 @@ import toBeUsedAddress from "./components/globalIP";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+
+
+
+
 // import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
 
 export default class Home extends React.Component {
@@ -137,7 +141,6 @@ export default class Home extends React.Component {
                                 <ShowAll goTo="/blog" text="View all my posts"/>
 
                             </div>
-
                         </div>
                     </MainLayout>
 

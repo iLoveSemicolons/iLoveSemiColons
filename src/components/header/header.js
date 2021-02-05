@@ -15,14 +15,12 @@ const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: 50px;
   transition :0.3s; 
 `;
 
 
-const HeaderLeftContentUnderLining = styled.div`
- border-bottom-color  : ${({theme}) => theme.headerLeftContentUnderLiningColor};
-`;
+
 //===============================================================================
 
 export default function Header() {
@@ -39,7 +37,7 @@ export default function Header() {
             </div>
 
             <div className={Styles.headerContentContainerUnderLining}>
-                <HeaderLeftContentUnderLining className={Styles.headerLeftContentUnderLining}/>
+                <div className={Styles.headerLeftContentUnderLining}/>
                 <div className={Styles.headerRightContentUnderLining}>
                     <div className={Styles.sunMoonUnderLining}/>
                     <div className={Styles.navIconUnderLining}/>

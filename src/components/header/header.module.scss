@@ -1,7 +1,7 @@
 @import "../globalFontStyling.scss";
 
 $headerRightContentWidth: 80px;
-$underLiningBorderWidth: 3px;
+$underLiningBorderWidth: 4px;
 
 
 
@@ -40,7 +40,7 @@ $underLiningBorderWidth: 3px;
 
 
 .headerLeftContentUnderLining {
-  border-bottom: $underLiningBorderWidth solid;
+  border-bottom: $underLiningBorderWidth solid $colorYellower;
   width: 276px; //logo width or could be also logoContainer width
 }
 
@@ -51,12 +51,12 @@ $underLiningBorderWidth: 3px;
 }
 
 .sunMoonUnderLining {
-  border-bottom: $underLiningBorderWidth solid #FCC21B;
+  border-bottom: $underLiningBorderWidth solid $colorYellower;
   width: 28px; //it is sunMoon width
 }
 
 .navIconUnderLining {
-  border-bottom: $underLiningBorderWidth solid #1B7CD1;
+  border-bottom: $underLiningBorderWidth solid $colorYellower;
   width: 35px; // it is navIcon width
 }
 

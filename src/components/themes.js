@@ -9,6 +9,7 @@ const globalColorStyling = {
     colorDarkGray: "#707070",
     colorBlue: "#009EFF",
     colorBluer: "#1B7CD1",
+    $colorViolet : "#4568DC",
     colorYellow: "#FFE087",
     colorGreenCalm : "#50CF96",
     colorGrayer : "#333",
@@ -23,7 +24,7 @@ const globalColorStyling = {
 const lightTheme = {
     id: "light",
     body: globalColorStyling.colorWhite,
-    header: globalColorStyling.colorWhite,
+    // header: globalColorStyling.colorWhite,
 
 //===========================
 
@@ -62,8 +63,7 @@ const lightTheme = {
 
 //=================================================================================
 
-    headerBackgroundColor: globalColorStyling.colorWhite,
-    headerLeftContentUnderLiningColor: globalColorStyling.colorDarkGray,
+    headerBackgroundColor: globalColorStyling.$colorViolet,
 
 //=================================================================================
 
@@ -152,8 +152,7 @@ const darkTheme = {
     id: "dark",
 //=================================================================================
 
-    headerBackgroundColor: globalColorStyling.colorBlack,
-    headerLeftContentUnderLiningColor: globalColorStyling.colorWhite,
+    headerBackgroundColor: globalColorStyling.$colorViolet,
 
 //=================================================================================
 

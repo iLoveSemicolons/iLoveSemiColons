@@ -10,6 +10,7 @@ import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 
 
+
 const Form = styled.form`
         background-color : ${({theme}) => theme.contactFormBackgroundColor}; 
         `
@@ -44,6 +45,7 @@ export default class Contact extends React.Component {
 
     constructor(props) {
         super(props);
+
 
         this.state = {
             lastNameField: '',
@@ -158,7 +160,6 @@ export default class Contact extends React.Component {
         const formIsSent = this.state.formIsSent;
         const submitButtonIsClicked = this.state.submitButtonIsClicked;
         const inputErrors = this.state.error;
-
 
         return (
             <PageLayout>

@@ -1,4 +1,4 @@
-
+@import "../globalFontStyling.scss";
 //==========================================================================================
 
 
@@ -20,7 +20,7 @@
 }
 
 .nav_icon_5 span{
-  background-color:#1B7CD1;
+  background-color:$colorWhite;
   position: absolute;
   border-radius: 2px;
   transition: .3s cubic-bezier(.8, .5, .2, 1.4);

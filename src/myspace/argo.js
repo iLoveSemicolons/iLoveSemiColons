@@ -253,8 +253,6 @@ export default class Argo extends React.Component {
         addIcon.current.classList.remove(style.addButtonClicked)
         addMemberInput.current.classList.remove(style.addButtonClicked);
         addButtonText.current.classList.remove(style.addButtonClicked);
-
-
     }
 
 
