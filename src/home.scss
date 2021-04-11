@@ -1,79 +1,67 @@
 @import "components/globalFontStyling.scss";
-
 .myImageHomePage {
-  width: 130px;
+    width: 150px;
 }
 
 .introContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.introTitle{
-  font-size: $fontsizeBiggest;
-  color : $colorWhiter;
-  font-weight: bold;
+.introTitle {
+    font-size: $fontsizeBiggest;
+    color: $colorWhiter;
+    font-weight: bold;
 }
 
-
-.introText{
-  font-size: $fontsizeMedium;
-  color: $colorWhite;
-  line-height: 1.8;
-  margin-top: 10px;
-
+.introText {
+    font-size: $fontsizeMedium;
+    color: $colorWhite;
+    line-height: 1.8;
+    margin-top: 10px;
 }
 
 .homePageIntroLeftContainer {
-  max-width : 500px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
+    max-width: 500px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.blueSpan{
-  color: $colorBluer;
+.blueSpan {
+    color: $colorBluer;
 }
 
 .homePageIntroRightContainer {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-
-  padding: 0 20px 0 20px;
-
-  height: 400px;
-  max-width: 250px;
-
-  background-color: #1A1A1A;
-  text-align: center;
-  border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px 0 20px;
+    height: 400px;
+    max-width: 250px;
+    background-color: #1A1A1A;
+    text-align: center;
+    border-radius: 10px;
 }
 
-
-.rightContainerText{
-  font-size: $fontsizeSmallMedium;
-  color: $colorWhiter;
-  line-height: 1.8;
+.rightContainerText {
+    font-size: $fontsizeSmallMedium;
+    color: $colorWhiter;
+    line-height: 1.8;
 }
-
-
 
 @media screen and (max-width: 600px) {
-  .introContainer{
-    flex-direction: column;
-  }
-
-  .homePageIntroRightContainer{
-   height: auto;
-    padding-bottom: 15px;
-    margin-top: 40px;
-  }
-  .homePageIntroRightContainer div{
-    margin-top: 15px;
-  }
+    .introContainer {
+        flex-direction: column;
+    }
+    .homePageIntroRightContainer {
+        height: auto;
+        padding-bottom: 15px;
+        margin-top: 40px;
+    }
+    .homePageIntroRightContainer div {
+        margin-top: 15px;
+    }
 }
