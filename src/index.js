@@ -24,8 +24,6 @@ import { GlobalStyles } from "./components/globalStyles";
 import { initialThemeState, themeReducer } from "./components/themeReducer";
 import { Helmet } from "react-helmet";
 import ScrollToTop from "./components/scrollToTop";
-import MyHomePage from "./myspace/myHomePage";
-import Argo from "./myspace/argo";
 // import TestFormRider from "./testFormRider";
 
 //===========================================================
@@ -61,8 +59,6 @@ function App() {
             <Route exact path="/legalNotice" component={LegalNotice} />
             <Route exact path="/subscribe" component={Subscribe} />
             {/* <Route exact path="/testFormRider" component={TestFormRider} /> */}
-            <Route exact path="/myspace" component={MyHomePage} />
-            <Route exact path="/myspace/argo" component={Argo} />
             <Route
               exact
               path="/privateRepoRequest"

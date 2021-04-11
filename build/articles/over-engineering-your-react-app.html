@@ -1,0 +1,91 @@
+<style>
+    .boldText {
+        font-weight: bold;
+    }
+
+    .imageContainer {
+        text-align: center;
+    }
+
+    .image {
+        max-width: 600px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .image {
+            max-width: 100%;
+        }
+    }
+</style>
+
+
+<h3>
+    What is over-engineering in a simple approach, the orange juice approach :
+</h3>
+
+<p>
+    <span class="boldText">The problem :</span> You have a farm where there are just oranges in it, so you opened an
+    orange juice shop and you decided to start selling orange juice in two months.<br>
+    <span class="boldText">The optimal solution :</span> Buy an orange juicer, adapt it to your needs and deploy it in
+    your shop as soon as you can to start selling orange juice in two months.<br>
+    <span class="boldText">What you did :</span> You bought a lot of different pieces and began building/inventing a
+    juicer that would make juice from a lot of fruits and vegetables (oranges, onions etc.). This juicer is connected by
+    both wi-fi and Bluetooth to a mobile app created specifically build for this juicer, the juicer will start juicing
+    fruits by clicking on a “juice” button on your mobile app.<br>
+    <span class="boldText">The result</span> You finished building your powerful and well-structured pressing machine 4
+    months later, but you ended up having 2 month late on your project timeline, resulting in the loss of all your
+    orange crops because they were rotten. You’ve lost time and money because of your solution, but maybe the machine
+    you invented will be used by many companies because it is adapted to a lot of fruits and vegetables, it is fast and
+    powerful.<br>
+</p>
+<p>
+    Developers could easily be drawn into the over-engineering hell when developing new applications.
+</p>
+
+
+<p>
+    Over-engineering is bad even for scalable and large applications, it is also an absolute over kill for smaller ones
+    since it adds more layers of complexity and more complexity means more maintenance and more development time and
+    more expense.
+</p>
+
+
+<p>
+    React apps use components, that are like Javascript functions, they accept arguments called props, and return HTML
+    elements. Components makes “dynamic html elements”. React allows developers to make reusable UI components, this
+    reusability concept will facilitate and accelerate the development process, but this concept may also lead some
+    developers to over-engineer their applications.
+</p>
+
+
+<p>
+    In the next example, you can see a simple console.log that will introduce an Orange.
+</p>
+
+<div class="imageContainer">
+    <img class="image" src="/articles/carbonOverengineering1.png" alt="simple code example"/>
+</div>
+
+
+<p>
+    Another solution approach approach <br>
+    In this example, it is a function that can introduce any fruit we want, but in our case we only want to introduce an orange, so why making a function to introduce anything ?
+</p>
+<div class="imageContainer">
+    <img class="image" src="/articles/carbonOverengineering2.png" alt="simple code example"/>
+</div>
+
+<P>
+    How to prevent overengineering your components :
+    <ul>
+        <li>Don’t make a component if you don’t want to use it more than once.</li>
+        <li>Your code needs to be simple and clear. Simple doesn’t mean that things should be done in the “it does the job” way of things.</li>
+        <li>Ask yourself these questions, “Am I writing a well-structured code ?, is it complex? , will a random developer understand my code ?”, if the answer is no, you need to redesign your code.</li>
+    </ul>
+
+
+</P>
+
+
+<p>
+</p>
