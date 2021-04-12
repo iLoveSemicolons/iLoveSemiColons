@@ -1,11 +1,11 @@
 import React from 'react'
 import "./article.scss"
 import Hashtag from "./components/hashtag/hashtag";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import SubscribeBox from "./components/subscribeBox/SubscribeBox";
 import Error from "./Error";
 import styled from "styled-components";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 import Likes from "./components/likes/likes";
 import toBeUsedAddress from "./components/globalIP";
 import PageLayout from "./components/pageLayout/pageLayout";
@@ -18,21 +18,21 @@ import MainLayout from "./components/mainLayout/mainLayout";
 
 
 const ArticleTitle = styled.div`
-color ${({theme}) => theme.articleTitleTextColor};
+color ${({ theme }) => theme.articleTitleTextColor};
 `;
 
 const ArticleContent = styled.div`
-color : ${({theme}) => theme.articleContentTextColor};
+color : ${({ theme }) => theme.articleContentTextColor};
 `;
 
 
 const ArticleEstimatedReadingTime = styled.div`
-color : ${({theme}) => theme.articleEstimatedReadingTimeTextColor};
+color : ${({ theme }) => theme.articleEstimatedReadingTimeTextColor};
 `;
 
 
 const DatePosted = styled.div`
-color : ${({theme}) => theme.articleContentTextColor};
+color : ${({ theme }) => theme.articleContentTextColor};
 `;
 
 
@@ -62,7 +62,9 @@ export default class Article extends React.Component {
             method: "POST",
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*"
+
             },
             body: JSON.stringify({
                 articleLocalFileName: articleLocalFileName
@@ -73,11 +75,11 @@ export default class Article extends React.Component {
             //if there is no data from the api it will set the errorOccurred to true in order to show to 404Error page after the condition rendering
             .then((response) => {
                 if (response.length === 0) {
-                    this.setState({errorOccurred: true});
+                    this.setState({ errorOccurred: true });
                 }
                 return response;
             })
-            .then(response => this.setState({articleAPIResponse: response}))
+            .then(response => this.setState({ articleAPIResponse: response }))
             .catch(function (error) {
                 console.log(error);
             })
@@ -87,7 +89,7 @@ export default class Article extends React.Component {
         const contentSourcePath = this.articleSourceLink;
         fetch(contentSourcePath)
             .then(response => response.text())
-            .then(response => this.setState({articleContent: response}))
+            .then(response => this.setState({ articleContent: response }))
             .catch(function (error) {
                 console.log(error);
             });
@@ -123,13 +125,13 @@ export default class Article extends React.Component {
         dummyLinkHolder.select();
         document.execCommand("copy");
         document.body.removeChild(dummyLinkHolder);
-        this.setState({linkCopied: true});
+        this.setState({ linkCopied: true });
     }
 
     render() {
 
         const articleObject = this.state.articleAPIResponse;
-        const articleContent = {__html: this.state.articleContent};
+        const articleContent = { __html: this.state.articleContent };
         const linkCopied = this.state.linkCopied;
         return (
             <PageLayout>
@@ -153,7 +155,7 @@ export default class Article extends React.Component {
                                     </ArticleTitle>
 
                                     <div className={"articleLikesContainer"}>
-                                        <Likes idPost={article.idPost}/>
+                                        <Likes idPost={article.idPost} />
                                     </div>
 
                                     <ArticleEstimatedReadingTime className="estimatedReadingTime">
@@ -169,10 +171,10 @@ export default class Article extends React.Component {
                                 </div>
 
                                 <div className="articleHashtagContainer">
-                                    <Hashtag hashtags={article.hashtags}/>
+                                    <Hashtag hashtags={article.hashtags} />
                                 </div>
 
-                                <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent}/>
+                                <ArticleContent className="articleContent" dangerouslySetInnerHTML={articleContent} />
 
 
                                 <div className="articleSubTitleContainer">
@@ -200,14 +202,14 @@ export default class Article extends React.Component {
 
 
                                 <div>
-                                    <SubscribeBox/>
+                                    <SubscribeBox />
                                 </div>
 
                             </div>
                         )}
 
                         {this.state.errorOccurred === true &&
-                        <Error/>
+                            <Error />
                         }
 
                     </div>

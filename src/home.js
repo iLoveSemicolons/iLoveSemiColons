@@ -27,7 +27,10 @@ export default class Home extends React.Component {
   }
 
   callProjectTopicAPI() {
-    fetch(toBeUsedAddress.address + "/homePageProjectTopic")
+    fetch(toBeUsedAddress.address + "/homePageProjectTopic", {
+      method : "GET",
+      headers : {'Access-Control-Allow-Origin': "*"}
+    })
       .then((response) => response.json())
       .then((response) => this.setState({ projectTopicAPIResponse: response }))
       .catch(function () {
@@ -36,7 +39,10 @@ export default class Home extends React.Component {
   }
 
   callPostTopicAPI() {
-    fetch(toBeUsedAddress.address + "/homePagePostTopic")
+    fetch(toBeUsedAddress.address + "/homePagePostTopic", {
+      method : "GET",
+      headers : {'Access-Control-Allow-Origin': "*"}
+    })
       .then((response) => response.json())
       .then((response) => this.setState({ postTopicAPIResponse: response }))
       .catch(function () {

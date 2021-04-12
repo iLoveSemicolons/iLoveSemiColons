@@ -17,7 +17,10 @@ export default class Blog extends React.Component {
   }
 
   callBlogAPI() {
-    fetch(toBeUsedAddress.address + "/blog")
+    fetch(toBeUsedAddress.address + "/blog", {
+      method : "GET",
+      headers : {'Access-Control-Allow-Origin': "*"}
+    })
       .then((response) => response.json())
       .then((response) => this.setState({ blogAPIResponse: response }))
       .catch(function () {

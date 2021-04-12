@@ -21,7 +21,10 @@ export default class Project extends React.Component {
     }
 
     callAPI() {
-        fetch(toBeUsedAddress.address + "/project")
+        fetch(toBeUsedAddress.address + "/project" , {
+            method : "GET",
+            headers : {'Access-Control-Allow-Origin': "*"}
+          })
             .then(response => response.json())
             .then(response => this.setState({apiResponse: response}))
             .catch(function () {
