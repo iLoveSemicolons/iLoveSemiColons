@@ -1,93 +1,83 @@
 @import "../globalFontStyling.scss";
-
 $headerRightContentWidth: 80px;
 $underLiningBorderWidth: 4px;
-
-
-
+.headerContainer {
+    background-color: $colorBluer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    transition: 0.3s;
+}
 
 .headerContentContainer {
-  display: flex;
-  margin: auto;
-  max-width: 1000px;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
-
-
-
 
 .headerRightContent {
-  display: flex;
-  justify-content: space-between;
-  width: $headerRightContentWidth;
+    display: flex;
+    justify-content: space-between;
+    width: $headerRightContentWidth;
 }
-
-
 
 //====================================================================================================
 //UNDER LINING WIDTH
 //====================================================================================================
-
 .headerContentContainerUnderLining {
-  display: flex;
-  margin: auto;
-  max-width: 1000px;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
 .headerLeftContentUnderLining {
-  border-bottom: $underLiningBorderWidth solid $colorYellower;
-  width: 276px; //logo width or could be also logoContainer width
+    border-bottom: $underLiningBorderWidth solid $colorYellower;
+    width: 276px; //logo width or could be also logoContainer width
 }
 
 .headerRightContentUnderLining {
-  display: flex;
-  justify-content: space-between;
-  width: $headerRightContentWidth;
+    display: flex;
+    justify-content: space-between;
+    width: $headerRightContentWidth;
 }
 
 .sunMoonUnderLining {
-  border-bottom: $underLiningBorderWidth solid $colorYellower;
-  width: 28px; //it is sunMoon width
+    border-bottom: $underLiningBorderWidth solid $colorYellower;
+    width: 28px; //it is sunMoon width
 }
 
 .navIconUnderLining {
-  border-bottom: $underLiningBorderWidth solid $colorYellower;
-  width: 35px; // it is navIcon width
+    border-bottom: $underLiningBorderWidth solid $colorYellower;
+    width: 35px; // it is navIcon width
 }
 
-
-
-
 @media screen and (max-width: 600px) {
-  .headerContentContainer {
-    width: 90%;
-  }
-
-  .headerContentContainerUnderLining {
-    width: 90%;
-  }
-
-  .headerLeftContentUnderLining{
-    max-width: 220px; //logo width while responsive design
-  }
-  .sunMoonUnderLining{
-    max-width: 24px;
-  }
-
-  .navIconUnderLining{
-    max-width: 30px;
-  }
-
-  .headerRightContent{
-    justify-content: space-around;
-  }
-
-  .headerRightContentUnderLining{
-    justify-content: space-around;
-  }
+    .headerContentContainer {
+        width: 90%;
+    }
+    .headerContentContainerUnderLining {
+        width: 90%;
+    }
+    .headerLeftContentUnderLining {
+        max-width: 220px; //logo width while responsive design
+    }
+    .sunMoonUnderLining {
+        max-width: 24px;
+    }
+    .navIconUnderLining {
+        max-width: 30px;
+    }
+    .headerRightContent {
+        justify-content: space-around;
+    }
+    .headerRightContentUnderLining {
+        justify-content: space-around;
+    }
 }

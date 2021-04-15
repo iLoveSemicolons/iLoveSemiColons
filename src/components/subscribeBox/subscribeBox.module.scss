@@ -1,57 +1,58 @@
 @import "../globalFontStyling.scss";
-
-
-
-.subscribeBoxContainer{
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 10px;
-
-
-  margin-top: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-
+.subscribeBoxContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.myImageHomePage{
-  width: 130px;
+.myImageHomePage {
+    width: 130px;
 }
 
-.subscribeBoxLeftContainer{
-  margin : 0 auto;
+.subscribeBoxLeftContainer {
+    margin: 0 auto;
 }
 
-.subscribeBoxRightContainer{
-  max-width: 700px;
+.subscribeBoxRightContainer {
+    max-width: 700px;
 }
 
-.subscribeBoxText{
-  font-size: $fontsizeSmallMedium;
-  line-height: 1.8;
+.subscribeBoxText {
+    font-size: $fontsizeSmallMedium;
+    line-height: 1.8;
 }
 
-.subscribeButtonContainer{
-  margin-top: 10px;
-}
-
-
-@media screen and (max-width: 600px){
-  .subscribeBoxContainer{
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .subscribeBoxText{
-    text-align: center;
+.subscribeButtonContainer {
     margin-top: 10px;
-  }
+}
 
-  .subscribeButtonContainer{
-    text-align: center;
-  }
+.subscribeButton {
+    background-image: linear-gradient(to right, #3036FE, #009EFF);
+    border: none;
+    cursor: pointer;
+    color: #EEEEEE;
+    font-size: $fontsizeSmallMedium;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 5px 17px 5px 17px;
+}
+
+@media screen and (max-width: 600px) {
+    .subscribeBoxContainer {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .subscribeBoxText {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .subscribeButtonContainer {
+        text-align: center;
+    }
 }
