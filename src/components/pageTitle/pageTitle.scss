@@ -1,9 +1,6 @@
 @import "../globalFontStyling.scss";
-
-
-
-.pageTitle{
-  font-size: $fontsizeBiggest;
-  font-weight: bold;
-  color: $colorWhite;
+.pageTitle {
+    font-size: $fontsizeBiggest;
+    font-weight: 500;
+    color: $colorWhite;
 }

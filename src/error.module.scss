@@ -1,67 +1,49 @@
 @import "./components/globalFontStyling.scss";
-
-.errorContainer{
-
-
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-
-  padding: 20px 50px 20px 50px;
-  margin: auto;
-
-
-
-  max-width: 400px;
-  border-radius: 10px;
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 50px 20px 50px;
+    margin: auto;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
-
-.textCode{
-  font-size: 60px;
-  font-weight: bold;
+.textCode {
+    font-size: 60px;
+    font-weight: 500;
 }
 
-.textCodeLeft{
-  color: $colorBlue;
-
-}
-.textCodeMiddle{
-color: $colorBlue;
+.textCodeLeft {
+    color: $colorBlue;
 }
 
-.textCodeRight{
-  color: $colorBlue;
-
+.textCodeMiddle {
+    color: $colorBlue;
 }
 
-
-
-.text{
-  color: $colorWhite;
-  font-size: $fontsizeBig;
+.textCodeRight {
+    color: $colorBlue;
 }
 
-
-.button404{
-  background-color: $colorWhite;
-  border: none;
-  cursor: pointer;
-
-  color: $colorBlacker;
-  font-size: $fontsizeSmallMedium;
-  font-family: inherit;
-  font-weight: bold;
-  border-radius: 15px;
-
-  padding: 5px 17px  5px 17px ;
-  margin-top: 20px;
-
-  &:hover{
-    background-color: $colorBlue;
+.text {
     color: $colorWhite;
-  }
+    font-size: $fontsizeBig;
+}
 
+.button404 {
+    background-color: $colorWhite;
+    border: none;
+    cursor: pointer;
+    color: $colorBlacker;
+    font-size: $fontsizeSmallMedium;
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 5px 17px 5px 17px;
+    margin-top: 20px;
+    &:hover {
+        background-color: $colorBlue;
+        color: $colorWhite;
+    }
 }

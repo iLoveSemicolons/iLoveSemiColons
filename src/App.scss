@@ -1,41 +1,39 @@
-
-
-
 body {
-  background-color:#202020 ;
-  font-family: 'Comfortaa', monospace;
-  margin: 0;
-  padding: 0 0 80px 0;
-  position: relative;
-  min-height: 100vh;
-  transition: 0.3s;
+    background-color: #202020;
+    font-family: 'Montserrat', 'Comfortaa', monospace;
+    margin: 0;
+    padding: 0 0 80px 0;
+    position: relative;
+    min-height: 100vh;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
-
 button {
-  font: inherit;
-  font-weight: bolder;
-  &:focus{
-    outline: none;
-  }
+    font: inherit;
+    font-weight: 500er;
+    &:focus {
+        outline: none;
+    }
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  &:focus{
-    outline: none;
-  }
-  &:hover{
-    outline: none;
-  }
+    text-decoration: none;
+    color: inherit;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        outline: none;
+    }
 }
 
-input, textarea{
-  &:focus{
-    outline: none;
-  }
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
 }
-
-
-

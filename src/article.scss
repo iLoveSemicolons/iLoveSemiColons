@@ -1,118 +1,106 @@
 @import "src/components/globalFontStyling";
-
 //overwriting font properties
-.articleSupContainer{
-  font-family: 'Open Sans', sans-serif;
+.articleSupContainer {
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
-
-.articleTopContainer{
-  border-left: solid 6px $colorBluer;
-  margin-bottom: 30px;
+.articleTopContainer {
+    border-left: solid 6px $colorBluer;
+    margin-bottom: 30px;
 }
 
- .articleTitle{
-   font-size: $fontsizeBiggest;
-   font-weight: bold;
-   padding-left: 15px;
- }
-
- .articleLikesContainer{
-   display: inherit;
-   padding-left: 15Px;
-   margin-top: 10px;
- }
-
- .estimatedReadingTime{
-   font-size: $fontsizeSmall;
-   margin-top: 10px;
-   padding-left: 15px;
- }
-
-.datePosted{
-  font-size: $fontsizeSmall;
-  margin-top: 10px;
-  padding-left: 15px;
+.articleTitle {
+    font-size: $fontsizeBiggest;
+    font-weight: 500;
+    padding-left: 15px;
 }
 
-.articleSubTitleContainer{
-  display : flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-top: 40px;
+.articleLikesContainer {
+    display: inherit;
+    padding-left: 15Px;
+    margin-top: 10px;
 }
 
-
-
-.articleHashtagContainer div{
-  margin-right: 10px;
-  margin-top: 10px;
+.estimatedReadingTime {
+    font-size: $fontsizeSmall;
+    margin-top: 10px;
+    padding-left: 15px;
 }
 
-
-
- .copyAndShareButton {
-   background-color: #FFE087;
-   padding: 0 22px 0 22px;
-   height: 26.2px; //same height as ProjectGithubLinkButton
-   border: none;
-   font-weight: bold;
-   color : #1A1A1A;
-   text-align: center;
-   text-decoration: none;
-   cursor: pointer;
-   border-radius: 12px;
-   font-size: $fontsizeSmall;
- }
-
- .goToBlogPageButton{
-   background-color: #FFE087;
-   padding: 0 22px 0 22px;
-   height: 26.2px; //same height as ProjectGithubLinkButton
-   border: none;
-   font-weight: bold;
-   color : #1A1A1A;
-   text-align: center;
-   text-decoration: none;
-   cursor: pointer;
-   border-radius: 12px;
-   font-size: $fontsizeSmall;
- }
-
-
-.copyAndShareButtonContainer{
-  //margin-left: 20px;
-}
-.goToBlogPageButtonContainer{
-  margin-left: 20px;
+.datePosted {
+    font-size: $fontsizeSmall;
+    margin-top: 10px;
+    padding-left: 15px;
 }
 
+.articleSubTitleContainer {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
 
- .articleContent{
-   margin-top: 40px;
-   font-size: $fontsizeMedium;
-   line-height: 1.8;
-   text-align: justify;
- }
+.articleHashtagContainer div {
+    margin-right: 10px;
+    margin-top: 10px;
+}
 
+.copyAndShareButton {
+    background-color: #FFE087;
+    padding: 0 22px 0 22px;
+    height: 26.2px; //same height as ProjectGithubLinkButton
+    border: none;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: $fontsizeSmall;
+}
 
- @media screen and (max-width : 600px){
+.goToBlogPageButton {
+    background-color: #FFE087;
+    padding: 0 22px 0 22px;
+    height: 26.2px; //same height as ProjectGithubLinkButton
+    border: none;
+    font-weight: 500;
+    color: #1A1A1A;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: $fontsizeSmall;
+}
 
-   .articleSubTitleContainer{
-     flex-direction: column;
-     align-items : flex-start;
-   }
+.copyAndShareButtonContainer {
+    //margin-left: 20px;
+}
 
+.goToBlogPageButtonContainer {
+    margin-left: 20px;
+}
 
-   .copyAndShareButtonContainer{
-     margin-left: 0;
-     margin-top: 20px;
-   }
+.articleContent {
+    margin-top: 40px;
+    font-size: $fontsizeMedium;
+    line-height: 1.8;
+    text-align: justify;
+}
 
-   .goToBlogPageButtonContainer{
-     margin-left: 0;
-     margin-top: 20px;
-   }
- }
+@media screen and (max-width: 600px) {
+    .articleSubTitleContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .copyAndShareButtonContainer {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .goToBlogPageButtonContainer {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}

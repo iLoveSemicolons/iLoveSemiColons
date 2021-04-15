@@ -33,7 +33,7 @@ export const AppContext = createContext();
 function App() {
   const [themeState, dispatch] = useReducer(themeReducer, initialThemeState);
   const { currentTheme } = themeState;
-
+  console.log(themeState);
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -44,10 +44,9 @@ function App() {
             <meta name="robots" content="index,follow" />
           </Helmet>
           <style>
-            @import
-            url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-            @import
-            url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');            
+            @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@900&display=swap');
           </style>
           <Switch>
             <Route On path="/" component={Home} exact />
@@ -59,23 +58,11 @@ function App() {
             <Route exact path="/legalNotice" component={LegalNotice} />
             <Route exact path="/subscribe" component={Subscribe} />
             {/* <Route exact path="/testFormRider" component={TestFormRider} /> */}
-            <Route
-              exact
-              path="/privateRepoRequest"
-              component={PrivateRepoRequest}
-            />
-            <Route
-              exact
-              path="/articleTesting/:articleLocalFileName"
-              component={ArticleTesting}
-            />
-            <Route
-              exact
-              path="/article/:articleLocalFileName"
-              component={article}
-            />
-
+            <Route exact path="/privateRepoRequest" component={PrivateRepoRequest} />
+            <Route exact path="/articleTesting/:articleLocalFileName" component={ArticleTesting} />
+            <Route exact path="/article/:articleLocalFileName" component={article} />
             <Route component={Error} />
+
           </Switch>
         </AppContext.Provider>
       </ThemeProvider>

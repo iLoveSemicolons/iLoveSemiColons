@@ -1,20 +1,11 @@
 @import "../globalFontStyling";
-
-
-
-
-
-.hashtagText{
+.hashtagText {
     display: inline-block;
     border-radius: 12px;
     background-color: $colorBlacker;
-    width:content-box;
+    width: content-box;
     color: $colorBluer;
-    font-weight: bold;
+    font-weight: 500;
     font-size: $fontsizeSmall;
     padding: 4px 17px 4px 17px;
 }
-
-
-
-

@@ -1,9 +1,7 @@
 @import "../globalFontStyling.scss";
-
-
-.topicTitle{
-  font-size: $fontsizeBiggest;
-  font-weight: bold;
-  color: $colorBluer;
-  margin-top: 60px;
+.topicTitle {
+    font-size: $fontsizeBiggest;
+    font-weight: 500;
+    color: $colorBluer;
+    margin-top: 60px;
 }

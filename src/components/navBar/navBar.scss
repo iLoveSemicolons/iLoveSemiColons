@@ -1,50 +1,37 @@
 @import "../globalFontStyling";
-
-
-
 //TODO border animation several colors, to do that look at your bookmarks :)
 .navBarContainer {
-
-  font-weight: bold;
-  background-color: $colorWhiter;
-  box-shadow: $colorGrey 0px 0px 8px;
-  display: flex;
-  visibility : visible;
-  opacity: 1;
-
-  justify-content: space-around;
-  align-items: center;
-
-
-  padding-top: 5px;
-  padding-bottom: 5px;
-
-  border-radius: 20px;
-
-  position: fixed;
-  z-index: 10;
-  left: 50%;
-  transform: translateX(-50%);  width: 100%;
-  max-width: 1000px;
-  top : 100px;
+    font-weight: 500;
+    background-color: $colorWhiter;
+    box-shadow: $colorGrey 0px 0px 8px;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1000px;
+    top: 100px;
 }
 
-
-
-
-
 @media screen and (max-width: 600px) {
-  .navBarContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: auto;
-    height: 30%;
-    border-radius: 5px;
-    left: 0;
-    transform: translateX(0%);
-    margin-left: 5%;
-    padding: 3px 10px 3px 10px;
-  }
-
+    .navBarContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: auto;
+        height: 30%;
+        border-radius: 5px;
+        left: 0;
+        transform: translateX(0%);
+        margin-left: 5%;
+        padding: 3px 10px 3px 10px;
+    }
 }
