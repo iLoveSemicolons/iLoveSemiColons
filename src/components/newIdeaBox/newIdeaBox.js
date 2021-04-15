@@ -173,7 +173,7 @@ export default class NewIdeaBox extends React.Component {
                             </div>
                             }
 
-                            <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} </IdeaBoxTitle>
+                            <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} Say that loud ! </IdeaBoxTitle>
                             <form className={style.ideaBox} onSubmit={this.handleSubmit}>
                                 <IdeaTextInput className={style.textInput} value={this.state.ideaField} type="text"
                                                onChange={this.handleIdeaFieldOnChange}

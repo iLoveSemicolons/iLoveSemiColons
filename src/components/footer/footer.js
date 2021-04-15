@@ -30,7 +30,7 @@ export default function Footer() {
 
             <div className={style.footerContainer}>
                 <div>
-                    &copy; 2020 iLoveSemicolons.io
+                    &copy; 2020-2021 iLoveSemicolons.io
                 </div>
 
                 <div className={style.footerRightContainer}>

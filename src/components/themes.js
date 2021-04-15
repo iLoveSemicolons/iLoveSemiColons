@@ -1,7 +1,7 @@
 const globalColorStyling = {
-
+    colorExtraWhite: "#ffffff",
     colorWhite: "#D4D4D4",
-    colorWhiter: "#EEEEEE",
+    colorWhiter: "#ffffff",
     colorDarkWhite : "#C8C8C8",
     colorGrey: "#B3B9C5",
     colorGreyBlue: "#848991",
@@ -165,15 +165,15 @@ const darkTheme = {
 //=================================================================================
 
     readButtonBorderColor : globalColorStyling.colorYellow,
-    readButtonTextColor : globalColorStyling.colorWhite,
+    readButtonTextColor : globalColorStyling.colorExtraWhite,
     readButtonBackgroundColorOnHover : globalColorStyling.colorYellow,
     readButtonTextColorOnHover : globalColorStyling.colorBlack,
 
 //=================================================================================
 
     demoProjectButtonBorderColor : globalColorStyling.colorBluer,
-    demoProjectButtonTextColor : globalColorStyling.colorWhite,
-    demoProjectButtonTextColorOnHover : globalColorStyling.colorWhite,
+    demoProjectButtonTextColor : globalColorStyling.colorExtraWhite,
+    demoProjectButtonTextColorOnHover : globalColorStyling.colorExtraWhite,
     demoProjectButtonBackgroundColorOnHover : globalColorStyling.colorBluer,
 
 //=================================================================================
