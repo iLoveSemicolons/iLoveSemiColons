@@ -7,7 +7,7 @@ import Error from "./Error";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import Likes from "./components/likes/likes";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import style from "./contact.module.scss";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
 import PageTitle from "./components/pageTitle/pageTitle";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";

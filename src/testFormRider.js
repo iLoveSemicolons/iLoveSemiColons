@@ -1,5 +1,5 @@
-/* import React from "react";
-import toBeUsedAddress from "./components/globalIP";
+import React from "react";
+import toBeUsedAddress from "../src/config/globalIP";
 import { FormRiderjs } from "formriderjs";
 
 export default class TestFormRider extends React.Component {
@@ -36,7 +36,7 @@ export default class TestFormRider extends React.Component {
 
     event.preventDefault();
 
-    window.setTimeout(() => {
+    window.setTimeout((z) => {
 
       let status = FormRiderjs.getValidationStatus();
       console.log(status);
@@ -87,4 +87,3 @@ export default class TestFormRider extends React.Component {
     );
   }
 }
- */

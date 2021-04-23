@@ -1,7 +1,7 @@
 import React from "react";
 import "./likes.scss"
 import styled from "styled-components";
-import toBeUsedAddress from "../globalIP";
+import toBeUsedAddress from "../../config/globalIP";
 
 const LikesNumber = styled.div`
     color : ${({theme}) => theme.NormalTextTextColor};

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./newIdeaBox.module.scss";
 import styled from "styled-components";
-import toBeUsedAddress from "../globalIP";
+import toBeUsedAddress from "../../config/globalIP";
 
 const IdeaBoxContainer = styled.div`
 background-color : ${({theme}) => theme.ideaBoxContainerBackgroundColor};

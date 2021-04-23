@@ -8,7 +8,8 @@ import ProjectCell from "./components/projectCell/ProjectCell";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 import { Helmet } from "react-helmet";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
+
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";

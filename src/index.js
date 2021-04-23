@@ -24,7 +24,7 @@ import { GlobalStyles } from "./components/globalStyles";
 import { initialThemeState, themeReducer } from "./components/themeReducer";
 import { Helmet } from "react-helmet";
 import ScrollToTop from "./components/scrollToTop";
-// import TestFormRider from "./testFormRider";
+import TestFormRider from "./testFormRider";
 
 //===========================================================
 
@@ -57,7 +57,7 @@ function App() {
             <Route exact path="/contact" component={contact} />
             <Route exact path="/legalNotice" component={LegalNotice} />
             <Route exact path="/subscribe" component={Subscribe} />
-            {/* <Route exact path="/testFormRider" component={TestFormRider} /> */}
+            <Route exact path="/testFormRider" component={TestFormRider} />
             <Route exact path="/privateRepoRequest" component={PrivateRepoRequest} />
             <Route exact path="/articleTesting/:articleLocalFileName" component={ArticleTesting} />
             <Route exact path="/article/:articleLocalFileName" component={article} />

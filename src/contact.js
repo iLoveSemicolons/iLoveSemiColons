@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 

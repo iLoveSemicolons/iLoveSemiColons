@@ -2,7 +2,8 @@ import React from 'react'
 import PageTitle from "./components/pageTitle/pageTitle";
 import style from './privateRepoRequest.module.scss';
 import styled from "styled-components";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
+
 import {Helmet} from "react-helmet";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";

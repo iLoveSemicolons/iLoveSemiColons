@@ -3,7 +3,7 @@ import PageTitle from "./components/pageTitle/pageTitle";
 import ArticleCell from "./components/articleCell/ArticleCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import { Helmet } from "react-helmet";
-import toBeUsedAddress from "./components/globalIP";
+import toBeUsedAddress from "../src/config/globalIP";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 
