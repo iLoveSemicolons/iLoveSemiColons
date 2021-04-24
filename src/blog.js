@@ -8,8 +8,8 @@ import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
 
 export default class Blog extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       blogAPIResponse: [],
@@ -17,10 +17,7 @@ export default class Blog extends React.Component {
   }
 
   callBlogAPI() {
-    fetch(toBeUsedAddress.address + "/blog", {
-      method : "GET",
-      headers : {'Access-Control-Allow-Origin': "*"}
-    })
+    fetch(toBeUsedAddress.address + "/blog")
       .then((response) => response.json())
       .then((response) => this.setState({ blogAPIResponse: response }))
       .catch(function () {
@@ -68,6 +65,14 @@ export default class Blog extends React.Component {
               datePosted={article.datePosted}
             />
           ))}
+          <ArticleCell
+              idPost={1}
+              key={1}
+              title={"Over-engineering yourReact app, the orange juice"}
+              sourceLink={"over-engineering-your-react-app.html"}
+              hashtags={"react,javascript,aefaef,ggg"}
+              datePosted={"article.datePosted"}
+            />
         </MainLayout>
       </PageLayout>
     );

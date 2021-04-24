@@ -43,7 +43,7 @@ export default class Article extends React.Component {
 
         this.articleLocalFileName = this.props.match.params.articleLocalFileName;
         this.copyToClipboard = this.copyToClipboard.bind(this);
-        this.articleSourceLink = '/articles/' + this.articleLocalFileName;
+        this.articleSourceLink = '/articles/' + this.articleLocalFileName.substring(0, this.articleLocalFileName.length-5) + "/" + this.articleLocalFileName;
 
         this.state = {
             articleContent: "",
@@ -87,6 +87,7 @@ export default class Article extends React.Component {
 
     fetchArticleContent() {
         const contentSourcePath = this.articleSourceLink;
+        console.log(contentSourcePath);
         fetch(contentSourcePath)
             .then(response => response.text())
             .then(response => this.setState({ articleContent: response }))
