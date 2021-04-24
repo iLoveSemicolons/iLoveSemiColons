@@ -5,7 +5,6 @@ import "./home.scss";
 import SubscribeButton from "./components/subscribeButton/SubscribeButton";
 import TopicTitle from "./components/topicTitle/TopicTitle";
 import ProjectCell from "./components/projectCell/ProjectCell";
-import ArticleCell from "./components/articleCell/ArticleCell";
 import ShowAll from "./components/showAll/showAll";
 import { Helmet } from "react-helmet";
 import toBeUsedAddress from "../src/config/globalIP";
@@ -13,8 +12,8 @@ import toBeUsedAddress from "../src/config/globalIP";
 import SocialNetworkingContainer from "./components/socialNetworkingContainer/socialNetworkingContainer";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+import PostsTopic from "./components/postsTopic/PostsTopic";
 
-// import SocialNetworkingButton from "./components/socialNetworkingButton/socialNetworkingButton";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -29,8 +28,8 @@ export default class Home extends React.Component {
 
   callProjectTopicAPI() {
     fetch(toBeUsedAddress.address + "/homePageProjectTopic", {
-      method : "GET",
-      headers : {'Access-Control-Allow-Origin': "*"}
+      method: "GET",
+      headers: { 'Access-Control-Allow-Origin': "*" }
     })
       .then((response) => response.json())
       .then((response) => this.setState({ projectTopicAPIResponse: response }))
@@ -41,8 +40,8 @@ export default class Home extends React.Component {
 
   callPostTopicAPI() {
     fetch(toBeUsedAddress.address + "/homePagePostTopic", {
-      method : "GET",
-      headers : {'Access-Control-Allow-Origin': "*"}
+      method: "GET",
+      headers: { 'Access-Control-Allow-Origin': "*" }
     })
       .then((response) => response.json())
       .then((response) => this.setState({ postTopicAPIResponse: response }))
@@ -59,7 +58,6 @@ export default class Home extends React.Component {
   render() {
     const projects = this.state.projectTopicAPIResponse;
     //const designs = this.state.designTopicAPIResponse;
-    const articles = this.state.postTopicAPIResponse;
 
     return (
       <div>
@@ -125,20 +123,8 @@ export default class Home extends React.Component {
                 <ShowAll goTo="/project" text="View all my projects" />
               </div>
               <TopicTitle title="Latest Posts" />
-              <div>
-                {articles.map((article) => (
-                  <ArticleCell
-                    key={article.idPost}
-                    idPost={article.idPost}
-                    title={article.title}
-                    sourceLink={article.sourceLink}
-                    hashtags={article.hashtags}
-                    datePosted={article.datePosted}
-                    likes={article.likes}
-                  />
-                ))}
-                <ShowAll goTo="/blog" text="View all my posts" />
-              </div>
+              <PostsTopic />
+              <ShowAll goTo="/blog" text="View all my posts" />
             </div>
           </MainLayout>
         </PageLayout>

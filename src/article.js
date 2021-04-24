@@ -41,9 +41,10 @@ export default class Article extends React.Component {
     constructor(props) {
         super(props);
 
-        this.articleLocalFileName = this.props.match.params.articleLocalFileName;
         this.copyToClipboard = this.copyToClipboard.bind(this);
-        this.articleSourceLink = '/articles/' + this.articleLocalFileName.substring(0, this.articleLocalFileName.length-5) + "/" + this.articleLocalFileName;
+        this.articleLocalFileName = this.props.match.params.articleLocalFileName;
+        this.articleName = this.articleLocalFileName.substring(0, this.articleLocalFileName.length - 5);
+        this.articleSourceLink = `/articles/${this.articleName}/${this.articleLocalFileName}`;
 
         this.state = {
             articleContent: "",
@@ -56,8 +57,6 @@ export default class Article extends React.Component {
 
     callArticleAPI() {
 
-        const articleLocalFileName = this.articleLocalFileName;
-
         fetch(toBeUsedAddress.address + "/article", {
             method: "POST",
             headers: {
@@ -67,7 +66,7 @@ export default class Article extends React.Component {
 
             },
             body: JSON.stringify({
-                articleLocalFileName: articleLocalFileName
+                articleLocalFileName: this.articleLocalFileName
             })
         })
             .then(response => response.json())
@@ -147,16 +146,13 @@ export default class Article extends React.Component {
                             <meta name={"keywords"} content={article.metaKeywords}/>
 */}
                                 </Helmet>
-
-
                                 <div className={"articleTopContainer"}>
+                                    <img className={"picArticle"} src={`/articles/${this.articleName}/${this.articleName}.webp`}
+                                        alt={"Sirage al dbiyat développeru web Lyon auteur de" + this.articleName}
+                                    />
                                     <ArticleTitle className="articleTitle">
                                         {article.title}
                                     </ArticleTitle>
-
-                                    <div className={"articleLikesContainer"}>
-                                        <Likes idPost={article.idPost} />
-                                    </div>
 
                                     <ArticleEstimatedReadingTime className="estimatedReadingTime">
                                         Reading Time : {article.estimatedReadingTime} min
@@ -166,6 +162,10 @@ export default class Article extends React.Component {
                                         {/*{article.datePosted.slice(0,10).replace("-","/")}*/}
                                         {this.articlePostDateReformatting(article.datePosted)}
                                     </DatePosted>
+
+                                    <div className={"articleLikesContainer"}>
+                                        <Likes idPost={article.idPost} />
+                                    </div>
 
 
                                 </div>

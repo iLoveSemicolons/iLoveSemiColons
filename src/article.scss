@@ -4,6 +4,10 @@
     font-family: 'Montserrat', 'Open Sans', sans-serif;
 }
 
+.picArticle {
+    width: 100%;
+}
+
 .articleTopContainer {
     border-left: solid 6px $colorBluer;
     margin-bottom: 30px;
@@ -13,6 +17,7 @@
     font-size: $fontsizeBiggest;
     font-weight: 500;
     padding-left: 15px;
+    margin-top: 10px;
 }
 
 .articleLikesContainer {

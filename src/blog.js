@@ -1,11 +1,11 @@
 import React from "react";
 import PageTitle from "./components/pageTitle/pageTitle";
-import ArticleCell from "./components/articleCell/ArticleCell";
 import NewIdeaBox from "./components/newIdeaBox/newIdeaBox";
 import { Helmet } from "react-helmet";
 import toBeUsedAddress from "../src/config/globalIP";
 import PageLayout from "./components/pageLayout/pageLayout";
 import MainLayout from "./components/mainLayout/mainLayout";
+import PostsTopic from "./components/postsTopic/PostsTopic";
 
 export default class Blog extends React.Component {
   constructor() {
@@ -30,8 +30,6 @@ export default class Blog extends React.Component {
   }
 
   render() {
-    const articles = this.state.blogAPIResponse;
-
     return (
       <PageLayout>
         <MainLayout>
@@ -52,27 +50,8 @@ export default class Blog extends React.Component {
             <meta name="robots" content="index,follow" />
           </Helmet>
           <PageTitle title="Blog" />
-
           <NewIdeaBox ideaBoxTitle="You have an idea for an article or can't wait to learn about a topic ?" />
-
-          {articles.map((article) => (
-            <ArticleCell
-              idPost={article.idPost}
-              key={article.idPost}
-              title={article.title}
-              sourceLink={article.sourceLink}
-              hashtags={article.hashtags}
-              datePosted={article.datePosted}
-            />
-          ))}
-          <ArticleCell
-              idPost={1}
-              key={1}
-              title={"Over-engineering yourReact app, the orange juice"}
-              sourceLink={"over-engineering-your-react-app.html"}
-              hashtags={"react,javascript,aefaef,ggg"}
-              datePosted={"article.datePosted"}
-            />
+          <PostsTopic />
         </MainLayout>
       </PageLayout>
     );

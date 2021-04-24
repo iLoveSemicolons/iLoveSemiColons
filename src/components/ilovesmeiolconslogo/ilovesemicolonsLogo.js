@@ -1,7 +1,6 @@
-import React, {useContext} from "react"
+import React  from "react"
 import "./ilovesemicolonslogo.scss";
 import {NavLink} from "react-router-dom";
-import {AppContext} from "../../index";
 
 export default function IlovesemicolonsLogo() {
 

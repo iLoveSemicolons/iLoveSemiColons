@@ -7,6 +7,7 @@
 .articleCell {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-left: solid 6px $colorBluer;
     padding: 0 0 10px 0;
     border-radius: 5px;
@@ -14,7 +15,17 @@
     -moz-border-radius: 5px;
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
-    max-width: 400px;
+    max-width: 420px;
+    min-height: 390px;
+}
+
+.picCellContainer {
+    width: 100%;
+    border-radius: 0px 5px 0 0;
+    -webkit-border-radius: 0px 5px 0 0;
+    -moz-border-radius: 0px 5px 0 0;
+    -ms-border-radius: 0px 5px 0 0;
+    -o-border-radius: 0px 5px 0 0;
 }
 
 .articleCellTopSideContainer {
@@ -52,6 +63,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .articleCellContainer {
+        margin: auto;
+    }
     .articleCellTopSideContainer {
         flex-direction: column;
     }
@@ -61,59 +75,8 @@
     }
 }
 
-
-/* @import "../globalStyles";
-.articleCellContainer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.articleCell {
-    display: flex;
-    flex-direction: column;
-    border-left: solid 6px $colorBluer;
-    padding: 10px 5px 10px 0;
-    border-radius: 5px;
-}
-
-.articleCellTopSideContainer {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 15px;
-}
-
-.articleCellTitle {
-    line-height: 1.5;
-}
-
-.articleCellTitle::first-line {
-    line-height: 1.5 !important;
-}
-
-.readButtonContainer {
-    padding-left: 10px;
-}
-
-.articleCellHashtagContainer {
-    padding-left: 15px;
-}
-
-.articleCellHashtagContainer div {
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.articleCellLikesContainer {
-    margin-top: 15px;
-    padding-left: 15Px;
-}
-
-@media screen and (max-width: 600px) {
-    .articleCellTopSideContainer {
-        flex-direction: column;
+@media screen and (max-width: 850px) {
+    .articleCellContainer {
+        margin: auto;
     }
-    .readButtonContainer {
-        padding-left: 0;
-        margin-top: 15px;
-    }
-} */
+}
