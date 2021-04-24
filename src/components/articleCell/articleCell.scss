@@ -8,8 +8,13 @@
     display: flex;
     flex-direction: column;
     border-left: solid 6px $colorBluer;
-    padding: 10px 5px 10px 0;
+    padding: 0 0 10px 0;
     border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    max-width: 400px;
 }
 
 .articleCellTopSideContainer {
@@ -20,6 +25,8 @@
 
 .articleCellTitle {
     line-height: 1.5;
+    padding-right: 5px;
+    padding-top: 10px;
 }
 
 .articleCellTitle::first-line {

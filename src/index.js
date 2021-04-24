@@ -30,7 +30,6 @@ export const AppContext = createContext();
 function App() {
   const [themeState, dispatch] = useReducer(themeReducer, initialThemeState);
   const { currentTheme } = themeState;
-  console.log(themeState);
   return (
     <BrowserRouter>
       <ScrollToTop />

@@ -25,11 +25,6 @@ export default function ReadArticleButton(props) {
         <div>
             <Link to={{
                 pathname: `/article/${sourceLink}`,
-/*                state: {
-                    title: `${props.title}`,
-                    datePosted:`${props.datePosted}`,
-                    hashtags:`${props.hashtags}`,
-                }*/
             }}>
                 <ReadButton className="ReadArticleButton">Read</ReadButton>
             </Link>

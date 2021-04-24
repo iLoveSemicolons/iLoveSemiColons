@@ -64,12 +64,10 @@ export default class Home extends React.Component {
     return (
       <div>
         <Helmet>
-          {" "}
-          {/*Search engines*/}{" "}
+          {/*Search engines*/}
           <title>
-            {" "}
-            Opensource projects and blog posts about web development{" "}
-          </title>{" "}
+            Opensource projects and blog posts about web development
+          </title>
           <meta
             name="description"
             content="Opensource projects and weekly posts about programming and web development."
@@ -79,20 +77,20 @@ export default class Home extends React.Component {
             content="i love semicolons, ilovesemicolons, Lyon, France, homepage, home page, opensource, blog, Open Source, website, portfolio, Sirage AL DBIYAT, ALDBIYAT, it, freelance, freelancing, autoentrepreneur, web development, web programming, full stack web developer, full stack"
           />
           <meta name="robots" content="index,follow" />
-        </Helmet>{" "}
+        </Helmet>
         <PageLayout>
           <MainLayout>
             <div className="introContainer">
               <div className="homePageIntroLeftContainer">
-                <div className="introTitle">Hey, I am Sirage </div>{" "}
+                <div className="introTitle">Hey, I am Sirage </div>
                 <div className="introText">
-                  A full stack web developer, passionate about{" "}
+                  A full stack web developer, passionate about
                   <span className="blueSpan"> open - source </span> projects and
-                  the contribution to web modernization{" "}
+                  the contribution to web modernization
                 </div>
                 <div>
                   <SocialNetworkingContainer />
-                </div>{" "}
+                </div>
               </div>
               <div className="homePageIntroRightContainer">
                 <div>
@@ -101,20 +99,19 @@ export default class Home extends React.Component {
                     className="myImageHomePage"
                     alt="Sirage AL DBIYAT"
                   />
-                </div>{" "}
+                </div>
                 <div className="rightContainerText">
                   Be informed when there is a new project or an article on my
                   page!
                 </div>
                 <div>
                   <SubscribeButton />
-                </div>{" "}
-              </div>{" "}
+                </div>
+              </div>
             </div>
             <div className="topicsContainer">
               <TopicTitle title="Projects" />
               <div>
-                {" "}
                 {projects.map((project, index) => (
                   <ProjectCell
                     key={project.idProject}
@@ -124,7 +121,7 @@ export default class Home extends React.Component {
                     demoLink={project.linkToDemo}
                     language={project.language}
                   />
-                ))}{" "}
+                ))}
                 <ShowAll goTo="/project" text="View all my projects" />
               </div>
               <TopicTitle title="Latest Posts" />
@@ -139,12 +136,12 @@ export default class Home extends React.Component {
                     datePosted={article.datePosted}
                     likes={article.likes}
                   />
-                ))}{" "}
+                ))}
                 <ShowAll goTo="/blog" text="View all my posts" />
-              </div>{" "}
-            </div>{" "}
+              </div>
+            </div>
           </MainLayout>
-        </PageLayout>{" "}
+        </PageLayout>
       </div>
     );
   }

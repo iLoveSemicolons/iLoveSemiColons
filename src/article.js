@@ -87,7 +87,6 @@ export default class Article extends React.Component {
 
     fetchArticleContent() {
         const contentSourcePath = this.articleSourceLink;
-        console.log(contentSourcePath);
         fetch(contentSourcePath)
             .then(response => response.text())
             .then(response => this.setState({ articleContent: response }))
