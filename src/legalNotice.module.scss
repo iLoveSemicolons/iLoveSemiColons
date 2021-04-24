@@ -1,8 +1,4 @@
-@import "./components/globalFontStyling.scss";
-
-
-
-
-.legalNoticeContainer{
-  font-size: $fontsizeSmallMedium;
+@import "./components/globalStyles.scss";
+.legalNoticeContainer {
+    font-size: $fontsizeSmallMedium;
 }

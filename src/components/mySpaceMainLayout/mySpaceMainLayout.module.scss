@@ -1,7 +1,6 @@
-@import "../globalFontStyling.scss";
-
+@import "../globalStyles.scss";
 .mainLayout {
-  max-width: 1000px;
-  margin: 40px auto auto auto;
-  color: $colorWhite;
+    max-width: 1000px;
+    margin: 40px auto auto auto;
+    color: $colorWhite;
 }

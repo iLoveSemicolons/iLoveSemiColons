@@ -1,17 +1,14 @@
-@import "../globalFontStyling";
-
-
-.showAll{
-  display: inline-block;
-  border-radius: 12px;
-  width:content-box;
-  font-size: $fontsizeSmallMedium;
-  cursor: pointer;
-  padding: 3px 30px 3px 30px;
+@import "../globalStyles";
+.showAll {
+    display: inline-block;
+    border-radius: 12px;
+    width: content-box;
+    font-size: $fontsizeSmallMedium;
+    cursor: pointer;
+    padding: 3px 30px 3px 30px;
 }
 
-
-.showAllContainer{
-  margin-top: 30px;
-  text-align: center;
+.showAllContainer {
+    margin-top: 30px;
+    text-align: center;
 }

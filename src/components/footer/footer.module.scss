@@ -1,104 +1,85 @@
-@import "../globalFontStyling";
-
-
+@import "../globalStyles";
 .footer {
-  position: absolute;
-
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-
-  font-size: $fontsizeSmall;
-
-  transition: 0.3s;
-
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    font-size: $fontsizeSmall;
+    transition: 0.3s;
 }
 
 .footerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  max-width: 1000px;
-  height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1000px;
+    height: 100%;
 }
 
-
 .footerRightContainer {
-  display: flex;
+    display: flex;
 }
 
 .separator {
-  margin: 0 4px 0 4px;
+    margin: 0 4px 0 4px;
 }
-
 
 //===============================================================================
-
-
 .footerContentContainerUpperLining {
-  display: flex;
-  margin: auto;
-  max-width: 1000px;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-
 .footerLeftContentUpperLining {
-  border-bottom: 3px solid;
-  width: 276px; //logo width or could be also logoContainer width
+    border-bottom: 3px solid;
+    width: 276px; //logo width or could be also logoContainer width
 }
 
 .footerRightContentUpperLining {
-  display: flex;
-  justify-content: space-between;
-  width: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
 }
 
 .sunMoonUpperLining {
-  border-bottom: 3px solid #FCC21B;
-  width: 28px; //it is sunMoon width
+    border-bottom: 3px solid #FCC21B;
+    width: 28px; //it is sunMoon width
 }
 
 .navIconUpperLining {
-  border-bottom: 3px solid #1B7CD1;
-  width: 35px; // it is navIcon width
+    border-bottom: 3px solid #1B7CD1;
+    width: 35px; // it is navIcon width
 }
 
 @media screen and (max-width: 600px) {
-  .footerContainer{
-    width: 90%;
-  }
-
-  .footerContentContainerUpperLining {
-    width: 90%;
-
-  }
-
-  .footerLeftContentUpperLining {
-    max-width: 220px; //logo width while responsive design
-  }
-
-  .footerRightContentUpperLining {
-    justify-content: space-around;
-  }
-
-  .sunMoonUpperLining {
-    max-width: 24px;
-  }
-
-  .navIconUpperLining {
-    max-width: 30px;
-
-  }
-
+    .footerContainer {
+        width: 90%;
+    }
+    .footerContentContainerUpperLining {
+        width: 90%;
+    }
+    .footerLeftContentUpperLining {
+        max-width: 220px; //logo width while responsive design
+    }
+    .footerRightContentUpperLining {
+        justify-content: space-around;
+    }
+    .sunMoonUpperLining {
+        max-width: 24px;
+    }
+    .navIconUpperLining {
+        max-width: 30px;
+    }
 }
 
 @media screen and (max-width: 440px) {
-  .footerContainer{
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
+    .footerContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
 }

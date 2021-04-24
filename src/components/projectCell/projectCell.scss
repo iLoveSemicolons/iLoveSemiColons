@@ -1,105 +1,83 @@
-@import "../globalFontStyling";
-
-.projectCellWrapper{
-  padding-top: 20px;
-  padding-bottom: 20px;
+@import "../globalStyles";
+.projectCellWrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-
 
 .projectCellContainer {
-  border-left: solid 6px $colorGreenCalm;
-  border-radius: 5px;
-  padding: 10px 5px 10px 15px;
-
+    border-left: solid 6px $colorGreenCalm;
+    border-radius: 5px;
+    padding: 10px 5px 10px 15px;
 }
-
 
 .projectCell {
-  display: flex;
-  padding-bottom: 5px;
+    display: flex;
+    padding-bottom: 5px;
 }
-
 
 .projectCellTitle {
-  color: $colorWhite;
-  flex: 1 1;
+    color: $colorWhite;
+    flex: 1 1;
 }
-
 
 .projectResume {
-  padding: 0 15px 0 15px;
-  line-height: 1.5;
-  flex: 3 1;
-}
-.projectResume::first-line {
-  line-height: 1.5 !important;
+    padding: 0 15px 0 15px;
+    line-height: 1.5;
+    flex: 3 1;
 }
 
-.projectDemoButtonContainer{
-  padding-right: 10px;
+.projectResume::first-line {
+    line-height: 1.5 !important;
+}
+
+.projectDemoButtonContainer {
+    padding-right: 10px;
 }
 
 .projectCellButtons {
-  flex: 1 1;
-  display: flex;
-  justify-content: flex-end;
+    flex: 1 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-
-
-
-
-
-.languageContainer{
-  display: flex;
+.languageContainer {
+    display: flex;
 }
 
-
-
-.singleLanguageContainer{
-  display: flex;
-  align-items: center;
-  margin-right: 25px;
-  font-size: $fontsizeSmall;
-
+.singleLanguageContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    font-size: $fontsizeSmall;
 }
 
-.languageCircle{
-  border-radius: 50%;
-  background-color: $colorYellower;
-  width: 13px;
-  height: 13px;
-  margin-right: 5px;
+.languageCircle {
+    border-radius: 50%;
+    background-color: $colorYellower;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
 }
-
-
-
 
 @media screen and (max-width: 600px) {
-
-  .projectCell{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .projectCellButtons{
-    flex: auto;
-    justify-content: normal;
-    margin-top: 15px;
-    margin-bottom: 15px;
-
-  }
-
-  .projectResume{
-    margin-top: 15px;
-    padding-left: 0;
-  }
-
-
-  .languageContainer{
-    flex-direction: column;
-  }
-  .singleLanguageContainer{
-    margin-top: 5px;
-  }
+    .projectCell {
+        display: flex;
+        flex-direction: column;
+    }
+    .projectCellButtons {
+        flex: auto;
+        justify-content: normal;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .projectResume {
+        margin-top: 15px;
+        padding-left: 0;
+    }
+    .languageContainer {
+        flex-direction: column;
+    }
+    .singleLanguageContainer {
+        margin-top: 5px;
+    }
 }

@@ -34,10 +34,10 @@ export default function SocialNetworkingContainer() {
                                     text="Sirage Al dbiyat"
             />
             <SocialNetworkingButton className={Styles.singleNetworkingButton}
-                                    goTo={"https://github.com/iLoveSemicolons"}
+                                    goTo={"https://github.com/sirageDb"}
                                     src={"githubLogo.svg"}
                                     alt={"githubLogo"}
-                                    text="iLoveSemicolons"
+                                    text="sirageDb"
             />
         </div>
     );

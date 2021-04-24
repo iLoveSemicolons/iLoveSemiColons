@@ -1,15 +1,16 @@
-@import "../globalFontStyling.scss";
-.sunMoonContainer{
-    display : inline-block;
+@import "../globalStyles.scss";
+.sunMoonContainer {
+    display: inline-block;
     background-color: green;
 }
-.sunMoon{
-    cursor : pointer;
-    max-width : 28px;
+
+.sunMoon {
+    cursor: pointer;
+    max-width: 28px;
 }
 
-@media screen and (max-width: 600px){
-    .sunMoon{
+@media screen and (max-width: 600px) {
+    .sunMoon {
         max-width: 24px;
     }
 }

@@ -1,33 +1,33 @@
-@import "../globalFontStyling";
-
+@import "../globalStyles";
 .projectCell {
-  display: flex;
-  border-left: solid 6px #009EFF;
+    display: flex;
+    border-left: solid 6px #009EFF;
 }
 
 .projectCellContainer {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  border-bottom: 2px solid #141414;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 2px solid #141414;
 }
 
 .projectCellTitle {
-  color: $colorWhite;
+    color: $colorWhite;
 }
 
 .projectCellTitle {
-  padding-left: 15px;
+    padding-left: 15px;
 }
 
 .projectResume {
-  color: $colorGrey;
-  padding: 0 15px 0 15px;
-  line-height: 1.5;
-}
-.projectResume::first-line {
-  line-height: 1.5 !important;
+    color: $colorGrey;
+    padding: 0 15px 0 15px;
+    line-height: 1.5;
 }
 
-.demoButtonContainer{
-  padding-left: 10px;
+.projectResume::first-line {
+    line-height: 1.5 !important;
+}
+
+.demoButtonContainer {
+    padding-left: 10px;
 }

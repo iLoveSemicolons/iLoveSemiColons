@@ -1,46 +1,43 @@
-
-
-
-@import "../globalFontStyling.scss";
-.crewMemberContainer{
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  position: relative;
+@import "../globalStyles.scss";
+.crewMemberContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
 }
 
-.crewMemberContainer input{
-  display: none;
+.crewMemberContainer input {
+    display: none;
 }
 
-.checkMark{
-  position: absolute;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  border-radius: 5px;
-  background-color: $colorDarkWhite;
-  transition: background-color 0.15s;
+.checkMark {
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    background-color: $colorDarkWhite;
+    transition: background-color 0.15s;
 }
 
-.memberName{
-  margin-left: 30px;
+.memberName {
+    margin-left: 30px;
 }
 
-.crewMemberContainer:hover .checkMark{
-  background-color: $colorDarkGray;
+.crewMemberContainer:hover .checkMark {
+    background-color: $colorDarkGray;
 }
 
-.crewMemberContainer input:checked ~ .checkMark {
-  background-color: $colorBlue;
+.crewMemberContainer input:checked~.checkMark {
+    background-color: $colorBlue;
 }
 
 .checkMark ::after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
 
-.crewMemberContainer input:checked ~ .checkMark :after {
-  display: block;
+.crewMemberContainer input:checked~.checkMark :after {
+    display: block;
 }

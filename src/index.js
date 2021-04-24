@@ -9,24 +9,21 @@ import contact from "./contact";
 import blog from "./blog";
 import Home from "./home";
 import article from "./article";
-
 import PrivateRepoRequest from "./privateRepoRequest";
 import "./App.scss";
 import Subscribe from "./subscribe";
 import ArticleTesting from "./articleTesting";
-
 import LegalNotice from "./legalNotice";
 
 //===========================================================
-
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
-import { initialThemeState, themeReducer } from "./components/themeReducer";
+import { initialThemeState, themeReducer } from "./reducers/themeReducer";
 import { Helmet } from "react-helmet";
 import ScrollToTop from "./components/scrollToTop";
 import TestFormRider from "./testFormRider";
-
 //===========================================================
+
 
 export const AppContext = createContext();
 
