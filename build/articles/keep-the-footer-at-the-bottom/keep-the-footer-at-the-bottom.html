@@ -1,0 +1,82 @@
+<style>
+    .boldText {
+        font-weight: bold;
+    }
+    
+    .imageContainer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .image {
+        max-width: 600px;
+    }
+    
+    @media screen and (max-width: 600px) {
+        .image {
+            max-width: 100%;
+        }
+    }
+</style>
+
+<p>
+    A Page footer should be always kept at the bottom of the page, for some it is maybe a difficult task, taking 1-2 hours to accomplish while it is pretty simple. Probably you are reading this right now because you are stuck on it. Let’s show you how to
+    keep the footer where it belongs in 2 steps (with explanation).
+</p>
+
+
+<p>
+    <b>TL;DR Go to the bottom to see the code.</b>
+</p>
+
+
+<ol>
+    <li>add a <i>footer</i> under your <i>body</i> then add a class <i>.footer</i> to it, then add these properties to the class.
+        <div class="imageContainer">
+            <img class="image" src="/articles/keep-the-footer-at-the-bottom/footerCSS.png" alt="footer at the bottom of the page" />
+        </div>
+        <p><b>Explanation: </b></p>
+        <ul>
+            <li>
+                putting a position absolute in our footer will remove it from the document flow so we are free to give it a new position.
+            </li>
+            <li>
+                Since it is a position absolute we give it a bottom: 0, but this wont let the footer go to the bottom of the page, instead it will be placed relatively to the containing block which is the body in our case.
+            </li>
+        </ul>
+    </li>
+
+
+    <li>
+        We should now create an HTML element under body wrapping all pages content including footer and header, add to this element a class and let’s call it .mainContainer
+        <div class="imageContainer">
+            <img class="image" src="/articles/keep-the-footer-at-the-bottom/mainContainer.png" alt="footer at the bottom of the page" />
+        </div>
+        <p>Magic !, Now the footer is at the bottom of the page.</p>
+        <p><b>Explanation :</b></p>
+        <ul>
+            <li>
+                When an element with a position:absolute contained by an element with a position: relative it will be placed according to the parent element. </li>
+            <li>
+                giving a min-height : 100vh means that the mainContainers height will always take 100% of the browser page height. </li>
+        </ul>
+    </li>
+</ol>
+<p>
+    As a final result, you have now the footer at the bottom of the page, contained by mainContainer.
+</p>
+
+<b>TL;DR Here is the code</b>
+<div class="imageContainer">
+    <img class="image" src="/articles/keep-the-footer-at-the-bottom/htmlBody.png" alt="footer at the bottom of the page" />
+</div>
+<p>
+    And in your main.css
+</p>
+<div class="imageContainer">
+    <img class="image" src="/articles/keep-the-footer-at-the-bottom/mainCSS.png" alt="footer at the bottom of the page" />
+</div>
+
+
+<p>happy coding :)</p>
+<br />
