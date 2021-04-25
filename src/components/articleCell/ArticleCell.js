@@ -25,9 +25,7 @@ export default function ArticleCell(props) {
                     <div className="articleCellTopSideContainer">
                         <Link to={{ pathname: `/article/${props.sourceLink}` }}>
                             <ArticleCellTitle className="articleCellTitle">
-                                <div>
                                     {props.title}
-                                </div>
                             </ArticleCellTitle>
                         </Link>
                     </div>

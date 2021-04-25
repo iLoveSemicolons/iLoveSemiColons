@@ -4,21 +4,21 @@ import styled from "styled-components";
 import toBeUsedAddress from "../../config/globalIP";
 
 const IdeaBoxContainer = styled.div`
-background-color : ${({theme}) => theme.ideaBoxContainerBackgroundColor};
+background-color : ${({ theme }) => theme.ideaBoxContainerBackgroundColor};
 `;
 
 const IdeaBoxTitle = styled.div`
-color : ${({theme}) => theme.ideaBoxTitleTextColor};
+color : ${({ theme }) => theme.ideaBoxTitleTextColor};
 `;
 
 
 const IdeaTextInput = styled.input`
-background-color : ${({theme}) => theme.ideaBoxTextInputBackgroundColor};
-color : ${({theme}) => theme.ideaBoxTextInputColor};
-border-color : ${({theme}) => theme.ideaBoxTextInputBorderColor};
+background-color : ${({ theme }) => theme.ideaBoxTextInputBackgroundColor};
+color : ${({ theme }) => theme.ideaBoxTextInputColor};
+border-color : ${({ theme }) => theme.ideaBoxTextInputBorderColor};
 
 &::place-holder  : {
-color : ${({theme}) => theme.ideaTextInputPlaceholderColor};
+color : ${({ theme }) => theme.ideaTextInputPlaceholderColor};
 }
 `;
 
@@ -27,8 +27,8 @@ color : ${({theme}) => theme.ideaTextInputPlaceholderColor};
 
 
 const IdeaThanksBox = styled.div`
-        background-color : ${({theme}) => theme.IdeaThanksBoxBackgroundColor};
-        color : ${({theme}) => theme.IdeaThanksBoxBoxTextColor};
+        background-color : ${({ theme }) => theme.IdeaThanksBoxBackgroundColor};
+        color : ${({ theme }) => theme.IdeaThanksBoxBoxTextColor};
         `
 
 
@@ -64,25 +64,25 @@ export default class NewIdeaBox extends React.Component {
     checkInputRequired(inputValue) {
         let regex = /^\s+/;
         if (regex.test(String(inputValue)) || inputValue.length === 0) {
-            this.setState({error: this.state.error + 1})
+            this.setState({ error: this.state.error + 1 })
         } else if (typeof (inputValue) === "undefined") {
-            this.setState({error: this.state.error + 1})
+            this.setState({ error: this.state.error + 1 })
         } else {
-            this.setState({error: this.state.error});
+            this.setState({ error: this.state.error });
         }
     }
 
     checkInputEmail(inputValue) {
         let regex = /^(([^<>()\]\\.,;:\s@"]+(\.[^<>()\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (regex.test(String(inputValue).toLowerCase())) {
-            this.setState({error: this.state.error + 1})
+            this.setState({ error: this.state.error + 1 })
         } else {
-            this.setState({error: this.state.error});
+            this.setState({ error: this.state.error });
         }
     }
 
 
-//========================================================================
+    //========================================================================
 
 
     handleSubmit(event) {
@@ -92,7 +92,7 @@ export default class NewIdeaBox extends React.Component {
         date = date.toISOString().slice(0, 19).replace("T", ' ');
 
 
-        this.setState({submitButtonIsClicked: true});
+        this.setState({ submitButtonIsClicked: true });
 
 
         const submitAfterValidation = async () => {
@@ -102,7 +102,7 @@ export default class NewIdeaBox extends React.Component {
 
 
             if (this.state.error === 0) {
-                fetch(toBeUsedAddress.address+"/newidea", {
+                fetch(toBeUsedAddress.address + "/newidea", {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
@@ -115,7 +115,7 @@ export default class NewIdeaBox extends React.Component {
                     })
                 })
                     .then((response) => {
-                        this.setState({ideaIsSent: true});
+                        this.setState({ ideaIsSent: true });
                         return response;
                     })
                     .then(response => response.json())
@@ -126,20 +126,20 @@ export default class NewIdeaBox extends React.Component {
             .catch((error) => {
                 console.log(error);
             });
-        this.setState({error: 0});
+        this.setState({ error: 0 });
     }
 
 
     handleIdeaFieldOnChange(event) {
-        this.setState({ideaField: event.target.value});
+        this.setState({ ideaField: event.target.value });
     }
 
 
     handleEmailFieldOnChange(event) {
-        this.setState({emailField: event.target.value});
+        this.setState({ emailField: event.target.value });
     }
 
-    pageReload(){
+    pageReload() {
         window.location.reload();
     }
 
@@ -167,28 +167,32 @@ export default class NewIdeaBox extends React.Component {
 
                         :
                         <IdeaBoxContainer className={style.ideaBoxContainer}>
-                            {(submitButtonIsClicked && !(inputErrors === 0)) &&
-                            <div className={style.errorNotification}>
-                                Please, verify your entries.
+                            {/* <img src="/idea.svg" alt={"new idea box"} className={style.ideaIcon} /> */}
+                            <div>
+                                {(submitButtonIsClicked && !(inputErrors === 0)) &&
+                                    <div className={style.errorNotification}>
+                                        Please, verify your entries.
                             </div>
-                            }
+                                }
 
-                            <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} Say that loud ! </IdeaBoxTitle>
-                            <form className={style.ideaBox} onSubmit={this.handleSubmit}>
-                                <IdeaTextInput className={style.textInput} value={this.state.ideaField} type="text"
-                                               onChange={this.handleIdeaFieldOnChange}
-                                               placeholder="Your idea in a few words ?"/>
+                                <IdeaBoxTitle className={style.ideaBoxTitle}> {this.ideaBoxTitle} Say that loud ! </IdeaBoxTitle>
+                                <form className={style.ideaBox} onSubmit={this.handleSubmit}>
+                                    <IdeaTextInput className={style.textInput} value={this.state.ideaField} type="text"
+                                        onChange={this.handleIdeaFieldOnChange}
+                                        placeholder="Your idea in a few words ?" />
 
-                                <div className={style.ideaBoxBottomContainer}>
-                                    <IdeaTextInput className={style.textInput + " " + style.emailField}
-                                                   value={this.state.emailField} type="email"
-                                                   onChange={this.handleEmailFieldOnChange}
-                                                   placeholder="Your email"/>
-                                    <div className={style.submitButtonContainer}>
-                                        <input className={style.submitButton} type="submit" value="Send"/>
+                                    <div className={style.ideaBoxBottomContainer}>
+                                        <IdeaTextInput className={style.textInput + " " + style.emailField}
+                                            value={this.state.emailField} type="email"
+                                            onChange={this.handleEmailFieldOnChange}
+                                            placeholder="Your email" />
+                                        <div className={style.submitButtonContainer}>
+                                            <input className={style.submitButton} type="submit" value="Send" />
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+
                         </IdeaBoxContainer>
 
                 }
