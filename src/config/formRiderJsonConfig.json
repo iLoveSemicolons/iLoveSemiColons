@@ -1,0 +1,34 @@
+{
+    "notifications": [{
+            "notificationCode": 1,
+            "text": "notification 1",
+            "textColor": "#ffffff",
+            "backgroundColor": "#E56C6C"
+        },
+        {
+            "notificationCode": 2,
+            "text": "notification 2",
+            "textColor": "#ffffff",
+            "backgroundColor": "#50CF96"
+        }
+    ],
+    "elementsToApplyValidationOn": {
+        "subscribeForm": {
+            "notificationCode": {
+                "validated": 2,
+                "notValidated": 1
+            },
+            "resetFormUponSubmit": false,
+            "inputNameToValidate": {
+                "firstName": {
+                    "required": [true, "first name is required"]
+                },
+                "email": {
+                    "required": [true, "an email is requried"],
+                    "email": [true, "input should be a valid email"]
+
+                }
+            }
+        }
+    }
+}

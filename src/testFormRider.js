@@ -1,6 +1,6 @@
 import React from "react";
 import toBeUsedAddress from "../src/config/globalIP";
-import { FormRiderjs } from "formriderjs";
+import FormRiderjs from "formriderjs";
 
 export default class TestFormRider extends React.Component {
   constructor(props) {
@@ -30,14 +30,11 @@ export default class TestFormRider extends React.Component {
 
 
 
-
-
   handleSubmit(event) {
-
     event.preventDefault();
 
+    
     window.setTimeout((z) => {
-
       let status = FormRiderjs.getValidationStatus();
       console.log(status);
       if (status === true) {
@@ -58,6 +55,30 @@ export default class TestFormRider extends React.Component {
       }
     }, 200);
   }
+
+  /*   handleSubmit(event) {
+      event.preventDefault();
+      window.setTimeout((z) => {
+        let status = FormRiderjs.getValidationStatus();
+        console.log(status);
+        if (status === true) {
+          fetch(toBeUsedAddress.address + "/subscribe", {
+            method: "POST",
+            headers: {
+              "Accept": "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              firstName: this.state.firstNameValue,
+              email: this.state.emailValue,
+              subscriptionDate: "2021-02-06 10:25:24",
+            }),
+          })
+            .then((response) => response.json())
+            .catch((err) => console.log(err));
+        }
+      }, 200);
+    } */
 
   render() {
     return (
